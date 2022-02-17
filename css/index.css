@@ -1,0 +1,15 @@
+body{
+    background-image: url("../img/1500x844_habilidades_necesarias_gerente-1080x675.jpg") ;
+    background-size: cover;
+}
+h1{
+    color: white;
+    text-shadow: black 1px 1px 1px;
+}
+p{
+    color: white;
+    text-shadow: black 1px 1px 1px; 
+}
+.card{
+    height: 50vh;
+}

@@ -1,0 +1,144 @@
+body{
+    background: url(../img/background.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.main-section{
+    margin:0 auto;
+    margin-top:25%;
+    padding: 0;
+}
+
+.container{
+    color: black;
+}
+
+.modal-content{
+    background-color: #7fa7c9;
+    opacity: .85;
+    box-shadow: 3px 3px 3px #7c7c7c;
+}
+
+h1
+{
+    position: relative;
+    color: #f5f5f5;
+    font-size: 4.5em;
+    -webkit-text-stroke: 7px #0a0808;
+    text-transform: uppercase;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    Left: 0;
+    width: 0;
+    height: 100%;
+    color: I#0400f0;
+    -webkit-text-stroke: 0vw #001664;
+    border-right: 2px solid #f1f1f1;
+    overflow: hidden;
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate
+{
+    0%,10%,100%
+    {
+        width: 0;
+    }
+    70%,100%
+    {
+        width: 100%;
+    }
+}
+
+.user-img{
+    margin-top: -50px;
+    margin-bottom: 35px;
+}
+
+.user-img img{
+    display:block;
+    margin:auto;
+    align-content: center;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0px 0px 7px #200094;
+    border-radius: 50%;
+}
+
+.form-group input{
+    height: 42px;
+    font-size: 18px;
+    border:0;
+    padding-left: 54px;
+    border-radius: 5px;
+}
+
+.form-group::before{
+    font-family: "Font Awesome\ 5 Free";
+    position: absolute;
+    left: 28px;
+    font-size: 22px;
+    padding-top:4px;
+    color: black;
+}
+
+
+.form-group#user-group::before{
+    content: "\f007";
+}
+
+.form-group#contrasena-group::before{
+    content: "\f023";
+}
+
+button{
+    width: 60%;
+    margin: 5px 0 25px;
+    font-size: large;
+    border-radius: 5px;
+}
+.btn-primary{
+    display:block;
+    margin: auto;
+}
+
+.forgot{
+    padding: 8px 0;
+    padding-left: 25%;
+}
+
+.forgot a{
+    color: white;
+}
+
+.modal-title{
+    color: white;
+}
+
+.close{
+    color: white;
+}
+
+.modal-body{
+    color: white;
+}
+
+.modal-footer{
+    position: relative;
+}
+
+#modalerror{
+    background-color: #0d5eb4;
+    opacity: .97;
+    box-shadow: 0px 0px 3px #848484;
+}
+
+#olvido{
+    display:block;
+    margin:auto;
+}
