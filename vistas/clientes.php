@@ -63,11 +63,11 @@
               <a class="nav-link " aria-current="page" href="../index.php">Index</a>
               <a class="nav-link  " href="./formularioproductos.html">Productos</a>
               <a class="nav-link" href="./Menu.html">Proveedores</a>
-              <a class="nav-link" href="./clientes.php">Clientes / Usuarios</a>
+              <a class="nav-link active" href="./clientes.php">Clientes / Usuarios</a>
               <a class="nav-link" href="./envios.php">Envios / Empresas </a>
               <a class="nav-link" href="./compras.php">Compras</a>
               <a class="nav-link " href="./Crud_Empleados.html">Empleados &Backslash; Usuarios</a>
-              <a class="nav-link active" href="./contactenosAdmin.html">Ventas</a>
+              <a class="nav-link " href="./contactenosAdmin.html">Ventas</a>
               <a class="nav-link" href="./direcciones.php">Direcciones</a>
               <form class="d-flex">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Cerrar sesi&oacute;n</button>

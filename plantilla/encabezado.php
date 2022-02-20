@@ -10,14 +10,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav">
-              <a class="nav-link " aria-current="page" href="../index.php">Index</a>
+              <a class="nav-link active" aria-current="page" href="../index.php">Index</a>
                     <a class="nav-link  " href="../vistas/formularioproductos.html">Productos</a>
                     <a class="nav-link" href="./Menu.html">Proveedores</a>
                     <a class="nav-link" href="../vistas/clientes.php">Clientes / Usuarios</a>
                     <a class="nav-link" href="../vistas/envios.php">Envios / Empresas </a>
                     <a class="nav-link" href="../vistas/compras.php">Compras</a>
                     <a class="nav-link " href="../vistas/Crud_Empleados.html">Empleados &Backslash; Usuarios</a>
-                    <a class="nav-link active" href="../vistas/contactenosAdmin.html">Ventas</a>
+                    <a class="nav-link " href="../vistas/contactenosAdmin.html">Ventas</a>
                     <a class="nav-link" href="../vistas/listatrabajos.html">Direcciones</a>
                 <form class="d-flex">
                   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Cerrar sesi&oacute;n</button>
