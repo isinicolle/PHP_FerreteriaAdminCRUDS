@@ -12,7 +12,7 @@
               <div class="navbar-nav">
               <a class="nav-link active" aria-current="page" href="../index.php">Index</a>
                     <a class="nav-link  " href="../vistas/formularioproductos.html">Productos</a>
-                    <a class="nav-link" href="./Menu.html">Proveedores</a>
+                    <a class="nav-link" href="./proveedores.php">Proveedores</a>
                     <a class="nav-link" href="../vistas/clientes.php">Clientes / Usuarios</a>
                     <a class="nav-link" href="../vistas/envios.php">Envios / Empresas </a>
                     <a class="nav-link" href="../vistas/compras.php">Compras</a>

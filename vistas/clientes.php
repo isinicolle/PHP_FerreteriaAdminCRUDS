@@ -62,7 +62,7 @@
             <div class="navbar-nav">
               <a class="nav-link " aria-current="page" href="../index.php">Index</a>
               <a class="nav-link  " href="./formularioproductos.html">Productos</a>
-              <a class="nav-link" href="./Menu.html">Proveedores</a>
+              <a class="nav-link" href="./proveedores.php">Proveedores</a>
               <a class="nav-link active" href="./clientes.php">Clientes / Usuarios</a>
               <a class="nav-link" href="./envios.php">Envios / Empresas </a>
               <a class="nav-link" href="./compras.php">Compras</a>
@@ -225,12 +225,12 @@
                 </div>
                 
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Direccion: </label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
+                    <label class="col-lg-3  col-form-label form-control-label">Direccion</label>
+                    <div class="col-lg-9">
+                      <textarea required class="form-control" name="direccion" id="direccion" maxlength="200"></textarea>
+                      <div class="valid-feedback">Correcto</div>
+                      <div class="invalid-feedback">Ingrese datos correctos</div>
+                      </div>
                 </div>
 
                 <div class="form-group row">
@@ -322,7 +322,7 @@
                   </div>
                 </div>
               </form>
-              <script src="../bootstrap/js/cliente.js"></script>
+              <script src="../bootstrap/js/validacion.js"></script>
             </div>
           </div>
         </div>

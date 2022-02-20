@@ -57,7 +57,7 @@
                 <div class="navbar-nav">
                     <a class="nav-link " aria-current="page" href="../index.php">Index</a>
                     <a class="nav-link  " href="./formularioproductos.html">Productos</a>
-                    <a class="nav-link" href="./Menu.html">Proveedores</a>
+                    <a class="nav-link" href="./proveedores.php">Proveedores</a>
                     <a class="nav-link" href="./clientes.php">Clientes / Usuarios</a>
                     <a class="nav-link" href="./envios.php">Envios / Empresas </a>
                     <a class="nav-link" href="./compras.php">Compras</a>
@@ -246,7 +246,7 @@
                   </div>
                 </div>
               </form>
-              <script src="../bootstrap/js/direcciones.js"></script>
+              <script src="../bootstrap/js/validacion.js"></script>
             </div>
           </div>
         </div>
