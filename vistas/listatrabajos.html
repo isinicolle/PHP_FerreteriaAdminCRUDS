@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>Trabajos</title>
+	<title>Direcciones</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" />
@@ -28,7 +28,7 @@
 	<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 	
 	<!-- Nuestro css-->
-	<link rel="stylesheet" type="text/css" href="./css/trabajoslista.css">
+	<link rel="stylesheet" type="text/css" href="../bootstrap/css/trabajoslista.css">
 
    <!-- DATA TABLE--> 
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
@@ -79,239 +79,255 @@
         <div class="mx-auto col-sm-12 main-section" id="myTab" role="tablist">
             <ul class="nav nav-tabs justify-content-center">
                 <li class="nav-item">
-                <a class="nav-link active" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="false"><strong>Trabajos</strong></a>
+                <a class="nav-link active" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="false"><strong>Listado Direccion</strong></a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form"
+                      aria-selected="true"><strong>Ingreso Direcciones</strong></a>
+                  </li>
             </ul>
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
-                    <!--Cartas Tabla-->
-                    <div class="card">
-                        <div class="card-header text-center">
-                            <h4><strong>SOLICITUDES DE EMPLEO</strong></h4>
-                        </div>
-                        <div class="card-body">
-                            <!--Tabla-->
-                            <div class="table-responsive">
-                                <table id="userList" class="table table-bordered table-hover table-striped text-center">
-                                    <thead class="thead-light">
-                                    <tr>
-                                        <th scope="col">Id Solicitud</th>
-                                        <th scope="col">Fecha</th>
-                                        <th scope="col">Nombre Completo</th>
-                                        <th scope="col">Genero</th>
-                                        <th scope="col">Edad</th>
-                                        <th scope="col">E-Mail</th>
-                                        <th scope="col">Telefono</th>
-                                        <th scope="col">Direccion</th>
-                                        <th scope="col">Area</th>
-                                        <th scope="col">Experiencia</th>
-                                        <th scope="col">Curriculum</th>
-                                        <th></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>8/10/2021</td>
-                                        <td>Alex David Sanoval</td>
-                                        <td>Masculino</td>
-                                        <td>23</td>
-                                        <td>asandoval@hotmail.com</td>
-                                        <td>98553476</td>
-                                        <td>Colonia Las Torres, Tegucigalpa</td>
-                                        <td>Chef</td>
-                                        <td>3 anios</td>
-                                        <td>CV_Alex.pdf</td>
-                                        <td>
-                                            <a href="#"><i class="fas fa-edit"></i></a><a href="#"><i class="fas fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>14/10/2021</td>
-                                        <td>Marco Eliu Gonzales</td>
-                                        <td>Masculino</td>
-                                        <td>21</td>
-                                        <td>Eliugo@gmail.com</td>
-                                        <td>89765432</td>
-                                        <td>las flores, Tegucigalpa</td>
-                                        <td>Ayudante de Cocina</td>
-                                        <td>2 anios</td>
-                                        <td>CV_Gonzales.pdf</td>
-                                        <td>
-                                            <a href="#"><i class="fas fa-edit"></i></a><a href="#"><i class="fas fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>4/07/2021</td>
-                                        <td>Maria Elena Gonzales</td>
-                                        <td>Femenino</td>
-                                        <td>19</td>
-                                        <td>Marelena@gmail.com</td>
-                                        <td>97845678</td>
-                                        <td>Bustamante, Tegucigalpa</td>
-                                        <td>Mesero Medio tiempo</td>
-                                        <td>menor de 3 anios</td>
-                                        <td>CV_Gonzalesele.pdf</td>
-                                        <td>
-                                            <a href="#"><i class="fas fa-edit"></i></a><a href="#"><i class="fas fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">4</th>
-                                        <td>8/09/2021</td>
-                                        <td>Arturo Vidal </td>
-                                        <td>Masculino</td>
-                                        <td>26</td>
-                                        <td>vidalar@gmail.com</td>
-                                        <td>67436756</td>
-                                        <td>los olivos, Tegucigalpa</td>
-                                        <td>Atencion al Cliente</td>
-                                        <td>3 anios</td>
-                                        <td>CV_vidal.pdf</td>
-                                        <td>
-                                            <a href="#"><i class="fas fa-edit"></i></a><a href="#"><i class="fas fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">5</th>
-                                        <td>8/10/2021</td>
-                                        <td>Eber Josue Giron</td>
-                                        <td>Masculino</td>
-                                        <td>29</td>
-                                        <td>ebegiron@gmail.com</td>
-                                        <td>67436756</td>
-                                        <td>Periferico, Tegucigalpa</td>
-                                        <td>Mesero Tiempo Completo</td>
-                                        <td>mas de 6 anios </td>
-                                        <td>CV_eberjosu.pdf</td>
-                                        <td>
-                                            <a href="#"><i class="fas fa-edit"></i></a><a href="#"><i class="fas fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">6</th>
-                                        <td>7/11/2021</td>
-                                        <td>Marcos Neimaya</td>
-                                        <td>Masculino</td>
-                                        <td>22</td>
-                                        <td>Marconei@gmail.com</td>
-                                        <td>67436756</td>
-                                        <td>Periferico, Tegucigalpa</td>
-                                        <td>Repartidor</td>
-                                        <td>4 anios</td>
-                                        <td>CV_MarcoNei.pdf</td>
-                                        <td>
-                                            <a href="#"><i class="fas fa-edit"></i></a><a href="#"><i class="fas fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">7</th>
-                                        <td>7/11/2021</td>
-                                        <td>Oscar portillo Cruz</td>
-                                        <td>Masculino</td>
-                                        <td>22</td>
-                                        <td>oscruz@gmail.com</td>
-                                        <td>67436756</td>
-                                        <td>Periferico, Tegucigalpa</td>
-                                        <td>Repartidor</td>
-                                        <td>menos de 3 anios</td>
-                                        <td>CV_oscar.pdf</td>
-                                        <td>
-                                            <a href="#"><i class="fas fa-edit"></i></a><a href="#"><i class="fas fa-trash"></i></a>
-                                        </td>
-                                    </tr> 
-                                    <tr>
-                                        <th scope="row">8</th>
-                                        <td>13/04/2021</td>
-                                        <td>Jimena Trochez</td>
-                                        <td>Femenino</td>
-                                        <td>19</td>
-                                        <td>Jimetro@gmail.com</td>
-                                        <td>87657890</td>
-                                        <td>la planeta, Tegucigalpa</td>
-                                        <td>Atencio al Cliente</td>
-                                        <td>Menos de 3 anios</td>
-                                        <td>CV_Jimechez.pdf</td>
-                                        <td>
-                                            <a href="#"><i class="fas fa-edit"></i></a><a href="#"><i class="fas fa-trash"></i></a>
-                                        </td>
-                                    </tr> 
-                                    <tr>
-                                        <th scope="row">9</th>
-                                        <td>13/04/2021</td>
-                                        <td>Agustina Campos</td>
-                                        <td>Femenino</td>
-                                        <td>31</td>
-                                        <td>Cgustina@gmail.com</td>
-                                        <td>98276512</td>
-                                        <td>el carmen, Tegucigalpa</td>
-                                        <td>chef</td>
-                                        <td>mas de 6 anios</td>
-                                        <td>CV_agustina.pdf</td>
-                                        <td>
-                                            <a href="#"><i class="fas fa-edit"></i></a><a href="#"><i class="fas fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">10</th>
-                                        <td>26/07/2021</td>
-                                        <td>Flor Esther Lara</td>
-                                        <td>Femenino</td>
-                                        <td>26</td>
-                                        <td>flora@gmail.com</td>
-                                        <td>89990678</td>
-                                        <td>el carmen, Tegucigalpa</td>
-                                        <td>Mesero Tiempo Completo</td>
-                                        <td>mas de 4 anios</td>
-                                        <td>CV_agustina.pdf</td>
-                                        <td>
-                                            <a href="#"><i class="fas fa-edit"></i></a><a href="#"><i class="fas fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">11</th>
-                                        <td>19/05/2021</td>
-                                        <td>Josue Quintanilla</td>
-                                        <td>Masculino</td>
-                                        <td>19</td>
-                                        <td>5tanilla@gmail.com</td>
-                                        <td>98875546</td>
-                                        <td>El calvario, Tegucigalpa</td>
-                                        <td>Repartidor</td>
-                                        <td>menos de 1 anio</td>
-                                        <td>CV_Quintanilla Josue.pdf</td>
-                                        <td>
-                                            <a href="#"><i class="fas fa-edit"></i></a><a href="#"><i class="fas fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">12</th>
-                                        <td>03/03/2021</td>
-                                        <td>Olga Nohemy vargas</td>
-                                        <td>Femenino</td>
-                                        <td>25</td>
-                                        <td>NohemyVA@gmail.com</td>
-                                        <td>87765423</td>
-                                        <td>San jose, Tegucigalpa</td>
-                                        <td>Ayudante de cocina</td>
-                                        <td>4 anios</td>
-                                        <td>CV_NOHEMY.pdf</td>
-                                        <td>
-                                            <a href="#"><i class="fas fa-edit"></i></a><a href="#"><i class="fas fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    <!--Fin cartas tabla-->
-                    </div>
+           
+     <!--Ingreso de direcciones y tabla-->
+     <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
+          <div class="card">
+            <div class="card-header">
+              <h4>Listado de Clientes</h4>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table id="userList" class="table table-bordered table-hover table-striped">
+                  <thead class="thead-light">
+                    <tr>
+                      <th scope="col">Id</th>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Apellido</th>
+                      <th scope="col">RTN</th>
+                      <th scope="col">Direccion</th>
+                      <th scope="col">Ciudad</th>
+                      <th scope="col">Telefono</th>
+                      <th scope="col">Estado Cliente</th>
+                      <th scope="col">DNI</th>
+                      <th scope="col">Correo</th>
+                      <th scope="col">Estado Usuario</th>
+                     
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Isis</td>
+                      <td>Zapata</td>
+                      <td>isiszapata</td>
+                      <td>Centro tegucigalpa</td>
+                      <td>Tegucigalpa</td>
+                      <td>+504 89823000</td>
+                      <td>Activo</td>
+                      <td>09022001</td>
+                      <td>isisnicollezapata@gmail.com</td>
+                      <td>Activo</td>
+                      <td>
+                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Isis</td>
+                      <td>Zapata</td>
+                      <td>isiszapata</td>
+                      <td>Centro tegucigalpa</td>
+                      <td>Tegucigalpa</td>
+                      <td>+504 89823000</td>
+                      <td>Activo</td>
+                      <td>09022001</td>
+                      <td>isisnicollezapata@gmail.com</td>
+                      <td>Activo</td>
+                      <td>
+                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>Isis</td>
+                      <td>Zapata</td>
+                      <td>isiszapata</td>
+                      <td>Centro tegucigalpa</td>
+                      <td>Tegucigalpa</td>
+                      <td>+504 89823000</td>
+                      <td>Activo</td>
+                      <td>09022001</td>
+                      <td>isisnicollezapata@gmail.com</td>
+                      <td>Activo</td>
+                      <td>
+                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">4</th>
+                      <td>Isis</td>
+                      <td>Zapata</td>
+                      <td>isiszapata</td>
+                      <td>Centro tegucigalpa</td>
+                      <td>Tegucigalpa</td>
+                      <td>+504 89823000</td>
+                      <td>Activo</td>
+                      <td>09022001</td>
+                      <td>isisnicollezapata@gmail.com</td>
+                      <td>Activo</td>
+                      <td>
+                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
+                      </td>
+                    </tr>
+                      
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab">
+          <div class="card">
+            <div class="card-header">
+              <h4>Ingreso del Cliente</h4>
+            </div>
+            <div class="card-body">
+              <form class="form needs-validation" id="form1" method="post" role="form" autocomplete="off" novalidate>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Nombre: </label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="text" required>
+                    <div class="valid-feedback">Correcto</div>
+                    <div class="invalid-feedback">Ingrese datos correctos</div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Apellido: </label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="text" required>
+                    <div class="valid-feedback">Correcto</div>
+                    <div class="invalid-feedback">Ingrese datos correctos</div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">RTN: </label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="text" required>
+                    <div class="valid-feedback">Correcto</div>
+                    <div class="invalid-feedback">Ingrese datos correctos</div>
+                  </div>
                 </div>
                 
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Direccion: </label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="text" required>
+                    <div class="valid-feedback">Correcto</div>
+                    <div class="invalid-feedback">Ingrese datos correctos</div>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Telefono: </label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="text" required>
+                    <div class="valid-feedback">Correcto</div>
+                    <div class="invalid-feedback">Ingrese datos correctos</div>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">DNI: </label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="text" required>
+                    <div class="valid-feedback">Correcto</div>
+                    <div class="invalid-feedback">Ingrese datos correctos</div>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">¿Activo?</label>
+                  <div class="col-lg-9">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Ciudad: </label>
+                  <div class="col-lg-9">
+                    <select class="custom-select custom-select-lg mb-3" required>
+                      <option selected disabled value="">Seleccione una opción</option>
+                      <option value="1">Tegucigalpa</option>
+                      <option value="2">San pedro sula</option>
+                      <option value="3">El paraiso</option>
+                      <option value="4">Comayaguela</option>
+                    </select>
+                    <div class="valid-feedback">Correcto</div>
+                    <div class="invalid-feedback">Ingrese datos correctos</div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Correo electrónico</label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="email" required>
+                    <div class="valid-feedback">Correcto</div>
+                    <div class="invalid-feedback">Ingrese datos correctos</div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Nombre de usuario</label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="text" required>
+                    <div class="valid-feedback">Correcto</div>
+                    <div class="invalid-feedback">Ingrese datos correctos</div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Contraseña</label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="password" required>
+                    <div class="valid-feedback">Correcto</div>
+                    <div class="invalid-feedback">Ingrese datos correctos</div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Confirmar contraseña</label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="password" required>
+                    <div class="valid-feedback">Correcto</div>
+                    <div class="invalid-feedback">Ingrese datos correctos</div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">¿Usuario Activo?</label>
+                  <div class="col-lg-9">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-lg-12 text-center">
+                    <button type="submit" class="btn btn-primary" value="Save Changes">Enviar</button>
+                    <button type="reset" class="btn btn-secondary" value="Cancel">Cancelar</button>
+                  </div>
+                </div>
+              </form>
+              <script src="../bootstrap/js/direcciones.js"></script>
             </div>
+          </div>
         </div>
+      </div>
+
+
+        </div>
+
+
+        
     </div>
     <!--Fin pesta;as-->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
