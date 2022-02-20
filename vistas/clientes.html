@@ -89,16 +89,10 @@
           <a class="nav-link" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form"
             aria-selected="true"><strong>Ingreso Clientes</strong></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form"
-            aria-selected="true"><strong>Ingreso Usuarios Clientes</strong></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form"
-            aria-selected="true"><strong>Listado Usuarios Clientes</strong></a>
-        </li>
+       
       </ul>
 
+     
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
           <div class="card">
@@ -191,12 +185,12 @@
         <div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab">
           <div class="card">
             <div class="card-header">
-              <h4>Ingreso de usuario</h4>
+              <h4>Ingreso del Cliente</h4>
             </div>
             <div class="card-body">
               <form class="form needs-validation" id="form1" method="post" role="form" autocomplete="off" novalidate>
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Nombres</label>
+                  <label class="col-lg-3 col-form-label form-control-label">Nombre: </label>
                   <div class="col-lg-9">
                     <input class="form-control" type="text" required>
                     <div class="valid-feedback">Correcto</div>
@@ -204,7 +198,7 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Apellidos</label>
+                  <label class="col-lg-3 col-form-label form-control-label">Apellido: </label>
                   <div class="col-lg-9">
                     <input class="form-control" type="text" required>
                     <div class="valid-feedback">Correcto</div>
@@ -212,47 +206,15 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Numero de identidad</label>
+                  <label class="col-lg-3 col-form-label form-control-label">RTN: </label>
                   <div class="col-lg-9">
                     <input class="form-control" type="text" required>
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
                 </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Fecha de nacimiento</label>
-                  <div class="col-lg-9">
-                    <input id="datepicker"  class="form-control" required />
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                    <script type="text/javascript">
-                      $(document).ready(function(){
-                       $('#datepicker').datepicker({
-                        "format": "mm-dd-yy",
-                        "endDate": "-18y",
-                        "keyboardNavigation": false
-                       }); 
-                      });
-                      </script>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Fecha de ingreso</label>
-                  <div class="col-lg-9">
-                    <input id="datepicker2" class="form-control" required />
-                    <script type="text/javascript">
-                      $(document).ready(function(){
-                       $('#datepicker2').datepicker({
-                        "format": "mm-dd-yy",
-                        "endDate": "-0d",
-                        "keyboardNavigation": false
-                       }); 
-                      });
-                      </script>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
+                
+             
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">¿Activo?</label>
                   <div class="col-lg-9">
@@ -320,9 +282,24 @@
           </div>
         </div>
       </div>
+    
+    
+      
+  
+
     </div>
   </div>
 
+
+
+
+
+
+
+
+
+
+  
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
