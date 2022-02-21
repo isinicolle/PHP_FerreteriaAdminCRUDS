@@ -1,14 +1,11 @@
-body{
-    background: url(../img/fondofromproductos.jpg) no-repeat center center fixed;
-    background-size: cover;
-}
-
 .main-section{
     margin:0 auto;
     margin-top:5%;
-    margin-bottom: 2%;
 }
-
+body{
+    background-image: url("../img/CategoriasYMarcas.png");
+    background-size: cover;
+}
 
 .card{
 	opacity: .98;    
