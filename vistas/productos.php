@@ -111,7 +111,7 @@
                                         <th scope="col">Stock</th>
                                         <th scope="col">Descuento</th>
                                         <th scope="col">Estado</th>
-                                        <th></th>
+                                        <th scope="col">Accion</th>
                                     </tr>
                                     </thead>
                                     <tbody>

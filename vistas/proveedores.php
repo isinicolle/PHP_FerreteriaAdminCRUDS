@@ -107,6 +107,7 @@
                       <th scope="col">Direccion</th>
                       <th scope="col">Ciudad</th>
                       <th scope="col">Estado Proveedor</th>
+                      <th scope="col">Accion</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -119,7 +120,7 @@
                       <td>Tegucigalpa</td>
                       <td>Activo</td>
                       <td>
-                        <a href="#"><i class="fas fa-edit"></i></a>|<a href="#"><i class="fas fa-trash"></i></a>
+                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
                       </td>
                     </tr>
                   </tbody>

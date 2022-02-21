@@ -103,6 +103,7 @@
                       <th scope="col">Id</th>
                       <th scope="col">Descripcion</th>
                       <th scope="col">Estado Categoria</th>
+                      <th scope="col">Accion</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -111,7 +112,7 @@
                       <td>Agricultura</td>
                       <td>Activo</td>
                       <td>
-                        <a href="#"><i class="fas fa-edit"></i></a>|<a href="#"><i class="fas fa-trash"></i></a>
+                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
                       </td>
                     </tr>
                   </tbody>
