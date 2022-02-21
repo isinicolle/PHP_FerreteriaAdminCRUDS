@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Formulario de empleados</title>
+  <title>Clientes</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -12,6 +12,7 @@
   <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
   <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
   <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="../bootstrap/css/Cliente.css">
 
   <!-- Todo para la data table-->
 <script
@@ -39,13 +40,6 @@
            $('#userList').DataTable();
        } );
    </script>
-<!-- Todo para las datepicker -->
-
-
-<!-- Datepicker -->
-<link href='../bootstrap/css/bootstrap-datepicker.min.css' rel='stylesheet' type='text/css'>
-<script src='../bootstrap/js/bootstrap-datepicker.min.js' type='text/javascript'></script>
-
 </head>
 
 <body>
@@ -53,7 +47,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="../index.php">
-              <img width="120" class="d-inline-block align-text-top" src="../bootstrap/img/LogoParrilla.png">
+            <img width="120" class="d-inline-block align-text-top" src="../bootstrap/img/LogoParrilla.png"> 
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -98,8 +92,8 @@
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
           <div class="card">
-            <div class="card-header">
-              <h4>Listado de Clientes</h4>
+            <div class="card-header text-center">
+              <h4>Listado Clientes</h4>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -113,15 +107,15 @@
                       <th scope="col">Direccion</th>
                       <th scope="col">Ciudad</th>
                       <th scope="col">Telefono</th>
-                      <th scope="col">Estado Cliente</th>
+                      <th scope="col">Estado</th>
                       <th scope="col">DNI</th>
                       <th scope="col">Correo</th>
                       <th scope="col">Estado Usuario</th>
-                     
+                      <th scope="col">Accion</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                  <tr>
                       <th scope="row">1</th>
                       <td>Isis</td>
                       <td>Zapata</td>
@@ -136,58 +130,7 @@
                       <td>
                         <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
                       </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Isis</td>
-                      <td>Zapata</td>
-                      <td>isiszapata</td>
-                      <td>Centro tegucigalpa</td>
-                      <td>Tegucigalpa</td>
-                      <td>+504 89823000</td>
-                      <td>Activo</td>
-                      <td>09022001</td>
-                      <td>isisnicollezapata@gmail.com</td>
-                      <td>Activo</td>
-                      <td>
-                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Isis</td>
-                      <td>Zapata</td>
-                      <td>isiszapata</td>
-                      <td>Centro tegucigalpa</td>
-                      <td>Tegucigalpa</td>
-                      <td>+504 89823000</td>
-                      <td>Activo</td>
-                      <td>09022001</td>
-                      <td>isisnicollezapata@gmail.com</td>
-                      <td>Activo</td>
-                      <td>
-                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">4</th>
-                      <td>Isis</td>
-                      <td>Zapata</td>
-                      <td>isiszapata</td>
-                      <td>Centro tegucigalpa</td>
-                      <td>Tegucigalpa</td>
-                      <td>+504 89823000</td>
-                      <td>Activo</td>
-                      <td>09022001</td>
-                      <td>isisnicollezapata@gmail.com</td>
-                      <td>Activo</td>
-                      <td>
-                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
-                      </td>
-                    </tr>
-                      
-                      </td>
-                    </tr>
+                  </tr>
                   </tbody>
                 </table>
               </div>
@@ -196,127 +139,27 @@
         </div>
         <div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab">
           <div class="card">
-            <div class="card-header">
-              <h4>Ingreso del Cliente</h4>
+            <div class="card-header text-center">
+              <h4>Ingreso de Marcas</h4>
             </div>
             <div class="card-body">
               <form class="form needs-validation" id="form1" method="post" role="form" autocomplete="off" novalidate>
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Nombre: </label>
+                  <label class="col-lg-3 col-form-label form-control-label">Descripcion de la Marca: </label>
                   <div class="col-lg-9">
                     <input class="form-control" type="text" required>
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Apellido: </label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">RTN: </label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-                
-                <div class="form-group row">
-                    <label class="col-lg-3  col-form-label form-control-label">Direccion</label>
-                    <div class="col-lg-9">
-                      <textarea required class="form-control" name="direccion" id="direccion" maxlength="200"></textarea>
-                      <div class="valid-feedback">Correcto</div>
-                      <div class="invalid-feedback">Ingrese datos correctos</div>
-                      </div>
-                </div>
-
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Telefono: </label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">DNI: </label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">¿Activo?</label>
                   <div class="col-lg-9">
                     <div class="form-check form-check-inline">
                       <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-
                     </div>
                   </div>
                 </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Ciudad: </label>
-                  <div class="col-lg-9">
-                    <select class="custom-select custom-select-lg mb-3" required>
-                      <option selected disabled value="">Seleccione una opción</option>
-                      <option value="1">Tegucigalpa</option>
-                      <option value="2">San pedro sula</option>
-                      <option value="3">El paraiso</option>
-                      <option value="4">Comayaguela</option>
-                    </select>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Correo electrónico</label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="email" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Nombre de usuario</label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Contraseña</label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="password" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Confirmar contraseña</label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="password" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">¿Usuario Activo?</label>
-                  <div class="col-lg-9">
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
 
-                    </div>
-                  </div>
-                </div>
                 <div class="form-group row">
                   <div class="col-lg-12 text-center">
                     <button type="submit" class="btn btn-primary" value="Save Changes">Enviar</button>
@@ -330,23 +173,9 @@
         </div>
       </div>
     
-    
-      
-  
-
     </div>
   </div>
 
-
-
-
-
-
-
-
-
-
-  
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
