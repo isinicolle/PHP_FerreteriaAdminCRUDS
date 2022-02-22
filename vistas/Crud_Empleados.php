@@ -49,38 +49,10 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="../index.php">
-              <img width="120" class="d-inline-block align-text-top" src="../bootstrap/img/LogoParrilla.png">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link " aria-current="page" href="../index.php">Index</a>
-              <a class="nav-link  " href="./productos.php">Productos</a>
-              <a class="nav-link" href="./proveedores.php">Proveedores</a>
-              <a class="nav-link" href="./categorias.php">Categorias</a>
-              <a class="nav-link" href="./marcas.php">Marcas</a>
-              <a class="nav-link" href="./clientes.php">Clientes / Usuarios</a>
-              <a class="nav-link" href="./envios.php">Envios / Empresas </a>
-              <a class="nav-link" href="./compras.php">Compras</a>
-              <a class="nav-link " href="./Crud_Empleados.html">Empleados &Backslash; Usuarios</a>
-              <a class="nav-link active" href="./contactenosAdmin.html">Ventas</a>
-              <a class="nav-link" href="./direcciones.php">Direcciones</a>
-              <form class="d-flex">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Cerrar sesi&oacute;n</button>
-              </form>
-              
-            </div>
-          </div>
-        </div>
-      </nav>
-</header>
-  <div class="container">
+  <?php
+    include_once('../plantilla/encabezado.php');
+  ?>
+      <div class="container">
     <div class="mx-auto main-section" id="myTab" role="tablist">
       <ul class="nav nav-tabs justify-content-center">
         <li class="nav-item">
@@ -97,80 +69,97 @@
         <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
           <div class="card">
             <div class="card-header">
-              <h4>Lista de empleados/usuarios</h4>
+              <h4>Lista de Empleados Ferreteria Maresa</h4>
             </div>
             <div class="card-body">
               <div class="table-responsive">
                 <table id="userList" class="table table-bordered table-hover table-striped">
                   <thead class="thead-light">
                     <tr>
-                      <th scope="col">Id</th>
-                      <th scope="col">Primer Nombre</th>
+                      <th scope="col">ID</th>
+                      <th scope="col">Nombre</th>
                       <th scope="col">Apellido</th>
-                      <th scope="col">Nombre de usuario</th>
-                      <th scope="col">Numero de identidad</th>
+                      <th scope="col">Correo</th>
+                      <th scope="col">Teléfono</th>
+                      <th scope="col">Dirección</th>
+                      <th scope="col">ID Ciudad</th>
+                      <th scope="col">ID Rol</th>
                       <th scope="col">Fecha de nacimiento</th>
-                      <th scope="col">Fecha de ingreso</th>
                       <th scope="col">Estado</th>
-                      <th scope="col">E-mail</th>
-                      <th scope="col">Accion</th>
+                      <th scope="col">Editar</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <th scope="row">1</th>
-                      <td>Cristian</td>
-                      <td>Ruiz</td>
-                      <td>c.r.username</td>
-                      <td>1805199920054</td>
-                      <td>01/01/1999</td>
-                      <td>12/23/2020</td>
+                      <td>David</td>
+                      <td>Chavez</td>
+                      <td>dchavez@gmail.com</td>
+                      <td>22334455</td>
+                      <td>Santa Lucia</td>
+                      <td>01</td>
+                      <td>Administardor</td>
+                      <td>06/01/2001</td>
                       <td>Activo</td>
-                      <td>c.r.username@blog.com</td>
                       <td>
                         <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
                       </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Cristian</td>
-                      <td>Ruiz</td>
-                      <td>c.r.username</td>
-                      <td>1804199803610</td>
-                      <td>01/01/1999</td>
-                      <td>12/23/2020</td>
-                      <td>Inactivo</td>
-                      <td>c.r.username@blog.com</td>
-                      <td>
-                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Cristian</td>
-                      <td>Ruiz</td>
-                      <td>c.r.username</td>
-                      <td>1805199920054</td>
-                      <td>01/01/1999</td>
-                      <td>12/23/2020</td>
-                      <td>Activo</td>
-                      <td>c.r.username@blog.com</td>
-                      <td>
-                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
-                    </tr>
-                    <tr>
-                      <th scope="row">4</th>
-                      <td>Cristian</td>
-                      <td>Ruiz</td>
-                      <td>c.r.username</td>
-                      <td>1805199920054</td>
-                      <td>01/01/1999</td>
-                      <td>12/23/2020</td>
-                      <td>Activo</td>
-                      <td>c.r.username@blog.com</td>
-                      <td>
-                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
-                      </td>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Alex</td>
+                        <td>Sandoval</td>
+                        <td>asandoval@gmail.com</td>
+                        <td>22334455</td>
+                        <td>Santa Lucia</td>
+                        <td>01</td>
+                        <td>Administardor</td>
+                        <td>06/01/2001</td>
+                        <td>Activo</td>
+                        <td>
+                          <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
+                        </td>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Isis</td>
+                            <td>Zapata</td>
+                            <td>izapata@gmail.com</td>
+                            <td>22334455</td>
+                            <td>Santa Lucia</td>
+                            <td>02</td>
+                            <td>Administardor</td>
+                            <td>06/01/2001</td>
+                            <td>Activo</td>
+                            <td>
+                              <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
+                            </td>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Andres</td>
+                                <td>Martinez</td>
+                                <td>amartinez@gmail.com</td>
+                                <td>22334455</td>
+                                <td>Santa Lucia</td>
+                                <td>02</td>
+                                <td>Administardor</td>
+                                <td>06/01/2001</td>
+                                <td>Activo</td>
+                                <td>
+                                  <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
+                                </td>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mike</td>
+                                    <td>Moraquin</td>
+                                    <td>amartinez@gmail.com</td>
+                                    <td>22334455</td>
+                                    <td>Santa Lucia</td>
+                                    <td>02</td>
+                                    <td>Administardor</td>
+                                    <td>06/01/2001</td>
+                                    <td>Activo</td>
+                                    <td>
+                                      <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
+                                    </td>
                     </tr>
                   </tbody>
                 </table>
@@ -181,12 +170,12 @@
         <div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab">
           <div class="card">
             <div class="card-header">
-              <h4>Ingreso de usuario</h4>
+              <h4>Nuevo Empleado</h4>
             </div>
             <div class="card-body">
               <form class="form needs-validation" id="form1" method="post" role="form" autocomplete="off" novalidate>
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Nombres</label>
+                  <label class="col-lg-3 col-form-label form-control-label">Nombre</label>
                   <div class="col-lg-9">
                     <input class="form-control" type="text" required>
                     <div class="valid-feedback">Correcto</div>
@@ -194,7 +183,7 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Apellidos</label>
+                  <label class="col-lg-3 col-form-label form-control-label">Apellido</label>
                   <div class="col-lg-9">
                     <input class="form-control" type="text" required>
                     <div class="valid-feedback">Correcto</div>
@@ -202,13 +191,29 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Numero de identidad</label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
+                    <label class="col-lg-3 col-form-label form-control-label">Correo electrónico</label>
+                    <div class="col-lg-9">
+                      <input class="form-control" type="email" required>
+                      <div class="valid-feedback">Correcto</div>
+                      <div class="invalid-feedback">Ingrese datos correctos</div>
+                    </div>
                   </div>
-                </div>
+                  <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Teléfono</label>
+                    <div class="col-lg-9">
+                      <input class="form-control" type="text" required>
+                      <div class="valid-feedback">Correcto</div>
+                      <div class="invalid-feedback">Ingrese datos correctos</div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Dirección</label>
+                    <div class="col-lg-9">
+                      <input class="form-control" type="text" required>
+                      <div class="valid-feedback">Correcto</div>
+                      <div class="invalid-feedback">Ingrese datos correctos</div>
+                    </div>
+                  </div>
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">Fecha de nacimiento</label>
                   <div class="col-lg-9">
@@ -227,23 +232,6 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Fecha de ingreso</label>
-                  <div class="col-lg-9">
-                    <input id="datepicker2" class="form-control" required />
-                    <script type="text/javascript">
-                      $(document).ready(function(){
-                       $('#datepicker2').datepicker({
-                        "format": "mm-dd-yy",
-                        "endDate": "-0d",
-                        "keyboardNavigation": false
-                       }); 
-                      });
-                      </script>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-                <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">¿Activo?</label>
                   <div class="col-lg-9">
                     <div class="form-check form-check-inline">
@@ -253,14 +241,25 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Puesto</label>
+                  <label class="col-lg-3 col-form-label form-control-label">Ciudad</label>
                   <div class="col-lg-9">
                     <select class="custom-select custom-select-lg mb-3" required>
                       <option selected disabled value="">Seleccione una opción</option>
-                      <option value="1">Gerente</option>
-                      <option value="2">Cocinero</option>
-                      <option value="3">Cajero</option>
-                      <option value="4">Mesero</option>
+                      <option value="1">Tegucigalpa</option>
+                      <option value="2">San Pedro Sula</option>
+                      <option value="3">Comayagua</option>
+                    </select>
+                    <div class="valid-feedback">Correcto</div>
+                    <div class="invalid-feedback">Ingrese datos correctos</div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Rol</label>
+                  <div class="col-lg-9">
+                    <select class="custom-select custom-select-lg mb-3" required>
+                      <option selected disabled value="">Seleccione una opción</option>
+                      <option value="1">Administrador</option>
+                      <option value="2">Empleado</option>
                     </select>
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
@@ -312,24 +311,6 @@
       </div>
     </div>
   </div>
-
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Aviso</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          Si cierra sesi&oacute;n podr&iacute;a perder los datos en los que estaba trabajando.¿Desea continuar?
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-primary" > <a style="text-decoration: none;color: #fff;" href="./login.html">Cerrar sesión </a></button>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-
-</html>
+<?php
+  include_once('./plantilla/pie.php');
+?>
