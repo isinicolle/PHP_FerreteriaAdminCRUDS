@@ -68,12 +68,14 @@ include_once('../plantilla/encabezado.php');
                   <thead class="thead-light">
                     <tr>
                       <th scope="col">Id</th>
-                      <th scope="col">Numero de rastreo</th>
-                      <th scope="col">Referencia de venta</th>
-                      <th scope="col">Empresa de envío</th>
-                      <th scope="col">Cliente</th>
-              
-                      <th scope="col">Accion</th>
+                      <th scope="col">Nombre de empresa</th>
+                      <th scope="col">Correo electrónico</th>
+                      <th scope="col">Telefono</th>
+                      <th scope="col">Direccion de empresa</th>
+                      <th scope="col">Ciudad</th>
+                      <th scope="col">Departamento</th>
+                      <th scope="col">Codigo Postal</th>
+                      <th scope="col">Estado</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -87,12 +89,12 @@ include_once('../plantilla/encabezado.php');
         <div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab">
           <div class="card">
             <div class="card-header">
-              <h4>Ingreso de envío</h4>
+              <h4>Ingreso de empresas</h4>
             </div>
             <div class="card-body">
               <form class="form needs-validation" id="form1" method="post" role="form" autocomplete="off" novalidate>
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Numero de rastreo</label>
+                  <label class="col-lg-3 col-form-label form-control-label">Nombre de la empresa</label>
                   <div class="col-lg-9">
                     <input class="form-control" type="text" required>
                     <div class="valid-feedback">Correcto</div>
@@ -100,15 +102,24 @@ include_once('../plantilla/encabezado.php');
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Referencia de Venta</label>
+                  <label class="col-lg-3 col-form-label form-control-label">Correo electronico</label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="email" required>
+                    <div class="valid-feedback">Correcto</div>
+                    <div class="invalid-feedback">Ingrese datos correctos</div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Numero telefónico</label>
                   <div class="col-lg-9">
                     <input class="form-control" type="text" required>
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
                 </div>
+                
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Empresa de envío</label>
+                  <label class="col-lg-3 col-form-label form-control-label">Departamento</label>
                   <div class="col-lg-9">
                   <select class="custom-select custom-select-lg mb-3" required>
                       <option selected disabled value="">Seleccione una opción</option>
@@ -119,6 +130,36 @@ include_once('../plantilla/encabezado.php');
                     </select>
                   </div>
                 </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Ciudad</label>
+                  <div class="col-lg-9">
+                  <select class="custom-select custom-select-lg mb-3" required>
+                      <option selected disabled value="">Seleccione una opción</option>
+                      <option value="1">Cargo Expreso</option>
+                      <option value="2">Honduras expreso</option>
+                      <option value="3">Hugo</option>
+                      <option value="4">Mandados</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Codigo postal</label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="text" required>
+                    <div class="valid-feedback">Correcto</div>
+                    <div class="invalid-feedback">Ingrese datos correctos</div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">¿Activo?</label>
+                  <div class="col-lg-9">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+
+                    </div>
+                  </div>
+                </div>
+                
                 <div class="form-group row">
                   <div class="col-lg-12 text-center">
                     <button type="submit" class="btn btn-primary" value="Save Changes">Enviar</button>
