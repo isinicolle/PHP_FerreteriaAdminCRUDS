@@ -12,7 +12,7 @@
     
 <?php
   include_once('./plantilla/encabezado.php');
-
+  include_once('./conexion/conexionbd.php')
 ?>
     <div class="container"> 
     <div class="main-content">
@@ -21,7 +21,10 @@
                 <div class="card-body">
                     <h1 class="card-title display-5 fw-bold">Administracion</h1>
                     <div class="col-lg-6 mx-auto">
-                        <p class="lead mb-4">Esta página es meramente para propositos de administración. Desde aquí podrá controlar los diversos modulos</p>
+                        <p class="lead mb-4">Esta página es meramente para propositos de administración. Desde aquí podrá controlar los diversos modulos
+                          <?php	$var = new Conexion();
+                          $var->abrirCon(); ?>
+                        </p>
                       </div>
                   </div>
 

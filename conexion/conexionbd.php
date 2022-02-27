@@ -1,10 +1,17 @@
 <?php
-    Class Conexion
+     Class Conexion
     {
-        public function CadenaConexion()
+          public $bd;
+        function abrirCon()
         {
-            $this->bbdd = new PDO('andresmunicah.database.windows.net;ferreteria_MovilWeb',"rootUnicah1","@Rafarazer97");
-            return $this->bbdd;
+            try{
+                 $this->bd = new PDO( "sqlsrv:server=andresmunicah.database.windows.net;database=ferreteria_MovilWeb", "adminunicah", "rootUnicah1");
+
+                    echo("se conecto");
+               }
+                 catch(PDOException $exp){
+                      echo("Error<br> $exp");
+                 }
         }
     }
 ?>
