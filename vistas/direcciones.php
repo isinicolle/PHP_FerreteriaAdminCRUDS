@@ -112,14 +112,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>TRUPPER</td>
-                      <td>Activo</td>
-                      <td>
-                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
-                      </td>
-                    </tr>
+                    
                   </tbody>
                 </table>
               </div>
@@ -132,6 +125,7 @@
               <h4>Ingreso de direcciones</h4>
             </div>
             <div class="card-body">
+              
               <form class="form needs-validation" id="form1" method="post" role="form" autocomplete="off" novalidate>
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">Descripcion de la Marca: </label>
