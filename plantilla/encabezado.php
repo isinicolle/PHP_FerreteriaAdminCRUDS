@@ -18,7 +18,7 @@
               <a class="nav-link " href="./vistas/clientes.php">Clientes / Usuarios</a>
               <a class="nav-link" href="./vistas/envios.php">Envios / Empresas </a>
               <a class="nav-link" href="./vistas/compras.php">Compras</a>
-              <a class="nav-link " href="./vistas/Crud_Empleados.php">Empleados &Backslash; Usuarios</a>
+              <a class="nav-link " href="./vistas/empleados.php">Empleados &Backslash; Usuarios</a>
               <a class="nav-link " href="./vistas/ventas.php">Ventas</a>
               <a class="nav-link" href="./vistas/direcciones.php">Direcciones</a>
                 <form class="d-flex">
