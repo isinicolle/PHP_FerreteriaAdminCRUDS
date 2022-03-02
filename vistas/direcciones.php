@@ -129,7 +129,7 @@
         <div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab">
           <div class="card">
             <div class="card-header text-center">
-              <h4>Ingreso de Marcas</h4>
+              <h4>Ingreso de direcciones</h4>
             </div>
             <div class="card-body">
               <form class="form needs-validation" id="form1" method="post" role="form" autocomplete="off" novalidate>
