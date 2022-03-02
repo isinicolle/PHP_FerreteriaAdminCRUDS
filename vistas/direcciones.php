@@ -100,10 +100,15 @@
                 <table id="userList" class="table table-bordered table-hover table-striped">
                   <thead class="thead-light">
                     <tr>
-                      <th scope="col">Id</th>
-                      <th scope="col">Descripcion</th>
-                      <th scope="col">Estado Marca</th>
+                    <th scope="col">Id</th>
+                      <th scope="col">Direccion</th>
+                      <th scope="col">Ciudad</th>
+                      <th scope="col">Usuario Cliente</th>
+                      <th scope="col">Direccion Opcional</th>
+                      <th scope="col">Codigo Postal</th>
+                      <th scope="col">Departamento</th>
                       <th scope="col">Accion</th>
+                     
                     </tr>
                   </thead>
                   <tbody>
