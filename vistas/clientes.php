@@ -121,73 +121,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Isis</td>
-                      <td>Zapata</td>
-                      <td>isiszapata</td>
-                      <td>Centro tegucigalpa</td>
-                      <td>Tegucigalpa</td>
-                      <td>+504 89823000</td>
-                      <td>Activo</td>
-                      <td>09022001</td>
-                      <td>isisnicollezapata@gmail.com</td>
-                      <td>Activo</td>
-                      <td>
-                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Isis</td>
-                      <td>Zapata</td>
-                      <td>isiszapata</td>
-                      <td>Centro tegucigalpa</td>
-                      <td>Tegucigalpa</td>
-                      <td>+504 89823000</td>
-                      <td>Activo</td>
-                      <td>09022001</td>
-                      <td>isisnicollezapata@gmail.com</td>
-                      <td>Activo</td>
-                      <td>
-                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Isis</td>
-                      <td>Zapata</td>
-                      <td>isiszapata</td>
-                      <td>Centro tegucigalpa</td>
-                      <td>Tegucigalpa</td>
-                      <td>+504 89823000</td>
-                      <td>Activo</td>
-                      <td>09022001</td>
-                      <td>isisnicollezapata@gmail.com</td>
-                      <td>Activo</td>
-                      <td>
-                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">4</th>
-                      <td>Isis</td>
-                      <td>Zapata</td>
-                      <td>isiszapata</td>
-                      <td>Centro tegucigalpa</td>
-                      <td>Tegucigalpa</td>
-                      <td>+504 89823000</td>
-                      <td>Activo</td>
-                      <td>09022001</td>
-                      <td>isisnicollezapata@gmail.com</td>
-                      <td>Activo</td>
-                      <td>
-                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
-                      </td>
-                    </tr>
-                      
-                      </td>
-                    </tr>
+                    
                   </tbody>
                 </table>
               </div>
