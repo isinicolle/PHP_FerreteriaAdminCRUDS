@@ -1,14 +1,14 @@
 <?php 
 
-class clientes 
+class modelo_clientes 
 {
     private $db;
-    private $clientesU;
+    private $clientes;
 
     //funcion constructora
     public function construct()
     {
-       $this -> clientesU = array();
+       $this -> clientes = array();
        $this -> db = new PDO( "sqlsrv:server=andresmunicah.database.windows.net;database=ferreteria_MovilWeb", "adminUnicah", "rootUnicah1");
     }
 
@@ -24,9 +24,9 @@ FROM            dbo.usuariosClientes INNER JOIN
 
          while($row = $resultado->fetch_assoc())
          {
-             $this->clientesU[] = $row;
+             $this->clientes[] = $row;
          }
-         return $this->clientesU;
+         return $this->clientes;
      }
 
 
