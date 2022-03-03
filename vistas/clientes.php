@@ -115,6 +115,7 @@
                       <th scope="col">Telefono</th>
                       <th scope="col">Estado Cliente</th>
                       <th scope="col">DNI</th>
+                      <th scope="col">Usuario</th>
                       <th scope="col">Correo</th>
                       <th scope="col">Estado Usuario</th>
                      
