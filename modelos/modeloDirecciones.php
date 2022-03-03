@@ -1,6 +1,6 @@
 <?php 
 
-class direcciones
+class modelo_direcciones
 {
     private $db;
     private $direcciones;
