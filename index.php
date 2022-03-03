@@ -13,6 +13,22 @@
 <?php
   include_once('./plantilla/encabezado.php');
   include_once('./conexion/conexionbd.php');
+
+  require_once "./conexion/conexionbd.php";
+
+  //controladores
+  //require once
+  require_once "./controladores/controladorclientes.php";
+  require_once "./controladores/controladordirecciones.php";
+
+
+  //instancias de objetos control
+  $control = new controladorClientes();
+  $control->index();
+
+  $control2 = new controladorDirecciones();
+  $control2->index();
+
 ?>
     <div class="container"> 
     <div class="main-content">

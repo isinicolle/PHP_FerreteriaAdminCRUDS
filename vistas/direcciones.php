@@ -107,8 +107,7 @@
                       <th scope="col">Direccion Opcional</th>
                       <th scope="col">Codigo Postal</th>
                       <th scope="col">Departamento</th>
-                      <th scope="col">Accion</th>
-                     
+            
                     </tr>
                   </thead>
                   <tbody>
