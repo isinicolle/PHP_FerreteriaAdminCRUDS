@@ -1,7 +1,7 @@
 <?php
      Class Conexion
     {
-     static public $bd;
+     public $bd;
         function abrirCon()
         {
             try{
