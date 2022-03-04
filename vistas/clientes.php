@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Formulario de clientes</title>
+  <title><?php echo $data["titulo"]; ?></title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -122,7 +122,31 @@
                     </tr>
                   </thead>
                   <tbody>
+                    <?php
+
+                    foreach($data["clientes"] as $dato)
+                    {
+                      echo "<tr>";
                     
+                      echo "<td>".$dato["id_cliente"]."</td>";
+                      echo "<td>".$dato["nom_cliente"]."</td>";
+                      echo "<td>".$dato["apellido_cliente"]."</td>";
+                      echo "<td>".$dato["Clientes.RTN"]."</td>";
+                      echo "<td>".$dato["direccion_cliente"]."</td>";
+                      echo "<td>".$dato["nombre_ciudad"]."</td>";
+                      echo "<td>".$dato["tel_cliente"]."</td>";
+                      echo "<td>".$dato["estado"]."</td>";
+                      echo "<td>".$dato["DNI_Cliente"]."</td>";
+                      echo "<td>".$dato["nombre_usuario"]."</td>";
+                      echo "<td>".$dato["correo_usuario"]."</td>";
+                      echo "<td>".$dato["Estado_Usuario"]."</td>";
+  
+                      echo "<tr>";
+                    }
+                   
+
+                    
+                    ?>
                   </tbody>
                 </table>
               </div>
