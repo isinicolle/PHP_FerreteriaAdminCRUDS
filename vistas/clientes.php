@@ -111,13 +111,10 @@
                       <th scope="col">Apellido</th>
                       <th scope="col">RTN</th>
                       <th scope="col">Direccion</th>
-                      <th scope="col">Ciudad</th>
+                      <th scope="col">Id Ciudad</th>
                       <th scope="col">Telefono</th>
                       <th scope="col">Estado Cliente</th>
                       <th scope="col">DNI</th>
-                      <th scope="col">Usuario</th>
-                      <th scope="col">Correo</th>
-                      <th scope="col">Estado Usuario</th>
                      
                     </tr>
                   </thead>
@@ -131,15 +128,12 @@
                       echo "<td>".$dato["id_cliente"]."</td>";
                       echo "<td>".$dato["nom_cliente"]."</td>";
                       echo "<td>".$dato["apellido_cliente"]."</td>";
-                      echo "<td>".$dato["Clientes.RTN"]."</td>";
+                      echo "<td>".$dato["RTN"]."</td>";
                       echo "<td>".$dato["direccion_cliente"]."</td>";
-                      echo "<td>".$dato["nombre_ciudad"]."</td>";
+                      echo "<td>".$dato["id_ciudad"]."</td>";
                       echo "<td>".$dato["tel_cliente"]."</td>";
                       echo "<td>".$dato["estado"]."</td>";
                       echo "<td>".$dato["DNI_Cliente"]."</td>";
-                      echo "<td>".$dato["nombre_usuario"]."</td>";
-                      echo "<td>".$dato["correo_usuario"]."</td>";
-                      echo "<td>".$dato["Estado_Usuario"]."</td>";
   
                       echo "<tr>";
                     }
