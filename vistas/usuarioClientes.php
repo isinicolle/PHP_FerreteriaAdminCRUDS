@@ -119,7 +119,7 @@
                   </thead>
                   <tbody>
                   <?php
-                    include("../controladores/controladorclientes.php");
+                    include("../controladores/controladorusuariocliente.php");
                     $cliente= new ControladorClientes;
                     $datos=$cliente->Listar();
                     for ($i = 0; $i < count($datos); $i++) {
