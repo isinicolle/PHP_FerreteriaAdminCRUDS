@@ -65,7 +65,8 @@
               <a class="nav-link" href="./proveedores.php">Proveedores</a>
               <a class="nav-link" href="./categorias.php">Categorias</a>
               <a class="nav-link" href="./marcas.php">Marcas</a>
-              <a class="nav-link active" href="./clientes.php">Clientes / Usuarios</a>
+              <a class="nav-link active" href="./clientes.php">Clientes</a>
+              <a class="nav-link" href="./usuarioClientes.php">Usuarios Clientes</a>
               <a class="nav-link" href="./envios.php">Envios / Empresas </a>
               <a class="nav-link" href="./compras.php">Compras</a>
               <a class="nav-link " href="./empleados.php">Empleados &Backslash; Usuarios</a>
@@ -185,34 +186,6 @@
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
                 </div>
-
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Telefono: </label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">DNI: </label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">¿Activo?</label>
-                  <div class="col-lg-9">
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-
-                    </div>
-                  </div>
-                </div>
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">Ciudad: </label>
                   <div class="col-lg-9">
@@ -228,39 +201,18 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Correo electrónico</label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="email" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Nombre de usuario</label>
+                  <label class="col-lg-3 col-form-label form-control-label">Telefono: </label>
                   <div class="col-lg-9">
                     <input class="form-control" type="text" required>
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
                 </div>
+
+    
+
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Contraseña</label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="password" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Confirmar contraseña</label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="password" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">¿Usuario Activo?</label>
+                  <label class="col-lg-3 col-form-label form-control-label">¿Activo?</label>
                   <div class="col-lg-9">
                     <div class="form-check form-check-inline">
                       <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
@@ -268,6 +220,19 @@
                     </div>
                   </div>
                 </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">DNI: </label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="text" required>
+                    <div class="valid-feedback">Correcto</div>
+                    <div class="invalid-feedback">Ingrese datos correctos</div>
+                  </div>
+                </div>
+               
+               
+               
+                
+           
                 <div class="form-group row">
                   <div class="col-lg-12 text-center">
                     <button type="submit" class="btn btn-primary" value="Save Changes">Enviar</button>
