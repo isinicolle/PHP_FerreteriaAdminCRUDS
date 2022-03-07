@@ -186,34 +186,6 @@
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
                 </div>
-
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Telefono: </label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">DNI: </label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">¿Activo?</label>
-                  <div class="col-lg-9">
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-
-                    </div>
-                  </div>
-                </div>
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">Ciudad: </label>
                   <div class="col-lg-9">
@@ -229,39 +201,18 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Correo electrónico</label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="email" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Nombre de usuario</label>
+                  <label class="col-lg-3 col-form-label form-control-label">Telefono: </label>
                   <div class="col-lg-9">
                     <input class="form-control" type="text" required>
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
                 </div>
+
+    
+
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Contraseña</label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="password" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Confirmar contraseña</label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="password" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">¿Usuario Activo?</label>
+                  <label class="col-lg-3 col-form-label form-control-label">¿Activo?</label>
                   <div class="col-lg-9">
                     <div class="form-check form-check-inline">
                       <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
@@ -269,6 +220,19 @@
                     </div>
                   </div>
                 </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">DNI: </label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="text" required>
+                    <div class="valid-feedback">Correcto</div>
+                    <div class="invalid-feedback">Ingrese datos correctos</div>
+                  </div>
+                </div>
+               
+               
+               
+                
+           
                 <div class="form-group row">
                   <div class="col-lg-12 text-center">
                     <button type="submit" class="btn btn-primary" value="Save Changes">Enviar</button>
