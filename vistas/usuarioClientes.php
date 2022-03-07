@@ -113,6 +113,7 @@
                       <th scope="col">Id cliente</th>
                       <th scope="col">correo electronico</th>
                       <th scope="col">estado</th>
+                      <th scope="col">Accion</th>
                      
                      
                     </tr>
@@ -131,6 +132,10 @@
                 <td><?php echo $datos[$i]["id_cliente"];?></td>
                 <td><?php echo $datos[$i]["correo_usuario"];?></td>
                 <td><?php echo $datos[$i]["estado"];?></td>
+                <td>
+                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
+                      </td>
+
         
            
                 </tr>

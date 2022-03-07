@@ -116,6 +116,7 @@
                       <th scope="col">Telefono</th>
                       <th scope="col">Estado Cliente</th>
                       <th scope="col">DNI</th>
+                      <th scope="col">Accion</th>
    
                      
                     </tr>
@@ -137,7 +138,9 @@
                 <td><?php echo $datos[$i]["tel_cliente"];?></td>
                 <td><?php echo $datos[$i]["estado"];?></td>
                 <td><?php echo $datos[$i]["DNI_Cliente"];?></td>
-           
+                <td>
+                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
+                      </td>
                 </tr>
                 <?php } ?>
                   </tbody>
