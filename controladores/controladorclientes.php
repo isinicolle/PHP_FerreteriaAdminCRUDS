@@ -17,7 +17,7 @@
         }
 
         function Eliminar($id ){
-            require_once("../modelos/modeloclientes.phphp");
+            require_once("../modelos/modeloclientes.php");
             $clientes = new Modeloclientes();
             $datos = $clientes->setEliminar($id);
             require_once("../vistas/clientes.php");

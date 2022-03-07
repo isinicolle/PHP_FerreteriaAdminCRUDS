@@ -160,7 +160,7 @@
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">Nombre de usuario</label>
                   <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
+                    <input class="form-control" type="text" required id="InputNom" name="InputNom" placeholder="Escriba el Nombre de Usuario">
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
@@ -169,7 +169,7 @@
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">Contraseña</label>
                   <div class="col-lg-9">
-                    <input class="form-control" type="password" required>
+                    <input class="form-control" type="password" required id="InputApe" name="InputApe" placeholder="Escriba la clave">
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
@@ -177,7 +177,7 @@
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">Id cliente </label>
                   <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
+                    <input class="form-control" type="text" required id="InputRTN" name="InputRTN" placeholder="Escriba el id cliente">
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
@@ -185,7 +185,7 @@
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">Correo electronico</label>
                   <div class="col-lg-9">
-                    <input class="form-control" type="email" required>
+                    <input class="form-control" type="email" required id="InputDireccion" name="InputDireccion"  placeholder="Escriba la direccion de correo">
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
@@ -198,9 +198,28 @@
                     </div>
                   </div>
                 </div>
+                    
+                <?php
+                    if (isset($_REQUEST['enviar'])) {
+                      $correo = $_REQUEST['InputDireccion'];
+                     
+                      $idcliente = $_REQUEST['InputRTN'];
+                      $clave = $_REQUEST['InputApe'];
+                      $usuario = $_REQUEST['InputNom'];
+                      
+
+              
+                      $datos=$cliente->Guardar($usuario, $clave, $idcliente,$correo);
+
+                   // $direccioness= new ControladorDirecciones;
+                   
+                  }
+                  
+                      ?>
+               
                 <div class="form-group row">
                   <div class="col-lg-12 text-center">
-                    <button type="submit" class="btn btn-primary" value="Save Changes">Enviar</button>
+                  <a href="./usuarioClientes.php" target="nombre" onclick="location.refresh()"> <button type="sumit" class="btn btn-primary"   name="enviar"  >Enviar</button></a>
                     <button type="reset" class="btn btn-secondary" value="Cancel">Cancelar</button>
                   </div>
                 </div>
