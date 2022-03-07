@@ -159,7 +159,7 @@
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">Nombre: </label>
                   <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
+                    <input class="form-control" type="text" required  id="InputNom" name="InputNom" placeholder="Escriba el Nombre">
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
@@ -167,7 +167,7 @@
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">Apellido: </label>
                   <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
+                    <input class="form-control" type="text" required id="InputApe" name="InputApe" placeholder="Escriba el Apellido">
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
@@ -175,7 +175,7 @@
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">RTN: </label>
                   <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
+                    <input class="form-control" type="text" required  id="InputRTN" name="InputRTN" placeholder="Escriba el RTN">
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
@@ -184,29 +184,24 @@
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">Direccion: </label>
                   <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
+                    <input class="form-control" type="text" required id="InputDireccion" name="InputDireccion"  placeholder="Escriba la direccion">
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Ciudad: </label>
-                  <div class="col-lg-9">
-                    <select class="custom-select custom-select-lg mb-3" required>
-                      <option selected disabled value="">Seleccione una opción</option>
-                      <option value="1">Tegucigalpa</option>
-                      <option value="2">San pedro sula</option>
-                      <option value="3">El paraiso</option>
-                      <option value="4">Comayaguela</option>
-                    </select>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
+                    <label class="col-lg-3 col-form-label form-control-label" for="InputCiudad">ID ciudad: </label>
+                    <div class="col-lg-9">
+                      <input class="form-control" type="text" required id="InputCiudad" name="InputCiudad" placeholder="Escriba el id de la ciudad">
+                      <div class="valid-feedback">Correcto</div>
+                      <div class="invalid-feedback">Ingrese datos correctos</div>
+                    </div>
                   </div>
-                </div>
+
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Telefono: </label>
+                  <label class="col-lg-3 col-form-label form-control-label" >Telefono: </label>
                   <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
+                    <input class="form-control" type="text" required id="InputUsuario" name="InputUsuario" placeholder="Escriba el telefono">
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
@@ -226,19 +221,38 @@
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">DNI: </label>
                   <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
+                    <input class="form-control" type="text" required id="InputDireccop" name="InputDireccop" placeholder="Escriba el DNI">
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
                 </div>
                
+                <?php
+                    if (isset($_REQUEST['enviar'])) {
+                      $direccion = $_REQUEST['InputDireccion'];
+                      $ciudad = $_REQUEST['InputCiudad'];
+                      $telefono = $_REQUEST['InputUsuario'];
+                      $dni = $_REQUEST['InputDireccop'];
+                      $rtn = $_REQUEST['InputRTN'];
+                      $apellido = $_REQUEST['InputApe'];
+                      $nombre = $_REQUEST['InputNom'];
+                      
+
+              
+                      $datos=$cliente->Guardar($nombre, $apellido, $rtn,$direccion , $ciudad, $telefono,$dni);
+
+                   // $direccioness= new ControladorDirecciones;
+                   
+                  }
+                  
+                      ?>
                
                
                 
            
                 <div class="form-group row">
                   <div class="col-lg-12 text-center">
-                    <button type="submit" class="btn btn-primary" value="Save Changes">Enviar</button>
+                  <a href="./clientes.php" target="nombre" onclick="location.refresh()"> <button type="sumit" class="btn btn-primary"   name="enviar"  >Enviar</button></a>
                     <button type="reset" class="btn btn-secondary" value="Cancel">Cancelar</button>
                   </div>
                 </div>
