@@ -111,17 +111,34 @@
                       <th scope="col">Apellido</th>
                       <th scope="col">RTN</th>
                       <th scope="col">Direccion</th>
-                      <th scope="col">Ciudad</th>
+                      <th scope="col">ID Ciudad</th>
                       <th scope="col">Telefono</th>
                       <th scope="col">Estado Cliente</th>
                       <th scope="col">DNI</th>
-                      <th scope="col">Correo</th>
-                      <th scope="col">Estado Usuario</th>
+   
                      
                     </tr>
                   </thead>
                   <tbody>
-                    
+                  <?php
+                    include("../controladores/controladorclientes.php");
+                    $cliente= new ControladorClientes;
+                    $datos=$cliente->Listar();
+                    for ($i = 0; $i < count($datos); $i++) {
+                ?>
+                 <tr>
+                <th scope="row"><?php echo $datos[$i]["id_cliente"];?></th>
+                <td><?php echo $datos[$i]["nom_cliente"];?></td>
+                <td><?php echo $datos[$i]["apellido_cliente"];?></td>
+                <td><?php echo $datos[$i]["RTN"];?></td>
+                <td><?php echo $datos[$i]["direccion_cliente"];?></td>
+                <td><?php echo $datos[$i]["id_ciudad"];?></td>
+                <td><?php echo $datos[$i]["tel_cliente"];?></td>
+                <td><?php echo $datos[$i]["estado"];?></td>
+                <td><?php echo $datos[$i]["DNI_Cliente"];?></td>
+           
+                </tr>
+                <?php } ?>
                   </tbody>
                 </table>
               </div>
