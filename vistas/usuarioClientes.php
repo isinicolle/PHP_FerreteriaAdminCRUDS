@@ -144,25 +144,23 @@
         <div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab">
           <div class="card">
             <div class="card-header">
-              <h4>Ingreso del Usuario Cliente</h4>
+              <h4>Ingreso del Cliente</h4>
             </div>
-            
+            <div class="card-body">
+              <form class="form needs-validation" id="form1" method="post" role="form" autocomplete="off" novalidate>
+                
+               
+                
+                
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Correo electrónico</label>
+                  <label class="col-lg-3 col-form-label form-control-label">Nombre de usuario</label>
                   <div class="col-lg-9">
                     <input class="form-control" type="email" required>
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
                 </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Nombre de usuario</label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
+               
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">Contraseña</label>
                   <div class="col-lg-9">
@@ -172,9 +170,17 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Confirmar contraseña</label>
+                  <label class="col-lg-3 col-form-label form-control-label">Id cliente </label>
                   <div class="col-lg-9">
                     <input class="form-control" type="password" required>
+                    <div class="valid-feedback">Correcto</div>
+                    <div class="invalid-feedback">Ingrese datos correctos</div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Correo electronico</label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="text" required>
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
@@ -184,7 +190,6 @@
                   <div class="col-lg-9">
                     <div class="form-check form-check-inline">
                       <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-
                     </div>
                   </div>
                 </div>
