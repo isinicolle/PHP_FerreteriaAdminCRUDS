@@ -16,6 +16,14 @@
             require_once("../vistas/usuarioClientes.php");
         }
 
+        function Actualizar($id,$nombre_usuario, $contraenia_usuario, $id_cliente,$correo_usuario,$estado){
+            require_once("../modelos/modelousuariocliente.php");
+            $direcciones = new Modeloclientes();
+            $datos = $direcciones->setActualizar($id,$nombre_usuario, $contraenia_usuario, $id_cliente,$correo_usuario,$estado);
+            require_once("../vistas/usuarioClientes.php");
+        }
+
+
         function Eliminar($id ){
             require_once("../modelos/modelousuariocliente.php");
             $direcciones = new Modeloclientes();

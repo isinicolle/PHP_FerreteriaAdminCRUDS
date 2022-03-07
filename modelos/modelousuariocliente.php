@@ -51,6 +51,25 @@ class Modeloclientes {
         }
     }
 
+    public function setActualizar($id,$nombre_usuario, $contraenia_usuario, $id_cliente,$correo_usuario,$estado) {
+
+        //self::setNames();
+        $sql = "UPDATE [dbo].[usuariosClientes]
+        SET [nombre_usuario] = '$nombre_usuario'
+           ,[contraenia_usuario] = '$contraenia_usuario'
+           ,[id_cliente] = '$id_cliente'
+           ,[correo_usuario] = '$correo_usuario'
+           ,[estado] = '$estado'
+      WHERE [id_usuarioCliente] = $id";
+        $result = $this->db->query($sql);
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
     public function setEliminar($id) {
 

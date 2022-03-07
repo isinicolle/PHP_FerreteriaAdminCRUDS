@@ -51,7 +51,7 @@ class Modelodirecciones {
 
     public function setActualizar($id, $direccion, $id_ciudad, $id_usuarioCliente,$direccion_opcional) {
 
-        self::setNames();
+        //self::setNames();
         $sql = "UPDATE [dbo].[DireccionesEnvio]
         SET [direccion] = '$direccion'
            ,[id_ciudad] = '$id_ciudad'
