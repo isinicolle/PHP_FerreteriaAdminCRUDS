@@ -86,11 +86,11 @@
       <ul class="nav nav-tabs justify-content-center">
         <li class="nav-item">
           <a class="nav-link active" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list"
-            aria-selected="false"><strong>Listado Clientes</strong></a>
+            aria-selected="false"><strong>Listado Usuarios de Clientes</strong></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form"
-            aria-selected="true"><strong>Ingreso Clientes</strong></a>
+            aria-selected="true"><strong>Ingreso Usuarios de Clientes</strong></a>
         </li>
        
       </ul>
@@ -100,7 +100,7 @@
         <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
           <div class="card">
             <div class="card-header">
-              <h4>Listado de Clientes</h4>
+              <h4>Listado de Usuario Cliente</h4>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -108,15 +108,12 @@
                   <thead class="thead-light">
                     <tr>
                       <th scope="col">Id</th>
-                      <th scope="col">Nombre</th>
-                      <th scope="col">Apellido</th>
-                      <th scope="col">RTN</th>
-                      <th scope="col">Direccion</th>
-                      <th scope="col">ID Ciudad</th>
-                      <th scope="col">Telefono</th>
-                      <th scope="col">Estado Cliente</th>
-                      <th scope="col">DNI</th>
-   
+                      <th scope="col">Nombre de usuario</th>
+                      <th scope="col">Contrasenia</th>
+                      <th scope="col">Id cliente</th>
+                      <th scope="col">correo electronico</th>
+                      <th scope="col">estado</th>
+                     
                      
                     </tr>
                   </thead>
@@ -128,15 +125,13 @@
                     for ($i = 0; $i < count($datos); $i++) {
                 ?>
                  <tr>
-                <th scope="row"><?php echo $datos[$i]["id_cliente"];?></th>
-                <td><?php echo $datos[$i]["nom_cliente"];?></td>
-                <td><?php echo $datos[$i]["apellido_cliente"];?></td>
-                <td><?php echo $datos[$i]["RTN"];?></td>
-                <td><?php echo $datos[$i]["direccion_cliente"];?></td>
-                <td><?php echo $datos[$i]["id_ciudad"];?></td>
-                <td><?php echo $datos[$i]["tel_cliente"];?></td>
+                <th scope="row"><?php echo $datos[$i]["id_usuarioCliente"];?></th>
+                <td><?php echo $datos[$i]["nombre_usuario"];?></td>
+                <td><?php echo $datos[$i]["contraenia_usuario"];?></td>
+                <td><?php echo $datos[$i]["id_cliente"];?></td>
+                <td><?php echo $datos[$i]["correo_usuario"];?></td>
                 <td><?php echo $datos[$i]["estado"];?></td>
-                <td><?php echo $datos[$i]["DNI_Cliente"];?></td>
+        
            
                 </tr>
                 <?php } ?>
@@ -149,85 +144,9 @@
         <div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab">
           <div class="card">
             <div class="card-header">
-              <h4>Ingreso del Cliente</h4>
+              <h4>Ingreso del Usuario Cliente</h4>
             </div>
-            <div class="card-body">
-              <form class="form needs-validation" id="form1" method="post" role="form" autocomplete="off" novalidate>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Nombre: </label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Apellido: </label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">RTN: </label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-                
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Direccion: </label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Telefono: </label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">DNI: </label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">¿Activo?</label>
-                  <div class="col-lg-9">
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Ciudad: </label>
-                  <div class="col-lg-9">
-                    <select class="custom-select custom-select-lg mb-3" required>
-                      <option selected disabled value="">Seleccione una opción</option>
-                      <option value="1">Tegucigalpa</option>
-                      <option value="2">San pedro sula</option>
-                      <option value="3">El paraiso</option>
-                      <option value="4">Comayaguela</option>
-                    </select>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
+            
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">Correo electrónico</label>
                   <div class="col-lg-9">

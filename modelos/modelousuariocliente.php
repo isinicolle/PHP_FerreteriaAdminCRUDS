@@ -17,16 +17,13 @@ class Modeloclientes {
     public function getclientes() {
 
        // self::setNames();
-        $sql = "SELECT id_cliente
-        ,nom_cliente
-        ,apellido_cliente
-        ,RTN
-        ,direccion_cliente
-        ,id_ciudad
-        ,tel_cliente
+        $sql = "SELECT  id_usuarioCliente
+        ,nombre_usuario
+        ,contraenia_usuario
+        ,id_cliente
+        ,correo_usuario
         ,estado
-        ,DNI_Cliente
-    FROM [dbo].Clientes";
+    FROM [dbo].[usuariosClientes]";
         foreach ($this->db->query($sql) as $res) {
             $this->clientes[] = $res;
         }
