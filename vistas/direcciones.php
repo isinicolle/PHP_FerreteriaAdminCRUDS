@@ -161,20 +161,13 @@
                   </div>
 
                   <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label">Usuario Cliente: </label>
+                    <label class="col-lg-3 col-form-label form-control-label">ID Usuario cliente: </label>
                     <div class="col-lg-9">
-                      <select class="custom-select custom-select-lg mb-3" required>
-                        <option selected disabled value="">Seleccione una opción</option>
-                        <option value="1">isiszapata</option>
-                        <option value="2">isiszapata</option>
-                        <option value="3">isiszapata</option>
-                        <option value="4">isiszapata</option>
-                      </select>
+                      <input class="form-control" type="text" required>
                       <div class="valid-feedback">Correcto</div>
                       <div class="invalid-feedback">Ingrese datos correctos</div>
                     </div>
                   </div>
-
                   <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Direccion Opcional: </label>
                     <div class="col-lg-9">
