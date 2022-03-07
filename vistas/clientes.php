@@ -127,8 +127,7 @@
                     for ($i = 0; $i < count($datos); $i++) {
                 ?>
                  <tr>
-                <th scope="row"><?php echo $datos[$i]["id"];?></th>
-                <td><?php echo $datos[$i]["id_cliente"];?></td>
+                <th scope="row"><?php echo $datos[$i]["id_cliente"];?></th>
                 <td><?php echo $datos[$i]["nom_cliente"];?></td>
                 <td><?php echo $datos[$i]["apellido_cliente"];?></td>
                 <td><?php echo $datos[$i]["RTN"];?></td>
