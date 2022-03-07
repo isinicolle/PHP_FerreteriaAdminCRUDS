@@ -49,6 +49,23 @@ class Modelodirecciones {
         }
     }
 
+    public function setActualizar($id, $direccion, $id_ciudad, $id_usuarioCliente,$direccion_opcional) {
+
+        //self::setNames();
+        $sql = "UPDATE [dbo].[DireccionesEnvio]
+        SET [direccion] = '$direccion'
+           ,[id_ciudad] = '$id_ciudad'
+           ,[id_usuarioCliente] = '$id_usuarioCliente'
+           ,[direccion_opcional] = '$direccion_opcional'
+      WHERE id_direccionEnvio = '$id'";
+        $result = $this->db->query($sql);
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     public function setEliminar($id) {
 

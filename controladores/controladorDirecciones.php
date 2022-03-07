@@ -16,6 +16,13 @@
             require_once("../vistas/direcciones.php");
         }
 
+        function Actualizar($id, $direccion, $id_ciudad, $id_usuarioCliente,$direccion_opcional){
+            require_once("../modelos/modelodirecciones.php");
+            $direcciones = new Modelodirecciones();
+            $datos = $direcciones->setActualizar($id, $direccion, $id_ciudad, $id_usuarioCliente,$direccion_opcional);
+            require_once("../vistas/direcciones.php");
+        }
+
         function Eliminar($id ){
             require_once("../modelos/modelodirecciones.php");
             $direcciones = new Modelodirecciones();
