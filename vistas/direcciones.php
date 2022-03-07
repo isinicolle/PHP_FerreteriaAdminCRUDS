@@ -142,7 +142,15 @@
               
               <form class="form needs-validation" id="form1" method="post" role="form" autocomplete="off" novalidate>
                 
-                  
+              <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Direccion: </label>
+                    <div class="col-lg-9">
+                      <input class="form-control" type="email" required>
+                      <div class="valid-feedback">Correcto</div>
+                      <div class="invalid-feedback">Ingrese datos correctos</div>
+                    </div>
+                  </div>
+
                   <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Ciudad: </label>
                     <div class="col-lg-9">
@@ -182,30 +190,9 @@
                     </div>
                   </div>
 
-                  <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label">Codigo Postal: </label>
-                    <div class="col-lg-9">
-                      <input class="form-control" type="email" required>
-                      <div class="valid-feedback">Correcto</div>
-                      <div class="invalid-feedback">Ingrese datos correctos</div>
-                    </div>
-                  </div>
+             
 
-                  <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label">Departamento: </label>
-                    <div class="col-lg-9">
-                      <select class="custom-select custom-select-lg mb-3" required>
-                        <option selected disabled value="">Seleccione una opción</option>
-                        <option value="1">Francisco Morazan</option>
-                        <option value="2">Yoro</option>
-                        <option value="3">Santa Barbara</option>
-                
-                      </select>
-                      <div class="valid-feedback">Correcto</div>
-                      <div class="invalid-feedback">Ingrese datos correctos</div>
-                    </div>
-                  </div>
-               
+    
                
 
                 <div class="form-group row">
