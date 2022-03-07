@@ -33,6 +33,46 @@ class Modeloclientes {
         return $this->clientes;
         $this->db = null;
     }
+
+
+    public function setGuardar($nom_cliente, $apellido_cliente, $RTN,$direccion_cliente , $id_ciudad, $tel_cliente,$estado,$DNI_Cliente) {
+
+        //self::setNames();
+        $sql = "INSERT INTO [dbo].[Clientes]
+        ([nom_cliente]
+        ,[apellido_cliente]
+        ,[RTN]
+        ,[direccion_cliente]
+        ,[id_ciudad]
+        ,[tel_cliente]
+        ,[estado]
+        ,[DNI_Cliente])
+        VALUES
+        ('$nom_cliente','$apellido_cliente', '$RTN','$direccion_cliente',' $id_ciudad','$tel_cliente','$estado','$DNI_Cliente' )";
+        $result = $this->db->query($sql);
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    public function setEliminar($id) {
+
+      //  self::setNames();
+        $sql = "DELETE FROM [dbo].[Clientes]
+        WHERE id_cliente = '$id'";
+        $result = $this->db->query($sql);
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
 
     ?>
