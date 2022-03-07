@@ -41,7 +41,7 @@ class Modeloclientes {
         ,[correo_usuario]
         ,[estado])
         VALUES
-        ('$nombre_usuario', '$contraenia_usuario', '$id_cliente','$correo_usuario')";
+        ('$nombre_usuario', '$contraenia_usuario', '$id_cliente','$correo_usuario','1')";
         $result = $this->db->query($sql);
 
         if ($result) {

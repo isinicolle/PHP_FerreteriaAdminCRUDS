@@ -9,10 +9,10 @@
             return $datos;
         }
 
-        function Guardar($nom_cliente, $apellido_cliente, $RTN,$direccion_cliente , $id_ciudad, $tel_cliente,$estado,$DNI_Cliente){
+        function Guardar($nom_cliente, $apellido_cliente, $RTN,$direccion_cliente , $id_ciudad, $tel_cliente,$DNI_Cliente){
             require_once("../modelos/modeloclientes.php");
             $clientes = new Modeloclientes();
-            $datos = $clientes->setGuardar($nom_cliente, $apellido_cliente, $RTN,$direccion_cliente , $id_ciudad, $tel_cliente,$estado,$DNI_Cliente);
+            $datos = $clientes->setGuardar($nom_cliente, $apellido_cliente, $RTN,$direccion_cliente , $id_ciudad, $tel_cliente,$DNI_Cliente);
             require_once("../vistas/clientes.php");
         }
 

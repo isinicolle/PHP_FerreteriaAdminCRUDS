@@ -35,7 +35,7 @@ class Modeloclientes {
     }
 
 
-    public function setGuardar($nom_cliente, $apellido_cliente, $RTN,$direccion_cliente , $id_ciudad, $tel_cliente,$estado,$DNI_Cliente) {
+    public function setGuardar($nom_cliente, $apellido_cliente, $RTN,$direccion_cliente , $id_ciudad, $tel_cliente,$DNI_Cliente) {
 
         //self::setNames();
         $sql = "INSERT INTO [dbo].[Clientes]
@@ -48,7 +48,7 @@ class Modeloclientes {
         ,[estado]
         ,[DNI_Cliente])
         VALUES
-        ('$nom_cliente','$apellido_cliente', '$RTN','$direccion_cliente',' $id_ciudad','$tel_cliente','$estado','$DNI_Cliente' )";
+        ('$nom_cliente','$apellido_cliente', '$RTN','$direccion_cliente',' $id_ciudad','$tel_cliente','1','$DNI_Cliente' )";
         $result = $this->db->query($sql);
 
         if ($result) {
