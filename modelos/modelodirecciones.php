@@ -50,6 +50,22 @@ class Modelodirecciones {
     }
 
 
+    public function setEliminar($id) {
+
+      //  self::setNames();
+        $sql = "DELETE FROM [dbo].[DireccionesEnvio]
+        WHERE id_direccionEnvio = '$id'";
+        $result = $this->db->query($sql);
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+
 
 }
 

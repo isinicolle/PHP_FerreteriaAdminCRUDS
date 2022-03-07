@@ -76,6 +76,7 @@
       </nav>
 </header>
   <div class="container">
+ 
     <div class="mx-auto main-section" id="myTab" role="tablist">
       <ul class="nav nav-tabs justify-content-center">
         <li class="nav-item">
@@ -106,6 +107,8 @@
                       <th scope="col">Id Ciudad</th>
                       <th scope="col">Id Usuario Cliente</th>
                       <th scope="col">Direccion Opcional</th>
+                      <th scope="col">Accion</th>
+                    
      
                      
                     </tr>
@@ -123,10 +126,18 @@
                 <td><?php echo $datos[$i]["id_ciudad"];?></td>
                 <td><?php echo $datos[$i]["id_usuarioCliente"];?></td>
                 <td><?php echo $datos[$i]["direccion_opcional"];?></td>
-          
-           
+                <td>
+                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
+                      </td>
+
+              
+                  
+                     
+            
+             
                 </tr>
                 <?php } ?>
+
                   </tbody>
                 </table>
               </div>
@@ -187,10 +198,10 @@
                       $direccop = $_REQUEST['InputDireccop'];
 
               
-                      
+                      $datos=$direcciones->Guardar($direccion,$ciudad,$usuario,$direccop);
 
                    // $direccioness= new ControladorDirecciones;
-                    $datos=$direcciones->Guardar($direccion,$ciudad,$usuario,$direccop);
+                   
                   }
                   
                       ?>
@@ -198,8 +209,9 @@
 
                 <div class="form-group row">
                   <div class="col-lg-12 text-center">
-                    <button type="sumit" class="btn btn-primary" name="enviar" >Enviar</button>
-                    <button type="reset" class="btn btn-secondary" value="Cancel">Cancelar</button>
+                  <a href="./direcciones.php" target="nombre" onclick="location.refresh()"> <button type="sumit" class="btn btn-primary"   name="enviar"  >Enviar</button></a>
+                   
+                    <button type="reset" class="btn btn-secondary"   value="Cancel">Cancelar</button>
                   </div>
                 </div>
               </form>
