@@ -145,7 +145,7 @@
               <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Direccion: </label>
                     <div class="col-lg-9">
-                      <input class="form-control" type="text" required>
+                      <input class="form-control" type="text" required id="InputDireccion" placeholder="Escriba la direccion">
                       <div class="valid-feedback">Correcto</div>
                       <div class="invalid-feedback">Ingrese datos correctos</div>
                     </div>
@@ -154,7 +154,7 @@
                   <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">ID ciudad: </label>
                     <div class="col-lg-9">
-                      <input class="form-control" type="text" required>
+                      <input class="form-control" type="text" required id="InputCiudad" placeholder="Escriba el id de la ciudad">
                       <div class="valid-feedback">Correcto</div>
                       <div class="invalid-feedback">Ingrese datos correctos</div>
                     </div>
@@ -163,7 +163,7 @@
                   <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">ID Usuario cliente: </label>
                     <div class="col-lg-9">
-                      <input class="form-control" type="text" required>
+                      <input class="form-control" type="text" required id="InputUsuario" placeholder="Escriba el id del usuario">
                       <div class="valid-feedback">Correcto</div>
                       <div class="invalid-feedback">Ingrese datos correctos</div>
                     </div>
@@ -171,7 +171,7 @@
                   <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Direccion Opcional: </label>
                     <div class="col-lg-9">
-                      <input class="form-control" type="text" required>
+                      <input class="form-control" type="text" required id="InputDireccop" placeholder="Escriba la direccion opcional">
                       <div class="valid-feedback">Correcto</div>
                       <div class="invalid-feedback">Ingrese datos correctos</div>
                     </div>

@@ -29,6 +29,28 @@ class Modelodirecciones {
         return $this->direcciones;
         $this->db = null;
     }
+
+    public function setGuardar($direccion, $id_ciudad, $id_usuarioCliente,$direccion_opcional ) {
+
+        self::setNames();
+        $sql = "INSERT INTO DireccionesEnvio
+        (direccion
+        ,id_ciudad
+        ,id_usuarioCliente
+        ,direccion_opcional)
+        VALUES
+        ('". $direccion . "', '" . $id_ciudad .  "', '" . $id_usuarioCliente .  "', '" . $direccion_opcional ."')";
+        $result = $this->db->query($sql);
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+
 }
 
     ?>
