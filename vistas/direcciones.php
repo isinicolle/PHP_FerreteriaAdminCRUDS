@@ -76,6 +76,7 @@
       </nav>
 </header>
   <div class="container">
+ 
     <div class="mx-auto main-section" id="myTab" role="tablist">
       <ul class="nav nav-tabs justify-content-center">
         <li class="nav-item">
@@ -106,6 +107,8 @@
                       <th scope="col">Id Ciudad</th>
                       <th scope="col">Id Usuario Cliente</th>
                       <th scope="col">Direccion Opcional</th>
+                      <th scope="col">Accion</th>
+                    
      
                      
                     </tr>
@@ -123,10 +126,18 @@
                 <td><?php echo $datos[$i]["id_ciudad"];?></td>
                 <td><?php echo $datos[$i]["id_usuarioCliente"];?></td>
                 <td><?php echo $datos[$i]["direccion_opcional"];?></td>
-          
-           
+                <td>
+                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
+                      </td>
+
+              
+                  
+                     
+            
+             
                 </tr>
                 <?php } ?>
+
                   </tbody>
                 </table>
               </div>
@@ -140,38 +151,38 @@
             </div>
             <div class="card-body">
               
-              <form class="form needs-validation" id="form1" method="post" role="form" autocomplete="off" novalidate>
+              <form class="form needs-validation" id="form1" method="post" role="form" autocomplete="off" novalidate >
                 
               <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label">Direccion: </label>
+                    <label class="col-lg-3 col-form-label form-control-label" for="InputDireccion">Direccion: </label>
                     <div class="col-lg-9">
-                      <input class="form-control" type="text" required>
+                      <input class="form-control" type="text" required id="InputDireccion" name="InputDireccion" placeholder="Escriba la direccion">
                       <div class="valid-feedback">Correcto</div>
                       <div class="invalid-feedback">Ingrese datos correctos</div>
                     </div>
                   </div>
 
                   <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label">ID ciudad: </label>
+                    <label class="col-lg-3 col-form-label form-control-label" for="InputCiudad">ID ciudad: </label>
                     <div class="col-lg-9">
-                      <input class="form-control" type="text" required>
+                      <input class="form-control" type="text" required id="InputCiudad" name="InputCiudad" placeholder="Escriba el id de la ciudad">
                       <div class="valid-feedback">Correcto</div>
                       <div class="invalid-feedback">Ingrese datos correctos</div>
                     </div>
                   </div>
 
                   <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label">ID Usuario cliente: </label>
+                    <label class="col-lg-3 col-form-label form-control-label" for="InputUsuario">ID Usuario cliente: </label>
                     <div class="col-lg-9">
-                      <input class="form-control" type="text" required>
+                      <input class="form-control" type="text" required id="InputUsuario" name="InputUsuario" placeholder="Escriba el id del usuario">
                       <div class="valid-feedback">Correcto</div>
                       <div class="invalid-feedback">Ingrese datos correctos</div>
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label">Direccion Opcional: </label>
+                    <label class="col-lg-3 col-form-label form-control-label" for="InputDireccop">Direccion Opcional: </label>
                     <div class="col-lg-9">
-                      <input class="form-control" type="text" required>
+                      <input class="form-control" type="text" required id="InputDireccop" name="InputDireccop" placeholder="Escriba la direccion opcional">
                       <div class="valid-feedback">Correcto</div>
                       <div class="invalid-feedback">Ingrese datos correctos</div>
                     </div>
@@ -179,13 +190,28 @@
 
              
 
-    
+                      <?php
+                    if (isset($_REQUEST['enviar'])) {
+                      $direccion = $_REQUEST['InputDireccion'];
+                      $ciudad = $_REQUEST['InputCiudad'];
+                      $usuario = $_REQUEST['InputUsuario'];
+                      $direccop = $_REQUEST['InputDireccop'];
+
+              
+                      $datos=$direcciones->Guardar($direccion,$ciudad,$usuario,$direccop);
+
+                   // $direccioness= new ControladorDirecciones;
+                   
+                  }
+                  
+                      ?>
                
 
                 <div class="form-group row">
                   <div class="col-lg-12 text-center">
-                    <button type="submit" class="btn btn-primary" value="Save Changes">Enviar</button>
-                    <button type="reset" class="btn btn-secondary" value="Cancel">Cancelar</button>
+                  <a href="./direcciones.php" target="nombre" onclick="location.refresh()"> <button type="sumit" class="btn btn-primary"   name="enviar"  >Enviar</button></a>
+                   
+                    <button type="reset" class="btn btn-secondary"   value="Cancel">Cancelar</button>
                   </div>
                 </div>
               </form>

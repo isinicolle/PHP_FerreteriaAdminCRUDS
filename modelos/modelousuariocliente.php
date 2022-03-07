@@ -30,6 +30,42 @@ class Modeloclientes {
         return $this->clientes;
         $this->db = null;
     }
+
+    public function setGuardar($nombre_usuario, $contraenia_usuario, $id_cliente,$correo_usuario) {
+
+        //self::setNames();
+        $sql = "INSERT INTO [dbo].[usuariosClientes]
+        ([nombre_usuario]
+        ,[contraenia_usuario]
+        ,[id_cliente]
+        ,[correo_usuario]
+        ,[estado])
+        VALUES
+        ('$nombre_usuario', '$contraenia_usuario', '$id_cliente','$correo_usuario','1')";
+        $result = $this->db->query($sql);
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    public function setEliminar($id) {
+
+      //  self::setNames();
+        $sql = "DELETE FROM [dbo].[usuariosClientes]
+        WHERE id_usuarioCliente = '$id'";
+        $result = $this->db->query($sql);
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
 
     ?>
