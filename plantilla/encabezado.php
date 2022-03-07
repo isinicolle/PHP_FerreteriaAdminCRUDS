@@ -15,7 +15,8 @@
               <a class="nav-link" href="./vistas/proveedores.php">Proveedores</a>
               <a class="nav-link" href="./vistas/categorias.php">Categorias</a>
               <a class="nav-link" href="./vistas/marcas.php">Marcas</a>
-              <a class="nav-link " href="./vistas/clientes.php">Clientes / Usuarios</a>
+              <a class="nav-link " href="./vistas/clientes.php">Clientes</a>
+              <a class="nav-link" href="./vistas/usuarioClientes.php">Usuarios Clientes</a>
               <a class="nav-link" href="./vistas/envios.php">Envios / Empresas </a>
               <a class="nav-link" href="./vistas/compras.php">Compras</a>
               <a class="nav-link " href="./vistas/empleados.php">Empleados &Backslash; Usuarios</a>
