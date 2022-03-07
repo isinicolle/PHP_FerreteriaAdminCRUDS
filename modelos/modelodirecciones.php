@@ -32,7 +32,7 @@ class Modelodirecciones {
 
     public function setGuardar($direccion, $id_ciudad, $id_usuarioCliente,$direccion_opcional ) {
 
-        self::setNames();
+        //self::setNames();
         $sql = "INSERT INTO DireccionesEnvio
         (direccion
         ,id_ciudad

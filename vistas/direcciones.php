@@ -143,7 +143,7 @@
               <form class="form needs-validation" id="form1" method="post" role="form" autocomplete="off" novalidate>
                 
               <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label">Direccion: </label>
+                    <label class="col-lg-3 col-form-label form-control-label" for="InputDireccion">Direccion: </label>
                     <div class="col-lg-9">
                       <input class="form-control" type="text" required id="InputDireccion" placeholder="Escriba la direccion">
                       <div class="valid-feedback">Correcto</div>
@@ -152,7 +152,7 @@
                   </div>
 
                   <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label">ID ciudad: </label>
+                    <label class="col-lg-3 col-form-label form-control-label" for="InputCiudad">ID ciudad: </label>
                     <div class="col-lg-9">
                       <input class="form-control" type="text" required id="InputCiudad" placeholder="Escriba el id de la ciudad">
                       <div class="valid-feedback">Correcto</div>
@@ -161,7 +161,7 @@
                   </div>
 
                   <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label">ID Usuario cliente: </label>
+                    <label class="col-lg-3 col-form-label form-control-label" for="InputUsuario">ID Usuario cliente: </label>
                     <div class="col-lg-9">
                       <input class="form-control" type="text" required id="InputUsuario" placeholder="Escriba el id del usuario">
                       <div class="valid-feedback">Correcto</div>
@@ -169,7 +169,7 @@
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label">Direccion Opcional: </label>
+                    <label class="col-lg-3 col-form-label form-control-label" for="InputDireccop">Direccion Opcional: </label>
                     <div class="col-lg-9">
                       <input class="form-control" type="text" required id="InputDireccop" placeholder="Escriba la direccion opcional">
                       <div class="valid-feedback">Correcto</div>
