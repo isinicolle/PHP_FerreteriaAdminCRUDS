@@ -58,6 +58,28 @@ class Modeloclientes {
         }
     }
 
+    public function setActualizar($id,$nom_cliente, $apellido_cliente, $RTN,$direccion_cliente , $id_ciudad, $tel_cliente,$estado,$DNI_Cliente) {
+
+        //self::setNames();
+        $sql = "UPDATE [dbo].[Clientes]
+        SET [nom_cliente] = '$nom_cliente'
+           ,[apellido_cliente] = '$apellido_cliente'
+           ,[RTN] = '$RTN'
+           ,[direccion_cliente] = '$direccion_cliente'
+           ,[id_ciudad] = '$id_ciudad'
+           ,[tel_cliente] = '$tel_cliente'
+           ,[estado] = '$estado'
+           ,[DNI_Cliente] = '$DNI_Cliente'
+      WHERE id_cliente = $id";
+        $result = $this->db->query($sql);
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
     public function setEliminar($id) {
 
