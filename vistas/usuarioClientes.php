@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-  <title>Formulario de empleados</title>
+  <title>Formulario de clientes</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link href="../bootstrap/css/crud_empleados.css" rel="stylesheet">
+  <link href="../bootstrap/css/cliente.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" />
   <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
@@ -39,8 +39,17 @@
            $('#userList').DataTable();
        } );
    </script>
-   <body>
-   <header>
+<!-- Todo para las datepicker -->
+
+
+<!-- Datepicker -->
+<link href='../bootstrap/css/bootstrap-datepicker.min.css' rel='stylesheet' type='text/css'>
+<script src='../bootstrap/js/bootstrap-datepicker.min.js' type='text/javascript'></script>
+
+</head>
+
+<body>
+  <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="../index.php">
@@ -56,9 +65,9 @@
               <a class="nav-link" href="./proveedores.php">Proveedores</a>
               <a class="nav-link" href="./categorias.php">Categorias</a>
               <a class="nav-link" href="./marcas.php">Marcas</a>
-              <a class="nav-link " href="./clientes.php">Clientes</a>
-              <a class="nav-link" href="./usuarioClientes.php">Usuarios Clientes</a>
-              <a class="nav-link active" href="./envios.php">Envios / Empresas </a>
+              <a class="nav-link" href="./clientes.php">Clientes</a>
+              <a class="nav-link active" href="./usuarioClientes.php">Usuarios Clientes</a>
+              <a class="nav-link" href="./envios.php">Envios / Empresas </a>
               <a class="nav-link" href="./compras.php">Compras</a>
               <a class="nav-link " href="./empleados.php">Empleados &Backslash; Usuarios</a>
               <a class="nav-link " href="./ventas.php">Ventas</a>
@@ -72,24 +81,26 @@
         </div>
       </nav>
 </header>
-<div class="container">
+  <div class="container">
     <div class="mx-auto main-section" id="myTab" role="tablist">
       <ul class="nav nav-tabs justify-content-center">
         <li class="nav-item">
           <a class="nav-link active" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list"
-            aria-selected="false"><strong>Tabla</strong></a>
+            aria-selected="false"><strong>Listado Clientes</strong></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form"
-            aria-selected="true"><strong>Formulario</strong></a>
+            aria-selected="true"><strong>Ingreso Clientes</strong></a>
         </li>
+       
       </ul>
 
+     
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
           <div class="card">
             <div class="card-header">
-              <h4>Lista envíos</h4>
+              <h4>Listado de Clientes</h4>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -97,18 +108,38 @@
                   <thead class="thead-light">
                     <tr>
                       <th scope="col">Id</th>
-                      <th scope="col">Nombre de empresa</th>
-                      <th scope="col">Correo electrónico</th>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Apellido</th>
+                      <th scope="col">RTN</th>
+                      <th scope="col">Direccion</th>
+                      <th scope="col">ID Ciudad</th>
                       <th scope="col">Telefono</th>
-                      <th scope="col">Direccion de empresa</th>
-                      <th scope="col">Ciudad</th>
-                      <th scope="col">Departamento</th>
-                      <th scope="col">Codigo Postal</th>
-                      <th scope="col">Estado</th>
+                      <th scope="col">Estado Cliente</th>
+                      <th scope="col">DNI</th>
+   
+                     
                     </tr>
                   </thead>
                   <tbody>
-                   
+                  <?php
+                    include("../controladores/controladorclientes.php");
+                    $cliente= new ControladorClientes;
+                    $datos=$cliente->Listar();
+                    for ($i = 0; $i < count($datos); $i++) {
+                ?>
+                 <tr>
+                <th scope="row"><?php echo $datos[$i]["id_cliente"];?></th>
+                <td><?php echo $datos[$i]["nom_cliente"];?></td>
+                <td><?php echo $datos[$i]["apellido_cliente"];?></td>
+                <td><?php echo $datos[$i]["RTN"];?></td>
+                <td><?php echo $datos[$i]["direccion_cliente"];?></td>
+                <td><?php echo $datos[$i]["id_ciudad"];?></td>
+                <td><?php echo $datos[$i]["tel_cliente"];?></td>
+                <td><?php echo $datos[$i]["estado"];?></td>
+                <td><?php echo $datos[$i]["DNI_Cliente"];?></td>
+           
+                </tr>
+                <?php } ?>
                   </tbody>
                 </table>
               </div>
@@ -118,12 +149,12 @@
         <div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab">
           <div class="card">
             <div class="card-header">
-              <h4>Ingreso de empresas</h4>
+              <h4>Ingreso del Cliente</h4>
             </div>
             <div class="card-body">
               <form class="form needs-validation" id="form1" method="post" role="form" autocomplete="off" novalidate>
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Nombre de la empresa</label>
+                  <label class="col-lg-3 col-form-label form-control-label">Nombre: </label>
                   <div class="col-lg-9">
                     <input class="form-control" type="text" required>
                     <div class="valid-feedback">Correcto</div>
@@ -131,15 +162,15 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Correo electronico</label>
+                  <label class="col-lg-3 col-form-label form-control-label">Apellido: </label>
                   <div class="col-lg-9">
-                    <input class="form-control" type="email" required>
+                    <input class="form-control" type="text" required>
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Numero telefónico</label>
+                  <label class="col-lg-3 col-form-label form-control-label">RTN: </label>
                   <div class="col-lg-9">
                     <input class="form-control" type="text" required>
                     <div class="valid-feedback">Correcto</div>
@@ -148,37 +179,32 @@
                 </div>
                 
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Departamento</label>
-                  <div class="col-lg-9">
-                  <select class="custom-select custom-select-lg mb-3" required>
-                      <option selected disabled value="">Seleccione una opción</option>
-                      <option value="1">Cargo Expreso</option>
-                      <option value="2">Honduras expreso</option>
-                      <option value="3">Hugo</option>
-                      <option value="4">Mandados</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Ciudad</label>
-                  <div class="col-lg-9">
-                  <select class="custom-select custom-select-lg mb-3" required>
-                      <option selected disabled value="">Seleccione una opción</option>
-                      <option value="1">Cargo Expreso</option>
-                      <option value="2">Honduras expreso</option>
-                      <option value="3">Hugo</option>
-                      <option value="4">Mandados</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Codigo postal</label>
+                  <label class="col-lg-3 col-form-label form-control-label">Direccion: </label>
                   <div class="col-lg-9">
                     <input class="form-control" type="text" required>
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
                 </div>
+
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Telefono: </label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="text" required>
+                    <div class="valid-feedback">Correcto</div>
+                    <div class="invalid-feedback">Ingrese datos correctos</div>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">DNI: </label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="text" required>
+                    <div class="valid-feedback">Correcto</div>
+                    <div class="invalid-feedback">Ingrese datos correctos</div>
+                  </div>
+                </div>
+
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">¿Activo?</label>
                   <div class="col-lg-9">
@@ -188,7 +214,61 @@
                     </div>
                   </div>
                 </div>
-                
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Ciudad: </label>
+                  <div class="col-lg-9">
+                    <select class="custom-select custom-select-lg mb-3" required>
+                      <option selected disabled value="">Seleccione una opción</option>
+                      <option value="1">Tegucigalpa</option>
+                      <option value="2">San pedro sula</option>
+                      <option value="3">El paraiso</option>
+                      <option value="4">Comayaguela</option>
+                    </select>
+                    <div class="valid-feedback">Correcto</div>
+                    <div class="invalid-feedback">Ingrese datos correctos</div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Correo electrónico</label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="email" required>
+                    <div class="valid-feedback">Correcto</div>
+                    <div class="invalid-feedback">Ingrese datos correctos</div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Nombre de usuario</label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="text" required>
+                    <div class="valid-feedback">Correcto</div>
+                    <div class="invalid-feedback">Ingrese datos correctos</div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Contraseña</label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="password" required>
+                    <div class="valid-feedback">Correcto</div>
+                    <div class="invalid-feedback">Ingrese datos correctos</div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">Confirmar contraseña</label>
+                  <div class="col-lg-9">
+                    <input class="form-control" type="password" required>
+                    <div class="valid-feedback">Correcto</div>
+                    <div class="invalid-feedback">Ingrese datos correctos</div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-lg-3 col-form-label form-control-label">¿Usuario Activo?</label>
+                  <div class="col-lg-9">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+
+                    </div>
+                  </div>
+                </div>
                 <div class="form-group row">
                   <div class="col-lg-12 text-center">
                     <button type="submit" class="btn btn-primary" value="Save Changes">Enviar</button>
@@ -196,14 +276,29 @@
                   </div>
                 </div>
               </form>
-              <script src="../bootstrap/js/validacion.js"></script>
+              <script src="../bootstrap/js/cliente.js"></script>
             </div>
           </div>
         </div>
       </div>
+    
+    
+      
+  
+
     </div>
   </div>
 
+
+
+
+
+
+
+
+
+
+  
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -221,8 +316,6 @@
       </div>
     </div>
   </div>
-
-<?php
-include_once('../plantilla/pie.php');
-?>
 </body>
+
+</html>
