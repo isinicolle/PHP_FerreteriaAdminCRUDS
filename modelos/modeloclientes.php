@@ -16,7 +16,7 @@ class Modeloclientes {
 
     public function getclientes() {
 
-        self::setNames();
+       // self::setNames();
         $sql = "SELECT id_cliente
         ,nom_cliente
         ,apellido_cliente
