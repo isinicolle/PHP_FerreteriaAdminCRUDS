@@ -9,18 +9,18 @@
             return $datos;
         }
 
-        function Guardar($direccion, $id_ciudad, $id_usuarioCliente,$direccion_opcional ){
-            require_once("../modelos/modelodirecciones.php");
-            $direcciones = new Modelodirecciones();
-            $datos = $direcciones->setGuardar($direccion, $id_ciudad, $id_usuarioCliente,$direccion_opcional);
-            require_once("../vistas/direcciones.php");
+        function Guardar($nombre_usuario, $contraenia_usuario, $id_cliente,$correo_usuario){
+            require_once("../modelos/modelousuariocliente.php");
+            $direcciones = new Modeloclientes();
+            $datos = $direcciones->setGuardar($nombre_usuario, $contraenia_usuario, $id_cliente,$correo_usuario);
+            require_once("../vistas/usuarioClientes.php");
         }
 
         function Eliminar($id ){
-            require_once("../modelos/modelodirecciones.php");
-            $direcciones = new Modelodirecciones();
+            require_once("../modelos/modelousuariocliente.php");
+            $direcciones = new Modeloclientes();
             $datos = $direcciones->setEliminar($id);
-            require_once("../vistas/direcciones.php");
+            require_once("../vistas/usuarioClientes.php");
         }
   
     }
