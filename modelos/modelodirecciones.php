@@ -39,7 +39,7 @@ class Modelodirecciones {
         ,id_usuarioCliente
         ,direccion_opcional)
         VALUES
-        ('". $direccion . "', '" . $id_ciudad .  "', '" . $id_usuarioCliente .  "', '" . $direccion_opcional ."')";
+        ('$direccion ', ' $id_ciudad', ' $id_usuarioCliente', '$direccion_opcional')";
         $result = $this->db->query($sql);
 
         if ($result) {

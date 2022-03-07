@@ -140,12 +140,12 @@
             </div>
             <div class="card-body">
               
-              <form class="form needs-validation" id="form1" method="post" role="form" autocomplete="off" novalidate>
+              <form class="form needs-validation" id="form1" method="post" role="form" autocomplete="off" novalidate >
                 
               <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label" for="InputDireccion">Direccion: </label>
                     <div class="col-lg-9">
-                      <input class="form-control" type="text" required id="InputDireccion" placeholder="Escriba la direccion">
+                      <input class="form-control" type="text" required id="InputDireccion" name="InputDireccion" placeholder="Escriba la direccion">
                       <div class="valid-feedback">Correcto</div>
                       <div class="invalid-feedback">Ingrese datos correctos</div>
                     </div>
@@ -154,7 +154,7 @@
                   <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label" for="InputCiudad">ID ciudad: </label>
                     <div class="col-lg-9">
-                      <input class="form-control" type="text" required id="InputCiudad" placeholder="Escriba el id de la ciudad">
+                      <input class="form-control" type="text" required id="InputCiudad" name="InputCiudad" placeholder="Escriba el id de la ciudad">
                       <div class="valid-feedback">Correcto</div>
                       <div class="invalid-feedback">Ingrese datos correctos</div>
                     </div>
@@ -163,7 +163,7 @@
                   <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label" for="InputUsuario">ID Usuario cliente: </label>
                     <div class="col-lg-9">
-                      <input class="form-control" type="text" required id="InputUsuario" placeholder="Escriba el id del usuario">
+                      <input class="form-control" type="text" required id="InputUsuario" name="InputUsuario" placeholder="Escriba el id del usuario">
                       <div class="valid-feedback">Correcto</div>
                       <div class="invalid-feedback">Ingrese datos correctos</div>
                     </div>
@@ -171,7 +171,7 @@
                   <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label" for="InputDireccop">Direccion Opcional: </label>
                     <div class="col-lg-9">
-                      <input class="form-control" type="text" required id="InputDireccop" placeholder="Escriba la direccion opcional">
+                      <input class="form-control" type="text" required id="InputDireccop" name="InputDireccop" placeholder="Escriba la direccion opcional">
                       <div class="valid-feedback">Correcto</div>
                       <div class="invalid-feedback">Ingrese datos correctos</div>
                     </div>
@@ -179,12 +179,26 @@
 
              
 
-    
+                      <?php
+                    if (isset($_REQUEST['enviar'])) {
+                      $direccion = $_REQUEST['InputDireccion'];
+                      $ciudad = $_REQUEST['InputCiudad'];
+                      $usuario = $_REQUEST['InputUsuario'];
+                      $direccop = $_REQUEST['InputDireccop'];
+
+              
+                      
+
+                   // $direccioness= new ControladorDirecciones;
+                    $datos=$direcciones->Guardar($direccion,$ciudad,$usuario,$direccop);
+                  }
+                  
+                      ?>
                
 
                 <div class="form-group row">
                   <div class="col-lg-12 text-center">
-                    <button type="submit" class="btn btn-primary" value="Save Changes">Enviar</button>
+                    <button type="sumit" class="btn btn-primary" name="enviar" >Enviar</button>
                     <button type="reset" class="btn btn-secondary" value="Cancel">Cancelar</button>
                   </div>
                 </div>

@@ -9,10 +9,10 @@
             return $datos;
         }
 
-        function Guardar(){
+        function Guardar($direccion, $id_ciudad, $id_usuarioCliente,$direccion_opcional ){
             require_once("../modelos/modelodirecciones.php");
             $direcciones = new Modelodirecciones();
-            $datos = $direcciones->setGuardar($_POST['InputDireccion'], $_POST['InputCiudad'],$_POST['InputUsuario'], $_POST['InputDireccop']);
+            $datos = $direcciones->setGuardar($direccion, $id_ciudad, $id_usuarioCliente,$direccion_opcional);
             require_once("../vistas/direcciones.php");
         }
   
