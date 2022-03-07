@@ -103,17 +103,30 @@
                     <tr>
                     <th scope="col">Id</th>
                       <th scope="col">Direccion</th>
-                      <th scope="col">Ciudad</th>
-                      <th scope="col">Usuario Cliente</th>
+                      <th scope="col">Id Ciudad</th>
+                      <th scope="col">Id Usuario Cliente</th>
                       <th scope="col">Direccion Opcional</th>
-                      <th scope="col">Codigo Postal</th>
-                      <th scope="col">Departamento</th>
-                      <th scope="col">Accion</th>
+     
                      
                     </tr>
                   </thead>
                   <tbody>
-                    
+                  <?php
+                    include("../controladores/controladorDirecciones.php");
+                    $direcciones= new ControladorDirecciones;
+                    $datos=$direcciones->Listar();
+                    for ($i = 0; $i < count($datos); $i++) {
+                ?>
+                 <tr>
+                <th scope="row"><?php echo $datos[$i]["id_direccionEnvio"];?></th>
+                <td><?php echo $datos[$i]["direccion"];?></td>
+                <td><?php echo $datos[$i]["id_ciudad"];?></td>
+                <td><?php echo $datos[$i]["id_usuarioCliente"];?></td>
+                <td><?php echo $datos[$i]["direccion_opcional"];?></td>
+          
+           
+                </tr>
+                <?php } ?>
                   </tbody>
                 </table>
               </div>
