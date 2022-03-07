@@ -31,16 +31,17 @@ class Modeloclientes {
         $this->db = null;
     }
 
-    public function setGuardar($direccion, $id_ciudad, $id_usuarioCliente,$direccion_opcional ) {
+    public function setGuardar($nombre_usuario, $contraenia_usuario, $id_cliente,$correo_usuario) {
 
         //self::setNames();
-        $sql = "INSERT INTO DireccionesEnvio
-        (direccion
-        ,id_ciudad
-        ,id_usuarioCliente
-        ,direccion_opcional)
+        $sql = "INSERT INTO [dbo].[usuariosClientes]
+        ([nombre_usuario]
+        ,[contraenia_usuario]
+        ,[id_cliente]
+        ,[correo_usuario]
+        ,[estado])
         VALUES
-        ('$direccion ', ' $id_ciudad', ' $id_usuarioCliente', '$direccion_opcional')";
+        ('$nombre_usuario', '$contraenia_usuario', '$id_cliente','$correo_usuario')";
         $result = $this->db->query($sql);
 
         if ($result) {
@@ -54,8 +55,8 @@ class Modeloclientes {
     public function setEliminar($id) {
 
       //  self::setNames();
-        $sql = "DELETE FROM [dbo].[DireccionesEnvio]
-        WHERE id_direccionEnvio = '$id'";
+        $sql = "DELETE FROM [dbo].[usuariosClientes]
+        WHERE id_usuarioCliente = '$id'";
         $result = $this->db->query($sql);
 
         if ($result) {
