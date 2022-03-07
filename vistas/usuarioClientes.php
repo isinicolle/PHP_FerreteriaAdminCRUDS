@@ -155,7 +155,7 @@
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">Nombre de usuario</label>
                   <div class="col-lg-9">
-                    <input class="form-control" type="email" required>
+                    <input class="form-control" type="text" required>
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
@@ -172,7 +172,7 @@
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">Id cliente </label>
                   <div class="col-lg-9">
-                    <input class="form-control" type="password" required>
+                    <input class="form-control" type="text" required>
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
@@ -180,7 +180,7 @@
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">Correo electronico</label>
                   <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
+                    <input class="form-control" type="email" required>
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>

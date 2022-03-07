@@ -145,22 +145,16 @@
               <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Direccion: </label>
                     <div class="col-lg-9">
-                      <input class="form-control" type="email" required>
+                      <input class="form-control" type="text" required>
                       <div class="valid-feedback">Correcto</div>
                       <div class="invalid-feedback">Ingrese datos correctos</div>
                     </div>
                   </div>
 
                   <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label">Ciudad: </label>
+                    <label class="col-lg-3 col-form-label form-control-label">ID ciudad: </label>
                     <div class="col-lg-9">
-                      <select class="custom-select custom-select-lg mb-3" required>
-                        <option selected disabled value="">Seleccione una opción</option>
-                        <option value="1">Tegucigalpa</option>
-                        <option value="2">San pedro sula</option>
-                        <option value="3">El paraiso</option>
-                        <option value="4">Comayaguela</option>
-                      </select>
+                      <input class="form-control" type="text" required>
                       <div class="valid-feedback">Correcto</div>
                       <div class="invalid-feedback">Ingrese datos correctos</div>
                     </div>
@@ -184,7 +178,7 @@
                   <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Direccion Opcional: </label>
                     <div class="col-lg-9">
-                      <input class="form-control" type="email" required>
+                      <input class="form-control" type="text" required>
                       <div class="valid-feedback">Correcto</div>
                       <div class="invalid-feedback">Ingrese datos correctos</div>
                     </div>
