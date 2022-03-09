@@ -3,6 +3,23 @@
  include_once('../conexion/conexionbd.php');
  $abrir = new Conexion();
  $conexion = $abrir->abrirCon();
+
+ if(isset($_GET['id'])){
+  $idEmpleado = $_GET['id'];
+  foreach (listarEmpleado($idEmpleado) as $row){
+      $id = $row[0];
+      $nombre = $row[1];
+      $apellido = $row[2];
+      $correo= $row[3];
+      $telefono = $row[4];
+      $direccion = $row[5];
+      $idCiudad = $row[6];
+      $idRol = $row[7];
+      $fecha = $row[8];
+      $estado = $row[9];
+      $usuario = $row[10];
+  }    
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,86 +94,42 @@
           </div>
         </div>
       </nav>
-    </header>
-    <!-- Contenido -->
+    </header>       
+
     <div class="container">
         <div class="mx-auto main-section" id="myTab" role="tablist">
           <ul class="nav nav-tabs justify-content-center">
-            <li class="nav-item">
-              <a class="nav-link active" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list"
-                aria-selected="false"><strong>Tabla</strong></a>
-            </li>
             <li class="nav-item">
               <a class="nav-link" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form"
                 aria-selected="true"><strong>Formulario</strong></a>
             </li>
           </ul>
-          <div class="tab-content" id="myTabContent">
-            <!-- Tabla -->
-            <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
-                <div class="card">
-                  <div class="card-header">
-                    <h4>Lista de Empleados Ferreteria Maresa</h4>
-                  </div>
-                  <div class="card-body">
-                    <div class="table-responsive">
-                      <table id="userList" class="table table-bordered table-hover table-striped">
-                        <thead class="thead-light">
-                          <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Apellido</th>
-                            <th scope="col">Correo</th>
-                            <th scope="col">Teléfono</th>
-                            <th scope="col">Dirección</th>
-                            <th scope="col">Ciudad</th>
-                            <th scope="col">Rol</th>
-                            <th scope="col">Fecha de nacimiento</th>
-                            <th scope="col">Estado</th>
-                            <th scope="col">Editar</th>
-                            <th scope="col">Eliminar</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                           <?php
-                           
-                            foreach(listar() as $row){?>
-                              <td><?php echo $row[0]?></td>
-                              <td><?php echo $row[1]?></td>
-                              <td><?php echo $row[2]?></td>
-                              <td><?php echo $row[3]?></td>
-                              <td><?php echo $row[4]?></td>
-                              <td><?php echo $row[5]?></td>
-                              <td><?php echo $row[6]?></td>
-                              <td><?php echo $row[7]?></td>
-                              <td><?php echo $row[8]?></td>
-                              <td><?php echo $row[9]?></td>
-                              <td><a href="../vistas/formEmpleado.php?id=<?php echo $row[0]?>">Editar</a></td>
-                              <td><a href="../controladores/controladorEmpleados.php?id_empleado=<?php echo $row[0]?>">Eliminar</a></td>
-                        </tbody>
-                        <?php
-                            }
-                           ?>
-                      </table>
-                    </div>
-                  </div>
+         
                 </div>
-            </div>           
-            
+    </div>  
             <!-- Formulario -->
-            <div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab">
+            <div class="tab-pane fade show active" id="form" role="tabpanel" aria-labelledby="form-tab">
               <div class="card">
                 <div class="card-header">
                   <h4>Nuevo Empleado</h4>
                 </div>
                 <div class="card-body">
 
-                  <form class="form needs-validation" id="form1" action="../controladores/controladorEmpleados.php" method="POST" role="form" autocomplete="off" novalidate>               
+                  <form class="form needs-validation" id="form1" action="../controladores/controladorEmpleados.php?id=<?php echo $_GET['id']?>" method="POST" role="form" autocomplete="off" novalidate>               
+                  <!-- Id-->
+                  <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label">Id</label>
+                      <div class="col-lg-9">
+                        <input class="form-control" type="text" value="<?php echo $id?>" name="id" disabled required>
+                        <div class="valid-feedback">Correcto</div>
+                        <div class="invalid-feedback">Ingrese datos correctos</div>
+                      </div>
+                    </div>
                   <!-- Nombre-->
                     <div class="form-group row">
                       <label class="col-lg-3 col-form-label form-control-label">Nombre</label>
                       <div class="col-lg-9">
-                        <input class="form-control" type="text" name="nom_empleado"  required>
+                        <input class="form-control" type="text" value="<?php echo $nombre?>" name="nombre" required>
                         <div class="valid-feedback">Correcto</div>
                         <div class="invalid-feedback">Ingrese datos correctos</div>
                       </div>
@@ -165,7 +138,7 @@
                     <div class="form-group row">
                       <label class="col-lg-3 col-form-label form-control-label">Apellido</label>
                       <div class="col-lg-9">
-                        <input class="form-control" type="text" name="apellido_empleado"required>
+                        <input class="form-control" type="text" value="<?php echo $apellido?>" name="apellido"required>
                         <div class="valid-feedback">Correcto</div>
                         <div class="invalid-feedback">Ingrese datos correctos</div>
                       </div>
@@ -174,7 +147,7 @@
                     <div class="form-group row">
                         <label class="col-lg-3 col-form-label form-control-label">Correo electrónico</label>
                         <div class="col-lg-9">
-                          <input class="form-control" type="email" name="correo_empleado"required>
+                          <input class="form-control" type="email" value="<?php echo $correo?>" name="correo"required>
                           <div class="valid-feedback">Correcto</div>
                           <div class="invalid-feedback">Ingrese datos correctos</div>
                         </div>
@@ -183,7 +156,7 @@
                       <div class="form-group row">
                         <label class="col-lg-3 col-form-label form-control-label">Teléfono</label>
                         <div class="col-lg-9">
-                          <input class="form-control" type="text" name="telefono_empleado"required>
+                          <input class="form-control" type="text" value="<?php echo $telefono?>" name="telefono"required>
                           <div class="valid-feedback">Correcto</div>
                           <div class="invalid-feedback">Ingrese datos correctos</div>
                         </div>
@@ -192,7 +165,7 @@
                       <div class="form-group row">
                         <label class="col-lg-3 col-form-label form-control-label">Dirección</label>
                         <div class="col-lg-9">
-                          <input class="form-control" type="text" name="direccion_empleado" required>
+                          <input class="form-control" type="text" value="<?php echo $direccion?>" name="direccion" required>
                           <div class="valid-feedback">Correcto</div>
                           <div class="invalid-feedback">Ingrese datos correctos</div>
                         </div>
@@ -201,7 +174,7 @@
                     <div class="form-group row">
                       <label class="col-lg-3 col-form-label form-control-label">Fecha de nacimiento</label>
                       <div class="col-lg-9">
-                        <input id="datepicker"  class="form-control" name="fnacimiento_empleado" required />
+                        <input id="datepicker"  class="form-control"  value="<?php echo $fecha?>" name="fecha" required />
                         <div class="valid-feedback">Correcto</div>
                         <div class="invalid-feedback">Ingrese datos correctos</div>
                         <script type="text/javascript">
@@ -221,9 +194,9 @@
                       <div class="col-lg-9">
                         <div class="form-check form-check-inline">
                           <label class="col-form-label form-control-label">Si</label>
-                          <input class="form-check-input" type="radio" name="estado" id="inlineCheckbox1"value ="1">
+                          <input class="form-check-input" type="radio" name="estado" value="<?php echo $estado?>" id="inlineCheckbox1"value ="1">
                           <label class="col-form-label form-control-label">No</label>
-                          <input class="form-check-input" type="radio" name="estado" id="inlineCheckbox1"value ="0">
+                          <input class="form-check-input" type="radio" name="estado"  id="inlineCheckbox1"value ="0">
                         </div>
                       </div>
                     </div>
@@ -231,7 +204,7 @@
                     <div class="form-group row">
                       <label class="col-lg-3 col-form-label form-control-label">Ciudad</label>
                       <div class="col-lg-9">
-                        <select class="custom-select custom-select-lg mb-3" name="id_ciudad" required>
+                        <select class="custom-select custom-select-lg mb-3" name="id_ciudad" value="<?php echo $idCiudad?>" required>
                           <option selected disabled value="">Seleccione una opción</option>
                           <option value="4">Tegucigalpa</option>
                           <option value="5">Comayagua</option>
@@ -244,10 +217,10 @@
                     <div class="form-group row">
                       <label class="col-lg-3 col-form-label form-control-label">Rol</label>
                       <div class="col-lg-9">
-                        <select class="custom-select custom-select-lg mb-3" name="id_rol" required>
-                          <option selected disabled value="">Seleccione una opción</option>
-                          <option value="1">Ejecutivo</option>
-                          <option value="3">Administrador</option>
+                        <select class="custom-select custom-select-lg mb-3" name="id_rol"  required>
+                          <option selected disabled value="<?php echo $idRol?>">Seleccione una opción</option>
+                          <option value="1" >Ejecutivo</option>
+                          <option value="3" >Administrador</option>
                         </select>
                         <div class="valid-feedback">Correcto</div>
                         <div class="invalid-feedback">Ingrese datos correctos</div>
@@ -257,7 +230,7 @@
                     <div class="form-group row">
                       <label class="col-lg-3 col-form-label form-control-label">Nombre de usuario</label>
                       <div class="col-lg-9">
-                        <input class="form-control" type="text" name="nom_usuarioEmpleado" required>
+                        <input class="form-control" type="text" name="usuario" value="<?php echo $usuario?>" required>
                         <div class="valid-feedback">Correcto</div>
                         <div class="invalid-feedback">Ingrese datos correctos</div>
                       </div>
@@ -266,7 +239,7 @@
                     <div class="form-group row">
                       <label class="col-lg-3 col-form-label form-control-label">Contraseña</label>
                       <div class="col-lg-9">
-                        <input class="form-control" type="password" name='contra' required>
+                        <input class="form-control" type="password" name='contra'  value="<?php echo $contra?>"required>
                         <div class="valid-feedback">Correcto</div>
                         <div class="invalid-feedback">Ingrese datos correctos</div>
                       </div>
@@ -275,14 +248,14 @@
                     <div class="form-group row">
                       <label class="col-lg-3 col-form-label form-control-label">Confirmar contraseña</label>
                       <div class="col-lg-9">
-                        <input class="form-control" type="password" required>
+                        <input class="form-control" type="password"  value="<?php echo $contra?>" required>
                         <div class="valid-feedback">Correcto</div>
                         <div class="invalid-feedback">Ingrese datos correctos</div>
                       </div>
                     </div>
                     <div class="form-group row">
                       <div class="col-lg-12 text-center">
-                        <input type='submit' class="btn btn-primary" name="save" value="Save Changes">
+                        <input type='submit' class="btn btn-primary" name="update" value="Save Changes">
                         <button type="reset" class="btn btn-secondary" value="Cancel">Cancelar</button>
                       </div>
                     </div>

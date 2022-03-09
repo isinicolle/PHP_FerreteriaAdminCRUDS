@@ -20,6 +20,19 @@
             $this->bd = null;
         }
 
+        public function getEmpleadosById($id) {
+            $consulta = "SELECT e.id_empleado ,e.nom_empleado,e.apellido_empleado,u.correo_empleado,e.telefono_empleado, e.direccion_empleado,e.id_ciudad,e.id_rol,e.fnacimiento_empleado,e.estado,u.nom_usuarioEmpleado FROM Empleados e 
+            inner join UsuarioEmpleados u on e.id_empleado = u.id_empleado
+            inner join RolesEmpleados r on e.id_rol = r.id_rol
+            inner join Ciudades c on e.id_ciudad = c.id_ciudad
+            WHERE u.id_empleado = $id";
+            foreach($this->bd->query($consulta) as $res) {
+                $this->empleados[] = $res;
+            }
+            return $this->empleados;
+            $this->bd = null;
+        }
+
         public function setSaveEmployee($nombre, $apellido, $telefono, $direccion, $idCiudad,$idRol,$fecha,$estado) {
             $sql = "INSERT INTO Empleados(nom_empleado,apellido_empleado,telefono_empleado, direccion_empleado,id_ciudad,id_rol,fnacimiento_empleado,Estado) VALUES (' $nombre ', ' $apellido ', '$telefono', '$direccion', $idCiudad ,$idRol,'$fecha',$estado)";
             $result = $this->bd->query($sql);
@@ -44,9 +57,21 @@
         }
 
        
-        public function setActualizar($id,$nombre, $apellido,$telefono, $direccion, $idCiudad,$idRol,$fecha,$estado) {
+        public function setUpdate($id,$nombre, $apellido,$telefono, $direccion, $idCiudad,$idRol,$fecha,$estado) {
     
             $sql = "UPDATE Empleados set nom_empleado='$nombre', apellido_empleado='$apellido', telefono_empleado='$telefono',  direccion_empleado='$direccion',id_ciudad=$idCiudad ,id_rol=$idRol ,fnacimiento_empleado='$fecha' ,Estado=$estado WHERE id_empleado=$id";
+            $result = $this->bd->query($sql);
+    
+            if ($result) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        public function setUpdateUser($id,$estado,$usuario,$contra,$correo) {
+            $sql = " UPDATE UsuarioEmpleados SET nom_usuarioEmpleado='$usuario',estado = $estado,contrasenia_empleado = '$contra',correo_empleado = '$correo' WHERE id_empleado = $id";
+            
             $result = $this->bd->query($sql);
     
             if ($result) {
