@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php 
+include_once('../controladores/controladorEnvios.php')
+?>
 <head>
   <title>Formulario de empleados</title>
   <meta charset="utf-8" />
@@ -106,8 +108,19 @@
                     </tr>
                   </thead>
                   <tbody>
-                   
+                    <?php
+                     foreach(listar() as $row){?>
+                      <td><?php echo $row[0]?></td>
+                      <td><?php echo $row[1]?></td>
+                      <td><?php echo $row[2]?></td>
+                      <td><?php echo $row[3]?></td>
+                      <td><?php echo $row[4]?></td>
+                      <td><a href="../vistas/formEmpleado.php?id=<?php echo $row[0]?>">Editar</a></td>
+                      <td><a href="../controladores/controladorEmpleados.php?id_empleado=<?php echo $row[0]?>">Eliminar</a></td>
                   </tbody>
+                  <?php
+                            }
+                           ?>
                 </table>
               </div>
             </div>
@@ -119,11 +132,12 @@
               <h4>Ingreso de envío</h4>
             </div>
             <div class="card-body">
-              <form class="form needs-validation" id="form1" method="post" role="form" autocomplete="off" novalidate>
-                <div class="form-group row">
+              <form class="form needs-validation"  method="post" action="../controladores/controladorEnvios.php" role="form" autocomplete="off" novalidate>
+              <input type="hidden" name="Insertar"  hidden/>  
+              <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">Numero de rastreo</label>
                   <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
+                    <input class="form-control" name="numRastreo" type="text" required>
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
@@ -131,7 +145,7 @@
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">Referencia de Venta</label>
                   <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
+                    <input class="form-control" name="idVenta" type="text" required>
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
@@ -139,12 +153,10 @@
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">Empresa de envío</label>
                   <div class="col-lg-9">
-                  <select class="custom-select custom-select-lg mb-3" required>
+                  <select class="custom-select custom-select-lg mb-3" name="idEmpresa" required>
+                    <?php foreach(getEmpresaEnvios() as $fila){ ?>
                       <option selected disabled value="">Seleccione una opción</option>
-                      <option value="1">Cargo Expreso</option>
-                      <option value="2">Honduras expreso</option>
-                      <option value="3">Hugo</option>
-                      <option value="4">Mandados</option>
+                      <option value=<?php echo $fila[0] ?> ><?php echo $fila[1]; } ?></option>
                     </select>
                   </div>
                 </div>
