@@ -131,8 +131,8 @@
                               <td><?php echo $row[7]?></td>
                               <td><?php echo $row[8]?></td>
                               <td><?php echo $row[9]?></td>
-                              <td><a href="../vistas/formEmpleado.php?id=<?php echo $row[0]?>">Editar</a></td>
-                              <td><a href="../controladores/controladorEmpleados.php?id_empleado=<?php echo $row[0]?>">Eliminar</a></td>
+                              <td><a style="color: white; text-decoration: none;" href="../vistas/formEmpleado.php?id=<?php echo $row[0]?>">Editar</a></td>
+                              <td><a style="color: white;  text-decoration: none;" href="../controladores/controladorEmpleados.php?id_empleado=<?php echo $row[0]?>">Eliminar</a></td>
                         </tbody>
                         <?php
                             }
