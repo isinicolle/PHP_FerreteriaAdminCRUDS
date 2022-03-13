@@ -138,9 +138,7 @@
                 <td><?php echo $datos[$i]["tel_cliente"];?></td>
                 <td><?php echo $datos[$i]["estado"];?></td>
                 <td><?php echo $datos[$i]["DNI_Cliente"];?></td>
-                <td>
-                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
-                      </td>
+                <td><a href="../controladores/controladorclientes.php?id_cliente=<?php echo $datos[$i]["id_cliente"]?>">Eliminar</a></td>
                 </tr>
                 <?php } ?>
                   </tbody>

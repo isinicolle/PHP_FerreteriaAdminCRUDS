@@ -23,14 +23,15 @@
             require_once("../vistas/clientes.php");
         }
 
-        function Eliminar($id ){
-            require_once("../modelos/modeloclientes.php");
-            $clientes = new Modeloclientes();
-            $datos = $clientes->setEliminar($id);
-            require_once("../vistas/clientes.php");
-        }
-  
+    
     }
     
-
+    if(isset($_GET['id_cliente'])){
+        require_once("../modelos/modeloclientes.php");
+        $clientes = new Modeloclientes();
+        $id = $_GET['id_cliente'];
+        header('Location: ../vistas/clientes.php');
+        
+        return  $clientes->setEliminar($id);  
+    }
 ?>
