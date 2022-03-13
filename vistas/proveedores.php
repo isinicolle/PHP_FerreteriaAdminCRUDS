@@ -1,3 +1,6 @@
+<?php
+  include_once('../controladores/controladorProveedores.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -99,7 +102,7 @@
               <div class="table-responsive">
                 <table id="userList" class="table table-bordered table-hover table-striped">
                   <thead class="thead-light">
-                    <tr>
+                    <tr class="text-center">
                       <th scope="col">Id</th>
                       <th scope="col">Nombre</th>
                       <th scope="col">Telefono</th>
@@ -111,18 +114,23 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>FerreProv</td>
-                      <td>+504 89823000</td>
-                      <td>frreprov@gmail.com</td>
-                      <td>Colonia Los Andes 2do nivel, frente Tecnivision, tegucigalpa</td>
-                      <td>Tegucigalpa</td>
-                      <td>Activo</td>
-                      <td>
-                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
-                      </td>
-                    </tr>
+                  <?php
+                   $datos= listarProveedor();
+                    for($i=0;$i < sizeof($datos);$i++){?>
+                      <tr class="text-center">
+                        <td><?php echo $datos[$i]["id_prov"] ?></td>
+                        <td><?php echo $datos[$i]["nom_prov"] ?></td>
+                        <td><?php echo $datos[$i]["telefono_prov"] ?></td>
+                        <td><?php echo $datos[$i]["correo_prov"] ?></td>
+                        <td><?php echo $datos[$i]["direccion_prov"] ?></td>
+                        <td><?php echo $datos[$i]["nombre_ciudad"] ?></td>
+                        <td><?php echo $datos[$i]["Estado"] ?></td>
+                        <td class="text-center">
+                         <a href="./proveedoresActualizar.php?id=<?php echo $datos[$i]['id_prov']?>"><i class="fas fa-edit"></i></a>  | 
+                         <a href="../controladores/controladorProveedores.php?id_prov=<?php echo $datos[$i]['id_prov']?>"><i class="fas fa-trash"></i></a>
+                        </td>
+                      </tr>
+                    <?php } ?>
                   </tbody>
                 </table>
               </div>
@@ -135,81 +143,80 @@
               <h4>Ingreso del Proveedor</h4>
             </div>
             <div class="card-body">
-              <form class="form needs-validation" id="form1" method="post" role="form" autocomplete="off" novalidate>
+              <form class="form needs-validation" id="form1" action="../controladores/controladorProveedores.php" method="POST" role="form" autocomplete="off" novalidate>
+                <!-- Nombre Proveedor-->
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Nombre del Proveedor: </label>
+                  <label class="col-lg-3 col-form-label form-control-label">Nombre Proveedor: </label>
                   <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
+                    <input class="form-control" name="nom_prov" type="text" required>
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
                 </div>
+                <!-- Telefono Proveedor-->
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">Telefono: </label>
                   <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
+                    <input class="form-control" name="telefono_prov" type="text" maxlength="12" required>
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
                 </div>
+                <!-- Correo Proveedor-->
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Correo electrónico</label>
+                  <label class="col-lg-3 col-form-label form-control-label">Correo: </label>
                   <div class="col-lg-9">
-                    <input class="form-control" type="email" required>
+                    <input class="form-control" name="correo_prov" type="email" required>
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
                 </div>
+                <!-- Direccion Proveedor-->
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Apellido: </label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">RTN: </label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
-                  </div>
-                </div>
-                
-                <div class="form-group row">
-                    <label class="col-lg-3  col-form-label form-control-label">Direccion</label>
+                    <label class="col-lg-3  col-form-label form-control-label">Direccion: </label>
                     <div class="col-lg-9">
-                      <textarea required class="form-control" name="direccion" id="direccion" maxlength="200"></textarea>
+                      <textarea required class="form-control" name="direccion_prov" maxlength="100"></textarea>
                       <div class="valid-feedback">Correcto</div>
                       <div class="invalid-feedback">Ingrese datos correctos</div>
                       </div>
                 </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Ciudad: </label>
-                  <div class="col-lg-9">
-                    <select class="custom-select custom-select-lg mb-3" required>
-                      <option selected disabled value="">Seleccione una opción</option>
-                      <option value="1">Tegucigalpa</option>
-                      <option value="2">San pedro sula</option>
-                      <option value="3">El paraiso</option>
-                      <option value="4">Comayaguela</option>
-                    </select>
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
+                 <!-- Ciudad-->
+                 <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label">Ciudad: </label>
+                      <div class="col-lg-9">
+                        <select class="custom-select custom-select-lg mb-3" name="id_ciudad" required>
+                          <option selected disabled value="">Seleccione</option>
+
+                          <?php
+                          $datosCiudades = listarCiudad();
+
+                          for($ciudad = 0; $ciudad < sizeof($datosCiudades); $ciudad++){
+                          ?>
+                              <option value="<?php echo $datosCiudades[$ciudad]['id_ciudad'] ?>"><?php echo $datosCiudades[$ciudad]['nombre_ciudad'] ?></option>
+                          <?php
+                              }
+                          ?>
+                          
+                        </select>
+                        <div class="valid-feedback">Correcto</div>
+                        <div class="invalid-feedback">Ingrese datos correctos</div>
+                      </div>
                   </div>
-                </div>
+                <!-- Estado-->
                 <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">¿Activo?</label>
-                  <div class="col-lg-9">
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      <label class="col-lg-3 col-form-label form-control-label">Estado: </label>
+                      <div class="col-lg-9 pt-2">
+                        <select class="custom-select" name="estado" required>
+                          <option selected disabled value="">Seleccione</option>
+                          <option name="estado" value="1" >Activo</option>
+                          <option name="estado" value="0" >Inactivo</option>
+                        </select>
+                      </div>
                     </div>
-                  </div>
-                </div>
+
                 <div class="form-group row">
                   <div class="col-lg-12 text-center">
-                    <button type="submit" class="btn btn-primary" value="Save Changes">Enviar</button>
+                    <button type="submit" class="btn btn-primary" name="guardar" value="Save Changes">Guardar</button>
                     <button type="reset" class="btn btn-secondary" value="Cancel">Cancelar</button>
                   </div>
                 </div>

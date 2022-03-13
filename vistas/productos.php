@@ -1,3 +1,6 @@
+<?php
+  include_once('../controladores/controladorProductos.php');
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -77,7 +80,7 @@
           </nav>
     </header>
     <!--Pesta;as de la tabla-->
-	<div class="container">
+	<div class="container-lg">
         <div class="mx-auto col-sm-12 main-section" id="myTab" role="tablist">
             <ul class="nav nav-tabs justify-content-center">
                 <li class="nav-item">
@@ -115,22 +118,28 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Carreta de Mano</td>
-                                        <td>Truper</td>
-                                        <td>Construccion</td>
-                                        <td>FerreProv</td>
-                                        <td>1</td>
-                                        <td>150.00</td>
-                                        <td>200.00</td>
-                                        <td>20</td>
-                                        <td>0.00</td>
-                                        <td>Activo</td>
-                                        <td>
-                                            <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
-                                        </td>
-                                    </tr>
+                                    <?php
+                                        $datos= listarProducto();
+                                        for($i=0;$i < sizeof($datos);$i++){?>
+                                        <tr class="text-center">
+                                            <td><?php echo $datos[$i]["id_producto"] ?></td>
+                                            <td><?php echo $datos[$i]["descripcion_producto"] ?></td>
+                                            <td><?php echo $datos[$i]["descripcion_marca"] ?></td>
+                                            <td><?php echo $datos[$i]["descripcion_categoria"] ?></td>
+                                            <td><?php echo $datos[$i]["nom_prov"] ?></td>
+                                            <td><?php echo $datos[$i]["cantidad_por_unidad"] ?></td>
+                                            <td><?php echo $datos[$i]["costo_producto"] ?></td>
+                                            <td><?php echo $datos[$i]["precio_actual"] ?></td>
+                                            <td><?php echo $datos[$i]["stock"] ?></td>
+                                            <td><?php echo $datos[$i]["descuento"] ?></td>
+                                            <td><?php echo $datos[$i]["estado"] ?></td>
+                                            
+                                            <td class="text-center">
+                                            <a href="./productosActualizar.php?id=<?php echo $datos[$i]['id_producto']?>"><i class="fas fa-edit"></i></a>  | 
+                                            <a href="../controladores/controladorProductos.php?id_producto=<?php echo $datos[$i]['id_producto']?>"><i class="fas fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -146,118 +155,144 @@
                         </div>
                         <div class="card-body">
                             <!--Inicio Formulario-->
-                            <form class="form needs-validation" novalidate role="form" autocomplete="off" id="fromulario" >
+                            <form class="form needs-validation" action="../controladores/controladorProductos.php" method="POST" novalidate role="form" autocomplete="off" id="fromulario" >
+                                <!-- Nombre-->
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Nombre Producto: </label>
                                     <div class="col-lg-9">
-                                        <input id="nombre" class="form-control" type="text"  maxlength="60" required>
+                                        <input id="nombre" class="form-control" name="descripcion" type="text"  maxlength="60" required>
                                         <div class="valid-feedback">Correcto</div>
                                         <div class="invalid-feedback">Ingrese datos correctos</div>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3  col-form-label form-control-label">Descripcion: </label>
-                                    <div class="col-lg-9">
-                                        <textarea required class="form-control" name="descripcion" id="descripcion" maxlength="200" ></textarea>
-                                        <div class="valid-feedback">Correcto</div>
-                                        <div class="invalid-feedback">Ingrese datos correctos</div>
-                                    </div>
-                                </div>
+                                <!-- Marca-->
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Marca:</label>
                                     <div class="col-lg-9">
-                                        <select class="custom-select" required>
-                                            <option selected disabled value="">Seleccione una Opcion</option>
-                                            <option value="1">TRUPPER</option>
-                                            <option value="2">Rotoplas</option>
-                                        </select>
+                                    <select class="custom-select custom-select-lg mb-3" name="marca" required>
+                                    <option selected disabled value="">Seleccione</option>
+                                        <?php
+                                        $datosMarcas = listarMar();
+                                        for($marca = 0; $marca < sizeof($datosMarcas); $marca++){
+                                        ?>
+                                            <option value="<?php echo $datosMarcas[$marca]['id_marca'] ?>"><?php echo $datosMarcas[$marca]['descripcion_marca'] ?></option>
+                                        <?php
+                                            }
+                                        ?>
+                                    </select>
                                         <div class="valid-feedback">Correcto</div>
                                         <div class="invalid-feedback">Ingrese datos correctos</div>
                                     </div>
                                 </div>
+                                <!-- Categoria-->
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Categoria:</label>
                                     <div class="col-lg-9">
-                                        <select class="custom-select" required>
-                                            <option selected disabled value="">Seleccione una Opcion</option>
-                                            <option value="1">Agricultura</option>
-                                            <option value="2">Soldadura</option>
-                                        </select>
+                                    <select class="custom-select custom-select-lg mb-3" name="categoria" required>
+                                        <option selected disabled value="">Seleccione</option>
+                                        <?php
+                                        $datosCategoria = listarCat();
+                                        for($categoria = 0; $categoria < sizeof($datosCategoria); $categoria++){
+                                        ?>
+                                            <option value="<?php echo $datosCategoria[$categoria]['id_categoria'] ?>"><?php echo $datosCategoria[$categoria]['descripcion_categoria'] ?></option>
+                                        <?php
+                                            }
+                                        ?>
+                                    </select>
                                         <div class="valid-feedback">Correcto</div>
                                         <div class="invalid-feedback">Ingrese datos correctos</div>
                                     </div>
                                 </div>
+                                <!-- Proveedor-->
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Proveedor:</label>
                                     <div class="col-lg-9">
-                                        <select class="custom-select" required>
-                                            <option selected disabled value="">Seleccione una Opcion</option>
-                                            <option value="1">FerreProv</option>
-                                        </select>
+                                    <select class="custom-select custom-select-lg mb-3" name="proveedor" required>
+                                        <option selected disabled value="">Seleccione</option>
+                                        <?php
+                                        $datosProveedor = listarProv();
+                                        for($proveedor = 0; $proveedor < sizeof($datosProveedor); $proveedor++){
+                                        ?>
+                                            <option value="<?php echo $datosProveedor[$proveedor]['id_prov'] ?>"><?php echo $datosProveedor[$proveedor]['nom_prov'] ?></option>
+                                        <?php
+                                            }
+                                        ?>
+                                    </select>
                                         <div class="valid-feedback">Correcto</div>
                                         <div class="invalid-feedback">Ingrese datos correctos</div>
                                     </div>
                                 </div>
+                                <!-- C/U-->
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Cantidad por Unidad: </label>
                                     <div class="col-lg-9">
-                                        <input id="nombre" class="form-control" type="text"  maxlength="60" required>
+                                        <input class="form-control" type="text" name="CU" required>
                                         <div class="valid-feedback">Correcto</div>
                                         <div class="invalid-feedback">Ingrese datos correctos</div>
                                     </div>
                                 </div>
+                                <!-- Costo-->
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Costo:</label>
                                     <div class="col-lg-9">
-                                        <input class="form-control" type="number" step="any" min="1" required>
+                                        <input class="form-control" type="number" name="costo" step="any" min="1" required>
                                         <div class="valid-feedback">Correcto</div>
                                         <div class="invalid-feedback">Ingrese datos correctos</div>
                                     </div>
                                 </div>
+                                <!-- Precio Actual-->
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Precio Actual: </label>
                                     <div class="col-lg-9">
-                                        <input class="form-control" type="number" step="any" min="1" required>
+                                        <input class="form-control" name="precio" type="number" step="any" min="1" required>
                                         <div class="valid-feedback">Correcto</div>
                                         <div class="invalid-feedback">Ingrese datos correctos</div>
                                     </div>
                                 </div>
+                                <!-- Stock-->
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Stock: </label>
                                     <div class="col-lg-9">
-                                        <input class="form-control" type="number" min="1" required>
+                                        <input class="form-control" name="stock" type="number" min="1" required>
                                         <div class="valid-feedback">Correcto</div>
                                         <div class="invalid-feedback">Ingrese datos correctos</div>
                                     </div>
                                 </div>
-                                
+                                <!-- Descuento-->
                                 <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Descuento</label>
+                                    <label class="col-lg-3 col-form-label form-control-label">Descuento: </label>
                                     <div class="col-lg-9">
-                                        <select class="custom-select" required>
-                                            <option selected disabled value="">Seleccione una Opcion</option>
-                                            <option value="1">0%</option>
-                                            <option value="2">10%</option>
+                                        <input class="form-control" name="descuento" type="number" step="any" min="0" required>
+                                        <div class="valid-feedback">Correcto</div>
+                                        <div class="invalid-feedback">Ingrese datos correctos</div>
+                                    </div>
+                                </div>
+                                <!-- Estado-->
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Estado: </label>
+                                    <div class="col-lg-9 pt-2">
+                                        <select class="custom-select" name="estado" required>
+                                        <option selected disabled value="">Seleccione</option>
+                                        <option name="estado" value="1" >Activo</option>
+                                        <option name="estado" value="0" >Inactivo</option>
                                         </select>
+                                    </div>
+                                    </div>
+                                <!-- URL IMAGEN-->
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">URL Imagen: </label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" name="imagen" required>
                                         <div class="valid-feedback">Correcto</div>
                                         <div class="invalid-feedback">Ingrese datos correctos</div>
-                                    </div>
-                                </div>
-                                
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">¿Activo?</label>
-                                    <div class="col-lg-9">
-                                        <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                        </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <div class="col-lg-12 text-center">
                                         <br><br>
-                                        <button class="btn btn-secondary" type="reset">Cancelar</button>
-                                        <button class="btn btn-primary" type="submit">Guardar</button>
+                                        <button type="submit" id="guardar" name="guardar" class="btn btn-primary">Guardar</button>
+                                        <button type="reset" class="btn btn-secondary" value="Cancel">Cancelar</button>
                                     </div>
                                 </div>
                             </form>

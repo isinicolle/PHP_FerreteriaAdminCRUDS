@@ -1,6 +1,8 @@
+<?php
+  include_once('../controladores/controladorCategorias.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <title>Categorias</title>
   <meta charset="utf-8" />
@@ -36,7 +38,6 @@
    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css"/>
    <script type="text/javascript">
        $(document).ready(function() {
-           //Asegurate que el id que le diste a la tabla sea igual al texto despues del simbolo #
            $('#userList').DataTable();
        } );
    </script>
@@ -85,10 +86,8 @@
           <a class="nav-link" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form"
             aria-selected="true"><strong>Ingreso Categorias</strong></a>
         </li>
-       
       </ul>
 
-     
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
           <div class="card">
@@ -99,7 +98,7 @@
               <div class="table-responsive">
                 <table id="userList" class="table table-bordered table-hover table-striped">
                   <thead class="thead-light">
-                    <tr>
+                    <tr class="text-center">
                       <th scope="col">Id</th>
                       <th scope="col">Descripcion</th>
                       <th scope="col">Estado Categoria</th>
@@ -107,14 +106,19 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Agricultura</td>
-                      <td>Activo</td>
-                      <td>
-                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
-                      </td>
-                    </tr>
+                  <?php
+                   $datos= listarCategorias();
+                    for($i=0;$i < sizeof($datos);$i++){?>
+                      <tr class="text-center">
+                        <td><?php echo $datos[$i]["id_categoria"] ?></td>
+                        <td><?php echo $datos[$i]["descripcion_categoria"] ?></td>
+                        <td><?php echo $datos[$i]["estado"] ?></td>
+                        <td>
+                         <a href="./categoriasActualizar.php?id=<?php echo $datos[$i]['id_categoria']?>"><i class="fas fa-edit"></i></a>  | 
+                         <a href="../controladores/controladorCategorias.php?id_categoria=<?php echo $datos[$i]['id_categoria']?>"><i class="fas fa-trash"></i></a>
+                        </td>
+                      </tr>
+                    <?php } ?>
                   </tbody>
                 </table>
               </div>
@@ -127,26 +131,30 @@
               <h4>Ingreso de Categoria</h4>
             </div>
             <div class="card-body">
-              <form class="form needs-validation" id="form1" method="post" role="form" autocomplete="off" novalidate>
-                <div class="form-group row">
+              <form class="form needs-validation"  action="../controladores/controladorcategorias.php"  method="POST" role="form" autocomplete="off" novalidate>
+                  <!-- Descripcion-->
+                  <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">Descripcion de la Categoria: </label>
                   <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
+                    <input class="form-control" type="text" id="descripcion" pattern="[a-zA-Z ]+" name="descripcion" required>
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">¿Activo?</label>
-                  <div class="col-lg-9">
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                  <!-- Estado-->
+                  <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label">Estado: </label>
+                      <div class="col-lg-9 pt-2">
+                        <select class="custom-select" name="estado" required>
+                          <option selected disabled value="">Seleccione</option>
+                          <option name="estado" value="1" >Activo</option>
+                          <option name="estado" value="0" >Inactivo</option>
+                        </select>
+                      </div>
                     </div>
-                  </div>
-                </div>
 
                 <div class="form-group row">
                   <div class="col-lg-12 text-center">
-                    <button type="submit" class="btn btn-primary" value="Save Changes">Enviar</button>
+                    <button type="submit" id="guardar" name="guardar" class="btn btn-primary">Guardar</button>
                     <button type="reset" class="btn btn-secondary" value="Cancel">Cancelar</button>
                   </div>
                 </div>
