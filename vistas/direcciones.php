@@ -126,11 +126,10 @@
                 <td><?php echo $datos[$i]["id_ciudad"];?></td>
                 <td><?php echo $datos[$i]["id_usuarioCliente"];?></td>
                 <td><?php echo $datos[$i]["direccion_opcional"];?></td>
-                <td>
-                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
-                      </td>
-
+                
+                <td><a href="../controladores/controladorDirecciones.php?id_direccionEnvio=<?php echo $datos[$i]["id_direccionEnvio"]?>">Eliminar</a></td>
               
+                      
                   
                      
             
