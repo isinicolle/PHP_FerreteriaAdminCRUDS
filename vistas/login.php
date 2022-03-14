@@ -19,16 +19,6 @@
 
 </head>
 <body>
-    <SCRIPT  language=JavaScript> 
-        function go(){
-        
-        if (document.form.password.value=='CONTRASEÑA' && document.form.login.value=='USUARIO'){ 
-                document.form.submit(); 
-
-            } 
-        } 
-    </SCRIPT> 
-
         <div class="modal fade text-center" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content text" id="modalerror">
@@ -49,31 +39,32 @@
         </div>
 
         <div class="modal-dialog">
-            <div class="col-sm-8 main-section">
+            <div class="col-sm-9 main-section">
                 <div class="modal-content">
                     <div class="container pb-5">
-                        <h1 data-text="PARILLA'S">Ferretea</h1>
+                        <h1 data-text="Ferretea">Ferretea</h1>
                     </div>
                     <div class="col-12 user-img aling-center" >
                         <img src="../bootstrap/img/user.png">
                     </div>
                      <!--aca en la ACTION va ir el formulario al que vamos a ir-->
-                    <form name=form class="col-12" action="./index.html">
+                    <form name='form' class="col-12" action="../controladores//controladorLogin.php" method="post">
                         <!--Usuario-->
                         <div class="form-group" id="user-group">
-                            <input required type="text" class="form-control" placeholder="Nombre de usuario" name="login"/>
+                            <input required type="text" class="form-control" placeholder="Username" name="login"/>
                         </div>
-                        <!--Contrasena-->
+                        <!--Contraseña-->
                         <div class="form-group" id="contrasena-group">
-                            <input required type="password" class="form-control" placeholder="Contraseña" name="password"/>
+                            <input required type="password" class="form-control" placeholder="Password" name="password"/>
                         </div>
-
-                        <button type="button" onclick=go() class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                        <i class="fas fa-sign-in-alt"></i> Ingresar</button>
+                      <!-- <input type="submit" onclick=go() class="btn btn-primary" name='save' data-toggle="modal" data-target="#exampleModal"> -->
+                        <input type="submit" class="btn btn-primary" name='save' data-toggle="modal" data-target="#exampleModal">
                     </form>
-                    <div class="col-12 forgot" id="olvido">
-                        <a href="#">¿Recordar contraseña?</a>
+                   <!--
+                     <div class="col-12 forgot" id="olvido">
+                        <a href="#">I forgot my password?</a>
                     </div>
+                   -->
                 </div>
             </div>
         </div>

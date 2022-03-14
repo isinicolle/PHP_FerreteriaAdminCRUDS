@@ -44,7 +44,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary" > <a style="text-decoration: none;color: #fff;" href="./vistas/login.html">Cerrar sesión </a></button>
+            <button type="button" class="btn btn-primary" > <a style="text-decoration: none;color: #fff;" href="./vistas/login.php">Cerrar sesión </a></button>
           </div>
         </div>
       </div>
