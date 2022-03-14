@@ -19,7 +19,7 @@
             
             from Venta v join Clientes c on
             v.id_cliente = c.id_cliente"  ;
-            foreach ($this->bd->bd->query($query) as $res){
+            foreach ($this->bd->db->query($query) as $res){
                 $this->Ventas[]= $res;
             }
             return $this->Ventas;             

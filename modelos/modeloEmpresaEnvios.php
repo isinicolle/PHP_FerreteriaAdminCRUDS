@@ -21,7 +21,7 @@
 
         public function getCiudades(){
             $query = "select * from Ciudades"  ;
-            foreach ($this->bd->bd->query($query) as $res){
+            foreach ($this->bd->db->query($query) as $res){
                 $this->Ciudades[]= $res;
             }
             return $this->Ciudades;             
@@ -29,7 +29,7 @@
         }
         public function getDepartamentos($idDepartamento){
             $query = "select * from Departamentos "  ;
-            foreach ($this->bd->bd->query($query) as $res){
+            foreach ($this->bd->db->query($query) as $res){
                 $this->Departamentos[]= $res;
             }
             return $this->Departamentos;             
@@ -45,7 +45,7 @@
             join Departamentos d 
             on 
             c.id_departamento = d.id_departamento ";
-            foreach($this->bd->bd->query($query) as $res) {
+            foreach($this->bd->db->query($query) as $res) {
                 $this->EmpresasEnvio[] = $res;
             }
             return $this->EmpresasEnvio;
@@ -74,7 +74,7 @@
             ,'$correo')";
            
           
-            $res = $this->bd->bd->query($query);
+            $res = $this->bd->db->query($query);
             if ($res){
                 return true;
             }
@@ -87,7 +87,7 @@
                 SELECT * From EmpresasEnvio where id_empresaEnvio=$id
             ";
             
-            foreach($this->bd->bd->query($query) as $res) {
+            foreach($this->bd->db->query($query) as $res) {
                 $this->EmpresasEnvio[] = $res;
             }
             return $this->EmpresasEnvio;
@@ -108,7 +108,7 @@
                 ,[correo_empresa] = '$correo'
             WHERE id_empresaEnvio=$idEmpresa";
              
-            $res =  $this->bd->bd->query($query);
+            $res =  $this->bd->db->query($query);
             if($res){
                 return true;
             }
@@ -119,7 +119,7 @@
         {
             $query = " DELETE FROM [dbo].[EmpresasEnvio]
               WHERE id_empresaEnvio=$idEmpresa";
-            $res = $this->bd->bd->query($query);
+            $res = $this->bd->db->query($query);
             if($res){
                 return true;
             }
@@ -131,7 +131,7 @@
             $query = "UPDATE [dbo].[EmpresasEnvio]
             SET [estado] = false
             WHERE id_empresaEnvio=$idEmpresa";
-            $res = $this->bd->bd->query($query);
+            $res = $this->bd->db->query($query);
             if($res){
                 return true;
             }
