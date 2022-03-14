@@ -16,25 +16,27 @@
             require_once("../vistas/clientes.php");
         }
 
-       /* function Actualizar($id,$nom_cliente, $apellido_cliente, $RTN,$direccion_cliente , $id_ciudad, $tel_cliente,$estado,$DNI_Cliente){
+       function Actualizar($id,$nom_cliente, $apellido_cliente, $RTN,$direccion_cliente , $id_ciudad, $tel_cliente,$estado,$DNI_Cliente)
+       {
             require_once("../modelos/modeloclientes.php");
             $clientes = new Modeloclientes();
             $datos = $clientes->setActualizar($id,$nom_cliente, $apellido_cliente, $RTN,$direccion_cliente , $id_ciudad, $tel_cliente,$estado,$DNI_Cliente);
-            require_once("../vistas/clientes.php");
-        }*/
+            require_once("../vistas/clientes.php"); }
+        
 
     
     }
 
-    function Listar1($id){
+    function Listar1($id)
+    {
         require_once("../modelos/modeloclientes.php");
         $clientes = new Modeloclientes();
         $datos = $clientes->getclientes1($id);
         return $datos;
     }
 
-
-    if(isset($_GET['id_cliente'])){
+    if(isset($_GET['id_cliente']))
+    {
         require_once("../modelos/modeloclientes.php");
         $clientes = new Modeloclientes();
         $id = $_GET['id_cliente'];
@@ -43,9 +45,13 @@
         return  $clientes->setEliminar($id);  
     }
 
+    
+
+
 
        //Actualizar
-       if(isset($_POST['update'])){
+       if(isset($_POST['update']))
+       {
         require_once("../modelos/modeloclientes.php");
         $clientes = new Modeloclientes();
 
@@ -62,8 +68,8 @@
         
         
 
-        header('Location: ../vistas/clientes.php');
-        return $clientes->setActualizar($id,$nom_cliente, $apellido_cliente, $RTN,$direccion_cliente , $id_ciudad, $tel_cliente,$estado,$DNI_Cliente);
+       header('Location: ../vistas/clientes.php');
+        return $clientes->setActualizar($id,$nombre, $apellido, $rtn,$direccion , $ciudad, $telefono,$estado,$dni);
     }
 
 ?>

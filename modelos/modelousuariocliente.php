@@ -31,6 +31,24 @@ class Modeloclientes {
         $this->db = null;
     }
 
+    public function getclientes1($id) {
+
+        // self::setNames();
+         $sql = "SELECT  id_usuarioCliente
+         ,nombre_usuario
+         ,contraenia_usuario
+         ,id_cliente
+         ,correo_usuario
+         ,estado
+     FROM [dbo].[usuariosClientes] WHERE id_usuarioCliente = '$id'" ;
+         foreach ($this->db->query($sql) as $res) {
+             $this->clientes[] = $res;
+         }
+         return $this->clientes;
+         $this->db = null;
+     }
+ 
+
     public function setGuardar($nombre_usuario, $contraenia_usuario, $id_cliente,$correo_usuario) {
 
         //self::setNames();
@@ -60,7 +78,7 @@ class Modeloclientes {
            ,[id_cliente] = '$id_cliente'
            ,[correo_usuario] = '$correo_usuario'
            ,[estado] = '$estado'
-      WHERE [id_usuarioCliente] = $id";
+      WHERE [id_usuarioCliente] = '$id'";
         $result = $this->db->query($sql);
 
         if ($result) {
