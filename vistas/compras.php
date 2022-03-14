@@ -211,13 +211,11 @@
                                  }
                                  function descuento()
                                 {
-
                                   document.getElementById('Inputporcentajedescue').value=((document.getElementById('InputDescuent').value /100)*document.getElementById('Inputsubtotal').value)
                                   document.getElementById('Inputmonto').value=document.getElementById('Inputsubtotal').value-document.getElementById('Inputporcentajedescue').value + document.getElementById('InputporISV').value
                                 }
                                 function ISV()
                                 {
-
                                   document.getElementById('InputporISV').value=((document.getElementById('InputISV').value /100)*document.getElementById('Inputsubtotal').value)
                                   document.getElementById('Inputmonto').value=parseFloat(document.getElementById('Inputsubtotal').value)+parseFloat(document.getElementById('InputporISV').value) - document.getElementById('Inputporcentajedescue').value
                                 }
@@ -243,9 +241,7 @@
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                     <input class="form-control" type="text" id="Inputporcentajedescue" value="0"  disabled required >
-                  </div>
-                  
-                 
+                  </div>                              
                 </div>
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">ISV: </label>
@@ -265,8 +261,7 @@
                   </div>
                 </div>
                 <?php
-                if(isset($_REQUEST['enviar'])) {
-                                        
+                if(isset($_REQUEST['enviar'])) {                                      
                                           $id_empleado= 29;                
                                           $isv = $_REQUEST['InputISV'];
                                           $descuento = $_REQUEST["InputDescuent"];
@@ -282,15 +277,12 @@
                <button class="btn btn-primary" method="post"  id="enviar"  name="enviar">Enviar</button></a>
                     <button type="reset" class="btn btn-secondary" value="Cancel">Cancelar</button>
                   </div>
-                </div>
-               
+                </div>              
               </form>
               <script src="../bootstrap/js/compras.js"></script>
             </div>
           </div>
-        </div>
-       
-
+        </div>       
       <div class="tab-pane fade " id="list" role="tabpanel" aria-labelledby="list-tab">
       <div class="card">
             <div class="card-header">
@@ -327,16 +319,14 @@
                 <td><?php echo $listarCompras[$i]["cantidad"];?></td>
                 <td><?php echo $listarCompras[$i]["precio"];?></td>
                 <td><?php echo $listarCompras[$i]["Total"];?></td>
-              
                 <td>
-                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i id="btneliminar" class="fas fa-trash"></i></a>
+                      <a href="#"><i class="fas fa-edit"></i></a> |
+                       <a href="../controladores/controladorcompras.php?idcompra=<?php echo $listarCompras[$i]["id_compra"]?>"><i id="btneliminar" class="fas fa-trash"></i></a>
                       </td>
                 </tr>               
                 <?php } ?>
                 <?php
-                if(isset($_REQUEST['btneliminar'])) {
-                 
-       
+                if(isset($_REQUEST['btneliminar'])) {             
                 }?>
 
                   </tbody>
