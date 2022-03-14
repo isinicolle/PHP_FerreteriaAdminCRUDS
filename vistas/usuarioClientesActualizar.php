@@ -1,11 +1,6 @@
 <?php
   include_once('../plantilla/encabezadousuarioclientes.php');
-
-?>
-
-<?php
-  include_once('../plantilla/encabezadoclientes.php');
-  include_once('../controladores/controladorclientes.php');
+  include_once('../controladores/controladorusuariocliente.php');
   
   
   if(isset($_GET['id'])){
@@ -14,19 +9,18 @@
     foreach (Listar1($idcli) as $row){
         $id =  $row[0];
         $nombre =  $row[1];
-        $apellido =  $row[2];
-        $rtn =  $row[3];
-        $direccion =$row[4];
-        $ciudad = $row[5];
-        $telefono =$row[6];
-        $estado = $row[7];
-        $dni = $row[8];
+        $clave =  $row[2];
+        $cliente=  $row[3];
+        $correo =$row[4];
+        $estado = $row[5];
+     
      
     }
   }
- 
 
 ?>
+
+
 
   <div class="container">
         <div class="mx-auto main-section" id="myTab" role="tablist">
@@ -46,7 +40,7 @@
               </div>
               <div class="card-body">
 
-                <form class="form needs-validation" id="form1" action="../controladores/controladorclientes.php?id=<?php echo $_GET['id']?>" method="POST" role="form" autocomplete="off" novalidate>               
+                <form class="form needs-validation" id="form1" action="../controladores/controladorusuariocliente.php?php echo $_GET['id']?>" method="POST" role="form" autocomplete="off" novalidate>               
                   <!-- Id-->
                   <div class="form-group row">
                       <label class="col-lg-3 col-form-label form-control-label">Id</label>
@@ -68,9 +62,9 @@
 
                   <!-- id ciudad-->
                   <div class="form-group row">
-                      <label class="col-lg-3 col-form-label form-control-label">Apellido</label>
+                      <label class="col-lg-3 col-form-label form-control-label">Clave</label>
                       <div class="col-lg-9">
-                        <input class="form-control" type="text" value="<?php echo  $apellido ?>" id="InputApe" pattern="[a-zA-Z ]+" name="InputApe" required>
+                        <input class="form-control" type="text" value="<?php echo  $clave ?>" id="InputApe" name="InputApe" required>
                         <div class="valid-feedback">Correcto</div>
                         <div class="invalid-feedback">Ingrese datos correctos</div>
                       </div>
@@ -78,9 +72,9 @@
 
                   <!-- id usuario-->
                   <div class="form-group row">
-                      <label class="col-lg-3 col-form-label form-control-label">RTN</label>
+                      <label class="col-lg-3 col-form-label form-control-label">Cliente</label>
                       <div class="col-lg-9">
-                        <input class="form-control" type="text"value="<?php echo   $rtn ?>" id="InputRTN"  name="InputRTN" required>
+                        <input class="form-control" type="text"value="<?php echo   $cliente ?>" id="InputRTN"  name="InputRTN" required>
                         <div class="valid-feedback">Correcto</div>
                         <div class="invalid-feedback">Ingrese datos correctos</div>
                       </div>
@@ -88,9 +82,9 @@
 
                      <!-- direccion opcional-->
                   <div class="form-group row">
-                      <label class="col-lg-3 col-form-label form-control-label">Direccion </label>
+                      <label class="col-lg-3 col-form-label form-control-label">Correo </label>
                       <div class="col-lg-9">
-                        <input class="form-control" type="text" value="<?php echo $direccion?>" id="InputDireccion"  pattern="[a-zA-Z ]+" name="InputDireccion" required>
+                        <input class="form-control" type="text" value="<?php echo $correo?>" id="InputDireccion"   name="InputDireccion" required>
                         <div class="valid-feedback">Correcto</div>
                         <div class="invalid-feedback">Ingrese datos correctos</div>
                       </div>
@@ -100,43 +94,26 @@
                     <div class="form-group row">
                       <label class="col-lg-3 col-form-label form-control-label">Ciudad</label>
                       <div class="col-lg-9">
-                        <input class="form-control" type="number" value="<?php echo  $ciudad ?>" id="InputCiudad"  name="InputCiudad" required>
+                        <input class="form-control" type="number" value="<?php echo  $estado ?>" id="Inputestado"  name="InputCiudad" required>
                         <div class="valid-feedback">Correcto</div>
                         <div class="invalid-feedback">Ingrese datos correctos</div>
                       </div>
                     </div>
 
                      <!-- id ciudad-->
-                  <div class="form-group row">
-                      <label class="col-lg-3 col-form-label form-control-label">Telefono</label>
-                      <div class="col-lg-9">
-                        <input class="form-control" type="number" value="<?php echo  $telefono ?>" id="InputUsuario"  name="InputUsuario" required>
-                        <div class="valid-feedback">Correcto</div>
-                        <div class="invalid-feedback">Ingrese datos correctos</div>
-                      </div>
-                    </div>
+      
 
 
                     <div class="form-group row">
-                      <label class="col-lg-3 col-form-label form-control-label">Estado</label>
-                      <div class="col-lg-9">
-                        <input class="form-control" type="number" value="<?php echo  $estado ?>" id="InputEstado"  name="InputEstado" required>
-                        <div class="valid-feedback">Correcto</div>
-                        <div class="invalid-feedback">Ingrese datos correctos</div>
+                      <label class="col-lg-3 col-form-label form-control-label">Estado: </label>
+                      <div class="col-lg-9 pt-2">
+                        <select class="custom-select" name="estado" value="<?php echo $estado?>" required>
+                          <option selected disabled value="">Seleccione</option>
+                          <option name="estado" value="1">Activo</option>
+                          <option name="estado" value="0">Inactivo</option>
+                        </select>
                       </div>
                     </div>
-
-
-                    <div class="form-group row">
-                      <label class="col-lg-3 col-form-label form-control-label">RTN</label>
-                      <div class="col-lg-9">
-                        <input class="form-control" type="text"value="<?php echo  $dni ?>" id="InputDireccop"  name="InputDireccop" required>
-                        <div class="valid-feedback">Correcto</div>
-                        <div class="invalid-feedback">Ingrese datos correctos</div>
-                      </div>
-                    </div>
-                    
-                   
 
 
 
