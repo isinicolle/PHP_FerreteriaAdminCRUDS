@@ -16,12 +16,12 @@
             require_once("../vistas/clientes.php");
         }
 
-       /* function Actualizar($id,$nom_cliente, $apellido_cliente, $RTN,$direccion_cliente , $id_ciudad, $tel_cliente,$estado,$DNI_Cliente){
+       function Actualizar($id,$nom_cliente, $apellido_cliente, $RTN,$direccion_cliente , $id_ciudad, $tel_cliente,$estado,$DNI_Cliente){
             require_once("../modelos/modeloclientes.php");
             $clientes = new Modeloclientes();
             $datos = $clientes->setActualizar($id,$nom_cliente, $apellido_cliente, $RTN,$direccion_cliente , $id_ciudad, $tel_cliente,$estado,$DNI_Cliente);
             require_once("../vistas/clientes.php");
-        }*/
+        
 
     
     }

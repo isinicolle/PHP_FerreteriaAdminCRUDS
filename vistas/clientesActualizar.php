@@ -131,6 +131,29 @@
                       </div>
                     </div>
                     
+                    <?php
+                     include("../controladores/controladorclientes.php");
+                     $cliente= new ControladorClientes;
+
+                    if (isset($_REQUEST['update'])) {
+                      $id = $_REQUEST['id'];
+                      $direccion = $_REQUEST['InputDireccion'];
+                      $ciudad = $_REQUEST['InputCiudad'];
+                      $telefono = $_REQUEST['InputUsuario'];
+                      $dni = $_REQUEST['InputDireccop'];
+                      $rtn = $_REQUEST['InputRTN'];
+                      $estado = $_REQUEST['InputEstado'];
+                      $apellido = $_REQUEST['InputApe'];
+                      $nombre = $_REQUEST['InputNom'];
+                      
+
+              
+                      $datos=$cliente->Actualizar($id,$nombre,$apellido,$rtn,$direccion,$ciudad,$telefono,$estado,$dni);
+                   // $direccioness= new ControladorDirecciones;
+                   
+                  }
+                  
+                      ?>
 
 
 
