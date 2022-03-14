@@ -1,3 +1,6 @@
+<?php
+  include_once('../controladores/controladorMarcas.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,7 +54,7 @@
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
+            </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
             <a class="nav-link " aria-current="page" href="../index.php">Index</a>
@@ -99,8 +102,8 @@
             <div class="card-body">
               <div class="table-responsive">
                 <table id="userList" class="table table-bordered table-hover table-striped">
-                  <thead class="thead-light">
-                    <tr>
+                <thead class="thead-light">
+                    <tr class="text-center">
                       <th scope="col">Id</th>
                       <th scope="col">Descripcion</th>
                       <th scope="col">Estado Marca</th>
@@ -108,14 +111,19 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>TRUPPER</td>
-                      <td>Activo</td>
-                      <td>
-                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
-                      </td>
-                    </tr>
+                  <?php
+                   $datos= listarMarcas();
+                    for($i=0;$i < sizeof($datos);$i++){?>
+                      <tr class="text-center">
+                        <td><?php echo $datos[$i]["id_marca"] ?></td>
+                        <td><?php echo $datos[$i]["descripcion_marca"] ?></td>
+                        <td><?php echo $datos[$i]["estado"] ?></td>
+                        <td class="text-center">
+                         <a href="./marcasActualizar.php?id=<?php echo $datos[$i]['id_marca']?>"><i class="fas fa-edit"></i></a>  | 
+                         <a href="../controladores/controladorMarcas.php?id_marca=<?php echo $datos[$i]['id_marca']?>"><i class="fas fa-trash"></i></a>
+                        </td>
+                      </tr>
+                    <?php } ?>
                   </tbody>
                 </table>
               </div>
@@ -128,26 +136,30 @@
               <h4>Ingreso de Marcas</h4>
             </div>
             <div class="card-body">
-              <form class="form needs-validation" id="form1" method="post" role="form" autocomplete="off" novalidate>
+              <form class="form needs-validation" id="form1"  action="../controladores/controladorMarcas.php" method="POST" role="form" autocomplete="off" novalidate>
+                <!-- Descripcion-->
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">Descripcion de la Marca: </label>
                   <div class="col-lg-9">
-                    <input class="form-control" type="text" required>
+                    <input class="form-control" type="text" id="descripcion" pattern="[a-zA-Z ]+" name="descripcion" required>
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">¿Activo?</label>
-                  <div class="col-lg-9">
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                  <!-- Estado-->
+                  <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label">Estado: </label>
+                      <div class="col-lg-9 pt-2">
+                        <select class="custom-select" name="estado" required>
+                          <option selected disabled value="">Seleccione</option>
+                          <option name="estado" value="1" >Activo</option>
+                          <option name="estado" value="0" >Inactivo</option>
+                        </select>
+                      </div>
                     </div>
-                  </div>
-                </div>
 
                 <div class="form-group row">
                   <div class="col-lg-12 text-center">
-                    <button type="submit" class="btn btn-primary" value="Save Changes">Enviar</button>
+                    <button type="submit" class="btn btn-primary" id="guardar" name="guardar" value="Save Changes">Guardar</button>
                     <button type="reset" class="btn btn-secondary" value="Cancel">Cancelar</button>
                   </div>
                 </div>
