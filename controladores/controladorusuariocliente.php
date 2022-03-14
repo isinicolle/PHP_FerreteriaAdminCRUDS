@@ -11,27 +11,29 @@
 
         function Guardar($nombre_usuario, $contraenia_usuario, $id_cliente,$correo_usuario){
             require_once("../modelos/modelousuariocliente.php");
-            $direcciones = new Modeloclientes();
-            $datos = $direcciones->setGuardar($nombre_usuario, $contraenia_usuario, $id_cliente,$correo_usuario);
+            $clientes = new Modeloclientes();
+            $datos =  $clientes->setGuardar($nombre_usuario, $contraenia_usuario, $id_cliente,$correo_usuario);
             require_once("../vistas/usuarioClientes.php");
         }
 
         function Actualizar($id,$nombre_usuario, $contraenia_usuario, $id_cliente,$correo_usuario,$estado){
             require_once("../modelos/modelousuariocliente.php");
-            $direcciones = new Modeloclientes();
-            $datos = $direcciones->setActualizar($id,$nombre_usuario, $contraenia_usuario, $id_cliente,$correo_usuario,$estado);
+            $clientes = new Modeloclientes();
+            $datos =  $clientes->setActualizar($id,$nombre_usuario, $contraenia_usuario, $id_cliente,$correo_usuario,$estado);
             require_once("../vistas/usuarioClientes.php");
         }
 
 
-        function Eliminar($id ){
-            require_once("../modelos/modelousuariocliente.php");
-            $direcciones = new Modeloclientes();
-            $datos = $direcciones->setEliminar($id);
-            require_once("../vistas/usuarioClientes.php");
-        }
   
     }
     
+    if(isset($_GET['id_usuarioCliente'])){
+        require_once("../modelos/modelousuariocliente.php");
+        $clientes = new Modeloclientes();
+        $id = $_GET['id_usuarioCliente'];
+        header('Location: ../vistas/usuarioClientes.php');
+        
+        return  $clientes->setEliminar($id);  
+    }
 
 ?>
