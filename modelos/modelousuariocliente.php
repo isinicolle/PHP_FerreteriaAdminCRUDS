@@ -78,7 +78,7 @@ class Modeloclientes {
            ,[id_cliente] = '$id_cliente'
            ,[correo_usuario] = '$correo_usuario'
            ,[estado] = '$estado'
-      WHERE [id_usuarioCliente] = $id";
+      WHERE [id_usuarioCliente] = '$id'";
         $result = $this->db->query($sql);
 
         if ($result) {

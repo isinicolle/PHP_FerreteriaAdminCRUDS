@@ -47,10 +47,11 @@
         //Actualizar
         if(isset($_POST['update']))
         {
-            require_once("../modelos/modelousuariocliente.php");
-            $clientes = new Modeloclientes();
+
+        require_once("../modelos/modelousuariocliente.php");
+        $clientes = new Modeloclientes();
  
-         $id = $_GET['id'];
+        $id = $_GET['id'];
          $correo = $_POST['InputDireccion'];
          $idcliente = $_POST['InputRTN'];
          $clave = $_POST['InputApe'];
@@ -59,8 +60,8 @@
          
 
         
-        header('Location: ../vistas/usuarioClientes.php');
-         return $clientes->setActualizar($id,$usuario, $clave, $id_cliente,$correo,$estado);
+       header('Location: ../vistas/usuarioClientes.php');
+         return $clientes->setActualizar($id,$usuario, $clave, $idcliente ,$correo,$estado);
      }
 
 
