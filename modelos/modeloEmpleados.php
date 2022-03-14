@@ -1,9 +1,9 @@
 <?php
     class Empleados {
-        private $bd;
+        public $bd;
         private $empleados;
         public function __construct()
-        {
+        {   
             $this->bd = new PDO( "sqlsrv:server=andresmunicah.database.windows.net;database=ferreteria_MovilWeb", "adminUnicah", "rootUnicah1");
             $this->empleados = array();
         }

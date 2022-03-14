@@ -194,9 +194,9 @@
                       <div class="col-lg-9">
                         <div class="form-check form-check-inline">
                           <label class="col-form-label form-control-label">Si</label>
-                          <input class="form-check-input" type="radio" name="estado" value="<?php echo $estado?>" id="inlineCheckbox1"value ="1">
+                          <input class="form-check-input" type="radio" name="estado" id="inlineCheckbox1"value ="1" required>
                           <label class="col-form-label form-control-label">No</label>
-                          <input class="form-check-input" type="radio" name="estado"  id="inlineCheckbox1"value ="0">
+                          <input class="form-check-input" type="radio" name="estado" id="inlineCheckbox1"value ="0" required>
                         </div>
                       </div>
                     </div>
@@ -205,7 +205,7 @@
                       <label class="col-lg-3 col-form-label form-control-label">Ciudad</label>
                       <div class="col-lg-9">
                         <select class="custom-select custom-select-lg mb-3" name="id_ciudad" value="<?php echo $idCiudad?>" required>
-                          <option selected disabled value="">Seleccione una opción</option>
+                          <option selected disabled value="" >Seleccione una opción</option>
                           <option value="4">Tegucigalpa</option>
                           <option value="5">Comayagua</option>
                         </select>
@@ -217,8 +217,8 @@
                     <div class="form-group row">
                       <label class="col-lg-3 col-form-label form-control-label">Rol</label>
                       <div class="col-lg-9">
-                        <select class="custom-select custom-select-lg mb-3" name="id_rol"  required>
-                          <option selected disabled value="<?php echo $idRol?>">Seleccione una opción</option>
+                        <select class="custom-select custom-select-lg mb-3" name="id_rol" value="<?php echo $idRol?>" required>
+                          <option selected disabled value="" >Seleccione una opción</option>
                           <option value="1" >Ejecutivo</option>
                           <option value="3" >Administrador</option>
                         </select>
@@ -256,7 +256,7 @@
                     <div class="form-group row">
                       <div class="col-lg-12 text-center">
                         <input type='submit' class="btn btn-primary" name="update" value="Save Changes">
-                        <button type="reset" class="btn btn-secondary" value="Cancel">Cancelar</button>
+                        <button type="reset" class="btn btn-secondary" name="cancel"><a style="list-style: none; color: white; text-decoration: none;" href="../vistas/empleados.php">Cancelar</a></button>
                       </div>
                     </div>
                   </form>

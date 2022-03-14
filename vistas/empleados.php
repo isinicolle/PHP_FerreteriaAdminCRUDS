@@ -1,8 +1,6 @@
 <?php
  include_once('../controladores/controladorEmpleados.php');
- include_once('../conexion/conexionbd.php');
- $abrir = new Conexion();
- $conexion = $abrir->abrirCon();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,7 +69,7 @@
               <a class="nav-link " href="./ventas.php">Ventas</a>
               <a class="nav-link" href="./direcciones.php">Direcciones</a>
               <form class="d-flex">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Cerrar sesi&oacute;n</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" name="close">Cerrar sesi&oacute;n</button>
               </form>    
             </div>
           </div>
@@ -131,8 +129,8 @@
                               <td><?php echo $row[7]?></td>
                               <td><?php echo $row[8]?></td>
                               <td><?php echo $row[9]?></td>
-                              <td><a href="../vistas/formEmpleado.php?id=<?php echo $row[0]?>">Editar</a></td>
-                              <td><a href="../controladores/controladorEmpleados.php?id_empleado=<?php echo $row[0]?>">Eliminar</a></td>
+                              <td><a style="color: white; text-decoration: none;" href="../vistas/formEmpleado.php?id=<?php echo $row[0]?>">Editar</a></td>
+                              <td><a style="color: white;  text-decoration: none;" href="../controladores/controladorEmpleados.php?id_empleado=<?php echo $row[0]?>">Eliminar</a></td>
                         </tbody>
                         <?php
                             }
@@ -293,6 +291,23 @@
             </div>
           </div>
         </div>
+      </div>  
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Aviso</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Si cierra sesi&oacute;n podr&iacute;a perder los datos de compra.¿Desea continuar?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" > <a style="text-decoration: none;color: #fff;" href="./login.html">Cerrar sesión </a></button>
+          </div>
+        </div>
       </div>
+    </div>
   </body>
 </html>
