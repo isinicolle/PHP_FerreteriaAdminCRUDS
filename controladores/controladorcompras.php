@@ -18,6 +18,22 @@
         }
 
 
+        if (isset($_GET['idcompra'])){
+            $idcompra = $_GET['idcompra'];
+            $compra=  new ModeloCompras();
+            if ($Compras->setEliminar($idcompra)){
+                echo '<script>alert("Registro eliminado"</script>';
+                time_nanosleep(3,0);
+                header('Location:../vistas/compras.php');
+            }
+            else
+            {
+                echo 'Ocurrio un error inesperado';
+                time_nanosleep(3,0);
+                header('Location:../vistas/compras.php');
+            }
+        }
+
         function getcargardatos($idproducto_){
             require_once("../modelos/modelocompras.php");
             $Compras= new ModeloCompras();
@@ -41,15 +57,8 @@
             require_once("../vistas/compras.php");
         }
 
-        function Eliminar($id_compra){
-            require_once("../modelos/modelocompras.php");
-            $Compras = new ModeloCompras();
-            $datos = $Compras->setEliminar($id);
-            require_once("../vistas/compras.php");
-        }
+       
 
-
-  
     }
     
 
