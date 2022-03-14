@@ -30,6 +30,23 @@ class Modelodirecciones {
         $this->db = null;
     }
 
+
+    public function getdirecciones1($id) {
+
+        // self::setNames();
+         $sql = "SELECT [id_direccionEnvio]
+         ,[direccion]
+         ,[id_ciudad]
+         ,[id_usuarioCliente]
+         ,[direccion_opcional]
+     FROM [dbo].[DireccionesEnvio] WHERE id_direccionEnvio = $id";
+         foreach ($this->db->query($sql) as $res) {
+             $this->direcciones[] = $res;
+         }
+         return $this->direcciones;
+         $this->db = null;
+     }
+
     public function setGuardar($direccion, $id_ciudad, $id_usuarioCliente,$direccion_opcional ) {
 
         //self::setNames();

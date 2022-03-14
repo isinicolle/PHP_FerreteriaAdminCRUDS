@@ -53,13 +53,11 @@
                 <td><?php echo $datos[$i]["id_ciudad"];?></td>
                 <td><?php echo $datos[$i]["id_usuarioCliente"];?></td>
                 <td><?php echo $datos[$i]["direccion_opcional"];?></td>
-                
-                <td><a href="../controladores/controladorDirecciones.php?id_direccionEnvio=<?php echo $datos[$i]["id_direccionEnvio"]?>">Eliminar</a></td>
-              
-                      
-                  
-                     
-            
+                <td class="text-center">
+                         <a href="./direccionesActualizar.php?id=<?php echo $datos[$i]["id_direccionEnvio"]?>"><i class="fas fa-edit"></i></a>  | 
+                         <a href="../controladores/controladorDirecciones.php?id_direccionEnvio=<?php echo $datos[$i]["id_direccionEnvio"]?>"><i class="fas fa-trash"></i></a>
+                        </td>
+  
              
                 </tr>
                 <?php } ?>
