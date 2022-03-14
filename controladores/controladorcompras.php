@@ -1,4 +1,5 @@
 <?php
+  require_once("../modelos/modelocompras.php");
     class ControladorCompras  {
         public function __construct() {
         }
@@ -17,22 +18,8 @@
             return $datos;
         }
 
-
-        if (isset($_GET['idcompra'])){
-            $idcompra = $_GET['idcompra'];
-            $compra=  new ModeloCompras();
-            if ($Compras->setEliminar($idcompra)){
-                echo '<script>alert("Registro eliminado"</script>';
-                time_nanosleep(3,0);
-                header('Location:../vistas/compras.php');
-            }
-            else
-            {
-                echo 'Ocurrio un error inesperado';
-                time_nanosleep(3,0);
-                header('Location:../vistas/compras.php');
-            }
-        }
+ 
+        
 
         function getcargardatos($idproducto_){
             require_once("../modelos/modelocompras.php");
@@ -59,6 +46,22 @@
 
        
 
+    }
+    if (isset($_GET['idcompra'])){
+      
+        $idcompra = $_GET['idcompra'];
+        $compra=  new ModeloCompras();
+        if ($compra->setEliminar($idcompra)){
+            echo '<script>alert("Registro eliminado"</script>';
+            time_nanosleep(3,0);
+            header('Location:../vistas/compras.php');
+        }
+        else
+        {
+            echo 'Ocurrio un error inesperado';
+            time_nanosleep(3,0);
+            header('Location:../vistas/compras.php');
+        }
     }
     
 
