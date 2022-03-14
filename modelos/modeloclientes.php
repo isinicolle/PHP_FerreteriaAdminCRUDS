@@ -34,6 +34,26 @@ class Modeloclientes {
         $this->db = null;
     }
 
+    public function getclientes1($id) {
+
+        // self::setNames();
+         $sql = "SELECT id_cliente
+         ,nom_cliente
+         ,apellido_cliente
+         ,RTN
+         ,direccion_cliente
+         ,id_ciudad
+         ,tel_cliente
+         ,estado
+         ,DNI_Cliente
+     FROM [dbo].Clientes WHERE id_cliente = $id";
+         foreach ($this->db->query($sql) as $res) {
+             $this->clientes[] = $res;
+         }
+         return $this->clientes;
+         $this->db = null;
+     }
+
 
     public function setGuardar($nom_cliente, $apellido_cliente, $RTN,$direccion_cliente , $id_ciudad, $tel_cliente,$DNI_Cliente) {
 
