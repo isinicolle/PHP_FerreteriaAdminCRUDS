@@ -1,7 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php 
-include_once('../controladores/controladorEnvios.php')
+include_once('../controladores/controladorEnvios.php');
+if (isset($_GET['id'])){
+$idEnvio = $_GET['id'];
+$Envio = getEnvioId($idEnvio);
+
+$idVenta= $Envio[0][2];
+$numRastreo = $Envio[0][1];
+$idEmpresa = $Envio[0][3];
+}
+
+
+
 ?>
 <head>
   <title>Formulario de empleados</title>
@@ -42,73 +53,63 @@ include_once('../controladores/controladorEnvios.php')
        } );
    </script>
    <body>
-   <?php
-     include_once('../plantilla/encabezadoVistas.php');
-   ?>
+   <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../index.php">
+              <img width="120" class="d-inline-block align-text-top" src="../bootstrap/img/LogoParrilla.png">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+            <a class="nav-link " aria-current="page" href="../index.php">Index</a>
+              <a class="nav-link  " href="./productos.php">Productos</a>
+              <a class="nav-link" href="./proveedores.php">Proveedores</a>
+              <a class="nav-link" href="./categorias.php">Categorias</a>
+              <a class="nav-link" href="./marcas.php">Marcas</a>
+              <a class="nav-link " href="./clientes.php">Clientes</a>
+              <a class="nav-link" href="./usuarioClientes.php">Usuarios Clientes</a>
+              <a class="nav-link active" href="./envios.php">Envios / Empresas </a>
+              <a class="nav-link" href="./compras.php">Compras</a>
+              <a class="nav-link " href="./empleados.php">Empleados &Backslash; Usuarios</a>
+              <a class="nav-link " href="./ventas.php">Ventas</a>
+              <a class="nav-link" href="./direcciones.php">Direcciones</a>
+              <form class="d-flex">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Cerrar sesi&oacute;n</button>
+              </form>
+              
+            </div>
+          </div>
+        </div>
+      </nav>
+</header>
 <div class="container">
     <div class="mx-auto main-section" id="myTab" role="tablist">
       <ul class="nav nav-tabs justify-content-center">
+
         <li class="nav-item">
-          <a class="nav-link active" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list"
-            aria-selected="false"><strong>Tabla</strong></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form"
+          <a class="nav-link active" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form"
             aria-selected="true"><strong>Formulario</strong></a>
         </li>
       </ul>
 
       <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
-          <div class="card">
-            <div class="card-header">
-              <h4>Lista envíos</h4>
-            </div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table id="userList" class="table table-bordered table-hover table-striped">
-                  <thead class="thead-light">
-                    <tr>
-                      <th scope="col">Id</th>
-                      <th scope="col">Numero de rastreo</th>
-                      <th scope="col">Referencia de venta</th>
-                      <th scope="col">Empresa de envío</th>
-                      <th scope="col">Cliente</th>
-              
-                      <th scope="col">Accion</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php
-                     foreach(listar() as $row){?>
-                      <td><?php echo $row[0]?></td>
-                      <td><?php echo $row[1]?></td>
-                      <td><?php echo $row[2]?></td>
-                      <td><?php echo $row[3]?></td>
-                      <td><?php echo $row[4]?></td>
-                      <td><a href="../vistas/frmEnvios.php?id=<?php echo $row[0]?>">Editar</a></td>
-                      <td><a href="../controladores/controladorEnvios.php?idEnvioE=<?php echo $row[0]?>">Eliminar</a></td>
-                  </tbody>
-                  <?php
-                            }
-                           ?>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab">
+       
+        <div class="tab-pane fade show active" id="form" role="tabpanel" aria-labelledby="form-tab">
           <div class="card">
             <div class="card-header">
               <h4>Ingreso de envío</h4>
             </div>
             <div class="card-body">
               <form class="form needs-validation"  method="post" action="../controladores/controladorEnvios.php" role="form" autocomplete="off" novalidate>
-              <input type="hidden" name="Insertar"  hidden/>  
+              <input type="hidden" name="Modificar"  hidden/>
+              <input type="hidden" name="idEnvio" value=<?php echo $idEnvio?>  hidden/>    
               <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">Numero de rastreo</label>
                   <div class="col-lg-9">
-                    <input class="form-control" name="numRastreo" type="text" required>
+                    <input class="form-control" name="numRastreo" value=<?php echo $numRastreo ?> type="text" required>
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
@@ -116,7 +117,7 @@ include_once('../controladores/controladorEnvios.php')
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">Referencia de Venta</label>
                   <div class="col-lg-9">
-                    <input class="form-control" name="idVenta" type="text" required>
+                    <input class="form-control" value=<?php echo $idVenta ?> name="idVenta" type="text" required>
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
@@ -127,14 +128,14 @@ include_once('../controladores/controladorEnvios.php')
                   <select class="custom-select custom-select-lg mb-3" name="idEmpresa" required>
                     <?php foreach(getEmpresaEnvios() as $fila){ ?>
                       <option selected disabled value="">Seleccione una opción</option>
-                      <option value=<?php echo $fila[0] ?> ><?php echo $fila[1]; } ?></option>
+                      <option <?php if ($fila[0]==$idEmpresa) echo "selected"; else echo"";  ?> value=<?php echo $fila[0] ?> ><?php echo $fila[1]; } ?></option>
                     </select>
                   </div>
                 </div>
                 <div class="form-group row">
                   <div class="col-lg-12 text-center">
                     <button type="submit" class="btn btn-primary" value="Save Changes">Enviar</button>
-                    <button type="reset" class="btn btn-secondary" value="Cancel">Cancelar</button>
+                    <button type="button" onclick="location.href='./envios.php';" class="btn btn-secondary"  value="Cancel">Cancelar</button>
                   </div>
                 </div>
               </form>

@@ -1,14 +1,14 @@
 <?php
-    include_once('../modelos/modeloEnvio.php');
+    include_once('../modelos/modeloVentas.php');
     
     
     
     function listar()
     {
-        $Envios = new Envios();
-        return $Envios->getEnvios();
+        $Ventas = new Venta();
+        return $Ventas->getVentas();
     }
-    function getEmpresaEnvios(){
+   /* function getEmpresaEnvios(){
         $Empresas = new Envios();
         return $Empresas->getEmpresas();
     }
@@ -91,7 +91,7 @@
         }
 
     }
-
+*/
 
 
 ?>

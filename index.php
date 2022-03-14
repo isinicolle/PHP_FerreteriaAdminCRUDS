@@ -12,7 +12,7 @@
     
 <?php
   include_once('./plantilla/encabezado.php');
-  include_once('./conexion/conexionbd.php');
+  include_once('./conexion/conexionbd.php');  
 ?>
     <div class="container"> 
     <div class="main-content">

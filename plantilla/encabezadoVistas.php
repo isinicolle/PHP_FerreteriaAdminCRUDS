@@ -11,18 +11,18 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav">
               <a class="nav-link active" aria-current="page" href="index.php">Index</a>
-              <a class="nav-link  " href="./vistas/productos.php">Productos</a>
-              <a class="nav-link" href="./vistas/proveedores.php">Proveedores</a>
-              <a class="nav-link" href="./vistas/categorias.php">Categorias</a>
-              <a class="nav-link" href="./vistas/marcas.php">Marcas</a>
-              <a class="nav-link " href="./vistas/clientes.php">Clientes</a>
-              <a class="nav-link" href="./vistas/usuarioClientes.php">Usuarios Clientes</a>
-              <a class="nav-link" href="./vistas/envios.php">Envios </a>
-              <a class="nav-link" href="./vistas/empresasEnvio.php">Empresas </a>
-              <a class="nav-link" href="./vistas/compras.php">Compras</a>
-              <a class="nav-link " href="./vistas/empleados.php">Empleados &Backslash; Usuarios</a>
-              <a class="nav-link " href="./vistas/ventas.php">Ventas</a>
-              <a class="nav-link" href="./vistas/direcciones.php">Direcciones</a>
+              <a class="nav-link  " href="../vistas/productos.php">Productos</a>
+              <a class="nav-link" href="../vistas/proveedores.php">Proveedores</a>
+              <a class="nav-link" href="../vistas/categorias.php">Categorias</a>
+              <a class="nav-link" href="../vistas/marcas.php">Marcas</a>
+              <a class="nav-link " href="../vistas/clientes.php">Clientes</a>
+              <a class="nav-link" href="../vistas/usuarioClientes.php">Usuarios Clientes</a>
+              <a class="nav-link" href="../vistas/envios.php">Envios </a>
+              <a class="nav-link" href="../vistas/empresasEnvio.php">Empresas </a>
+              <a class="nav-link" href="../vistas/compras.php">Compras</a>
+              <a class="nav-link " href="../vistas/empleados.php">Empleados &Backslash; Usuarios</a>
+              <a class="nav-link " href="../vistas/ventas.php">Ventas</a>
+              <a class="nav-link" href="../vistas/direcciones.php">Direcciones</a>
                 <form class="d-flex">
                   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Cerrar sesi&oacute;n</button>
                 </form>

@@ -36,7 +36,12 @@
         public function setEnvio($numRastreo,$idVenta,$idEmpresasEnvio){
 
             $query = "INSERT INTO Envios(num_rastreo,id_venta,id_empresaEnvio) Values ('$numRastreo','$idVenta','$idEmpresasEnvio')";
-            $this->bd->bd->query($query);
+            $estado = $this->bd->bd->query($query);
+            if ($estado){
+                return true;
+            }
+            else
+            return false;
         }
         public function getEnvios(){
             $query = "
@@ -60,9 +65,19 @@
             return $this->Envios;
         }
 
+        public function getEnvioId($id){
+            $query = "
+                SELECT * From Envios where id_envio=$id
+            ";
+            foreach($this->bd->bd->query($query) as $res) {
+                $this->Envios[] = $res;
+            }
+            return $this->Envios;
+        }
+
         public function updateEnvio($idEnvio,$numRastreo,$idVenta,$idEmpresasEnvio)
         {
-            $query = "UPDATE Envios SET 
+            $query = "
             UPDATE [dbo].[Envios]
             SET [num_rastreo] = '$numRastreo'
             ,[id_venta] ='$idVenta'
