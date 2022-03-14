@@ -1,8 +1,8 @@
 <?php
-     Class Conexion
+    Class Conexion
     {
-          public $bd;
-        function abrirCon()
+        public $bd;
+        public function abrirCon()
         {
             try{
                  $this->bd = new PDO( "sqlsrv:server=andresmunicah.database.windows.net;database=ferreteria_MovilWeb", "adminUnicah", "rootUnicah1");
