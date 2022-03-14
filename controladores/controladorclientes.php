@@ -68,8 +68,8 @@
         
         
 
-        header('Location: ../vistas/clientes.php');
-        return $clientes->setActualizar($id,$nom_cliente, $apellido_cliente, $RTN,$direccion_cliente , $id_ciudad, $tel_cliente,$estado,$DNI_Cliente);
+       header('Location: ../vistas/clientes.php');
+        return $clientes->setActualizar($id,$nombre, $apellido, $rtn,$direccion , $ciudad, $telefono,$estado,$dni);
     }
 
 ?>
