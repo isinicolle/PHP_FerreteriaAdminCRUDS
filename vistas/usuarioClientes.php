@@ -132,9 +132,7 @@
                 <td><?php echo $datos[$i]["id_cliente"];?></td>
                 <td><?php echo $datos[$i]["correo_usuario"];?></td>
                 <td><?php echo $datos[$i]["estado"];?></td>
-                <td>
-                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-trash"></i></a>
-                      </td>
+                <td><a href="../controladores/controladorusuariocliente.php?id_usuarioCliente=<?php echo $datos[$i]["id_usuarioCliente"]?>">Eliminar</a></td>
 
         
            

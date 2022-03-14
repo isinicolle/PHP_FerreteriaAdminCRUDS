@@ -23,14 +23,15 @@
             require_once("../vistas/direcciones.php");
         }
 
-        function Eliminar($id ){
-            require_once("../modelos/modelodirecciones.php");
-            $direcciones = new Modelodirecciones();
-            $datos = $direcciones->setEliminar($id);
-            require_once("../vistas/direcciones.php");
-        }
-  
+      
     }
     
-
+    if(isset($_GET['id_direccionEnvio'])){
+        require_once("../modelos/modelodirecciones.php");
+        $direcciones = new Modelodirecciones();
+        $id = $_GET['id_direccionEnvio'];
+        header('Location: ../vistas/direcciones.php');
+        
+        return  $direcciones->setEliminar($id);  
+    }
 ?>
