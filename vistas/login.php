@@ -68,11 +68,15 @@ include_once('../controladores/controladorLogin.php');
                             ?>">
                         </div>
                         <div class="form-group">
-                            <input type="checkbox" class="form-control"  name="remember" value="<?php
+                                <p  style="color: #fff; font-size: 20px;text-align:center">
+                                ¿Desea recordar su usuario y contraseña?
+        
+                                </p>
+                            <input type="checkbox" class="form-control" name="remember" value="<?php
                                 if(isset($_COOKIE['remember'])){
                                     echo $_COOKIE['remember'];
                                 }
-                            ?>">
+                            ?> ">
                         </div>
                       <!-- <input type="submit" onclick=go() class="btn btn-primary" name='save' data-toggle="modal" data-target="#exampleModal"> -->
                         <input type="submit" class="btn btn-primary" name='save' value='Ingresar' >
