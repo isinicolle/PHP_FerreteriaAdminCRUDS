@@ -45,7 +45,7 @@
         }
 
         public function setSaveUser($estado,$usuario,$contra,$correo) {
-            $sql = " INSERT INTO UsuarioEmpleados(nom_usuarioEmpleado,estado,contrasenia_empleado,correo_empleado,id_empleado) 
+            $sql = " INSERT INTO UsuarioEmpleados(nom_usuarioEmpleado,estado,contra_empleado,correo_empleado,id_empleado) 
             VALUES ('$usuario',$estado,' $contra','$correo',(select top 1 id_empleado from Empleados  order by id_empleado desc))";
             $result = $this->bd->query($sql);
     

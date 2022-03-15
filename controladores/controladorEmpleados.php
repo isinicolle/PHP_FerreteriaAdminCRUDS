@@ -1,5 +1,6 @@
 <?php
     include_once('../modelos/modeloEmpleados.php');
+    session_start();
     function listar(){
         $modeloEmpleado = new Empleados();
         return $modeloEmpleado->getEmpleados();
