@@ -20,7 +20,7 @@
         public function getEmpresas(){
 
             $query = "SELECT * from EmpresasEnvio ";
-            foreach($this->bd->bd->query($query) as $res) {
+            foreach($this->bd->db->query($query) as $res) {
                 $this->EmpresasEnvio[] = $res;
             }
             return $this->EmpresasEnvio;
@@ -28,7 +28,7 @@
 
         public function getVentas(){
             $query = 'SELECT * from Ventas ';
-            foreach($this->bd->bd->query($query) as $res) {
+            foreach($this->bd->db->query($query) as $res) {
                 $this->Ventas[] = $res;
             }
         }
@@ -36,7 +36,7 @@
         public function setEnvio($numRastreo,$idVenta,$idEmpresasEnvio){
 
             $query = "INSERT INTO Envios(num_rastreo,id_venta,id_empresaEnvio) Values ('$numRastreo','$idVenta','$idEmpresasEnvio')";
-            $estado = $this->bd->bd->query($query);
+            $estado = $this->bd->db->query($query);
             if ($estado){
                 return true;
             }
@@ -59,7 +59,7 @@
                 
 
             ";
-            foreach($this->bd->bd->query($query) as $res) {
+            foreach($this->bd->db->query($query) as $res) {
                 $this->Envios[] = $res;
             }
             return $this->Envios;
@@ -69,7 +69,7 @@
             $query = "
                 SELECT * From Envios where id_envio=$id
             ";
-            foreach($this->bd->bd->query($query) as $res) {
+            foreach($this->bd->db->query($query) as $res) {
                 $this->Envios[] = $res;
             }
             return $this->Envios;
@@ -85,7 +85,7 @@
             WHERE id_envio='$idEnvio' ";
              
              
-            $res =  $this->bd->bd->query($query);
+            $res =  $this->bd->db->query($query);
             if($res){
                 return true;
             }
@@ -96,7 +96,7 @@
         {
             $query = " DELETE FROM [dbo].[Envios]
             WHERE id_envio='$idEnvio' ";
-            $res = $this->bd->bd->query($query);
+            $res = $this->bd->db->query($query);
             if($res){
                 return true;
             }
