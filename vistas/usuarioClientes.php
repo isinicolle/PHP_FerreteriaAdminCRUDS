@@ -54,7 +54,7 @@
                 <td><?php echo $datos[$i]["correo_usuario"];?></td>
                 <td><?php echo $datos[$i]["estado"];?></td>
                 <td class="text-center">
-                         <a href="./usuarioClientesActualizar.php?id=<?php echo $datos[$i]["id_usuarioCliente"]?>"><i class="fas fa-edit"></i></a>  | 
+                <a href="./usuarioClientesActualizar.php?id=<?php echo $datos[$i]["id_usuarioCliente"]?>"><i class="fas fa-edit"></i></a>  | 
                          <a href="../controladores/controladorusuariocliente.php?id_usuarioCliente=<?php echo $datos[$i]["id_usuarioCliente"]?>"><i class="fas fa-trash"></i></a>
                         </td>
         

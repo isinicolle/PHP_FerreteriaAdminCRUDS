@@ -60,7 +60,7 @@
          
 
         
-       header('Location: ../vistas/usuarioClientes.php');
+        header('Location: ../vistas/usuarioClientes.php');
          return $clientes->setActualizar($id,$usuario, $clave, $idcliente ,$correo,$estado);
      }
 

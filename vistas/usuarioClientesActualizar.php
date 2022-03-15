@@ -40,7 +40,7 @@
               </div>
               <div class="card-body">
 
-                <form class="form needs-validation" id="form1" action="../controladores/controladorusuariocliente.php?php echo $_GET['id']?>" method="POST" role="form" autocomplete="off" novalidate>               
+                <form class="form needs-validation" id="form1" action="../controladores/controladorusuariocliente.php?id=<?php echo $_GET['id']?>" method="POST" role="form" autocomplete="off" novalidate>               
                   <!-- Id-->
                   <div class="form-group row">
                       <label class="col-lg-3 col-form-label form-control-label">Id</label>

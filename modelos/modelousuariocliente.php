@@ -73,12 +73,12 @@ class Modeloclientes {
 
         //self::setNames();
         $sql = "UPDATE [dbo].[usuariosClientes]
-        SET [nombre_usuario] = '$nombre_usuario'
-           ,[contraenia_usuario] = '$contraenia_usuario'
-           ,[id_cliente] = '$id_cliente'
-           ,[correo_usuario] = '$correo_usuario'
-           ,[estado] = '$estado'
-      WHERE [id_usuarioCliente] = '$id'";
+        SET [nombre_usuario] = '$nombre_usuario',
+           [contraenia_usuario] = '$contraenia_usuario',
+           [id_cliente] = '$id_cliente',
+           [correo_usuario] = '$correo_usuario',
+           [estado] = '$estado'
+           WHERE id_usuarioCliente = '$id'";
         $result = $this->db->query($sql);
 
         if ($result) {
