@@ -133,27 +133,10 @@
                 </div>
            
                     
-                <?php
-                    if (isset($_REQUEST['enviar'])) {
-                      $correo = $_REQUEST['InputDireccion'];
-                     
-                      $idcliente = $_REQUEST['InputRTN'];
-                      $clave = $_REQUEST['InputApe'];
-                      $usuario = $_REQUEST['InputNom'];
-                      
-
-              
-                      $datos=$cliente->Guardar($usuario, $clave, $idcliente,$correo);
-
-                   // $direccioness= new ControladorDirecciones;
-                   
-                  }
-                  
-                      ?>
                
                 <div class="form-group row">
                   <div class="col-lg-12 text-center">
-                  <a href="./usuarioClientes.php" target="nombre" onclick="location.refresh()"> <button type="sumit" class="btn btn-primary"   name="enviar"  >Enviar</button></a>
+                  <button type="submit" class="btn btn-primary" id="guardar" name="guardar" value="Save Changes">Guardar</button>
                     <button type="reset" class="btn btn-secondary" value="Cancel">Cancelar</button>
                   </div>
                 </div>
