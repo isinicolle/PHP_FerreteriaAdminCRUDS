@@ -28,6 +28,13 @@
             return $datos;
         }
 
+        function getcargardatosactualizar($idactualizar){
+            require_once("../modelos/modelocompras.php");
+            $Compras= new ModeloCompras();
+            $datos = $Compras->getdatoscargacompra($idactualizar);
+            return $datos;
+        }
+
 
 
         function Guardar($id_prov,$id_empleado , $isv, $descuento,$id_producto,$precio,$cantidad){
@@ -50,8 +57,8 @@
     if (isset($_GET['idcompra'])){
       
         $idcompra = $_GET['idcompra'];
-        $compra=  new ModeloCompras();
-        if ($compra->setEliminar($idcompra)){
+        $compras=  new ModeloCompras();
+        if ($compras->setEliminar($idcompra)){
             echo '<script>alert("Registro eliminado"</script>';
             time_nanosleep(3,0);
             header('Location:../vistas/compras.php');
@@ -63,6 +70,20 @@
             header('Location:../vistas/compras.php');
         }
     }
-    
+
+    if(isset($_POST['updatecompra']))
+    {
+     require_once("../modelos/modelocompras.php");
+     $compras=  new ModeloCompras();
+
+     $id_compra = $_GET['id'];
+     $cantidad = $_POST['Inputcantidad'];
+     $descuento = $_POST['InputDescuent'];
+     $isv = $_POST['InputISV'];
+     header('Location:../vistas/compras.php');
+     return $compras->setActualizar($id_compra,$cantidad, $descuento, $isv);
+ }
+
+
 
 ?>
