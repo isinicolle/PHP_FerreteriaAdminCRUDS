@@ -95,14 +95,34 @@
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
                 </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Id cliente </label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="text" required id="InputRTN" name="InputRTN" placeholder="Escriba el id cliente">
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
+
+
+                  <!-- Ciudad-->
+                  <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label">Cliente: </label>
+                      <div class="col-lg-9">
+                        <select class="custom-select custom-select-lg mb-3" name="InputRTN"  required>
+                          <option selected disabled value="">Seleccione</option>
+
+                          <?php
+                            include_once('../controladores/controladorusuariocliente.php');
+                            $datosClientes = listarCli();
+
+                          for($cliente = 0; $cliente< sizeof($datosClientes); $cliente++){
+                          ?>
+                              <option value="<?php echo $datosClientes[$cliente]['id_cliente'] ?>"><?php echo $datosClientes[$cliente]['nom_cliente'] ?></option>
+                          <?php
+                              }
+                          ?>
+                          
+                        </select>
+                        <div class="valid-feedback">Correcto</div>
+                        <div class="invalid-feedback">Ingrese datos correctos</div>
+                      </div>
                   </div>
-                </div>
+
+          
+
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">Correo electronico</label>
                   <div class="col-lg-9">

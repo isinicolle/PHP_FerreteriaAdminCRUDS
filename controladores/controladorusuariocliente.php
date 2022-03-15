@@ -64,5 +64,12 @@
          return $clientes->setActualizar($id,$usuario, $clave, $idcliente ,$correo,$estado);
      }
 
+     function listarCli(){
+        require_once("../modelos/modelousuariocliente.php");
+        $clientes = new Modeloclientes();
+        return  $clientes->getclien();
+    }
+
+
 
 ?>
