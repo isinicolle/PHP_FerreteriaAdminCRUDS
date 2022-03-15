@@ -173,7 +173,7 @@
                 </div>
                 <?php
                 if(isset($_REQUEST['enviar'])) {                                      
-                                          $id_empleado= 29;                
+                                          $id_empleado= 69;                
                                           $isv = $_REQUEST['InputISV'];
                                           $descuento = $_REQUEST["InputDescuent"];
                                           $id_prov = $_REQUEST["InputIDPROV"];                                      

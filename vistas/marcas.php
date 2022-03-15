@@ -66,11 +66,7 @@
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">Descripcion de la Marca: </label>
                   <div class="col-lg-9">
-<<<<<<< HEAD
-                    <input class="form-control" type="text" id="descripcion" pattern="[a-zA-Z ]+" name="descripcion" required>
-=======
                     <input class="form-control" type="text" name="descripcion" required>
->>>>>>> f71a3021cddd1dceb4de8af80ca559af0152c6d4
                     <div class="valid-feedback">Correcto</div>
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
@@ -83,11 +79,8 @@
                           <option name="estado" value="1" >Activo</option>
                           <option name="estado" value="0" >Inactivo</option>
                         </select>
-<<<<<<< HEAD
-=======
                       <div class="valid-feedback">Correcto</div>
                       <div class="invalid-feedback">Ingrese datos correctos</div>
->>>>>>> f71a3021cddd1dceb4de8af80ca559af0152c6d4
                       </div>
                     </div>
 

@@ -68,6 +68,7 @@ include_once('../controladores/controladorLogin.php');
                             ?>">
                         </div>
                         <div class="form-group">
+                            <p style="color: #fff;font-size:20px;text-align:center">¿Desea recordar su usuario y contraseña?</p>
                             <input type="checkbox" class="form-control"  name="remember" value="<?php
                                 if(isset($_COOKIE['remember'])){
                                     echo $_COOKIE['remember'];
