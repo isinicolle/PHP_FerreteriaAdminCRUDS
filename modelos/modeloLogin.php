@@ -9,12 +9,12 @@
         }
 
         public function getUser($usuario,$contra) {
-            $consulta = "SELECT *FROM UsuarioEmpleados where nom_usuarioEmpleado = '$usuario' and contrasenia_empleado = $contra and estado = 1" ;
+            $consulta = "select *from UsuarioEmpleados where nom_usuarioEmpleado = '$usuario' and contra_empleado like '%$contra%' and estado = 1" ;
                 foreach($this->bd->query($consulta) as $res) {
                     $this->login[] = $res;
                 }
-                    return $this->login;
-                    $this->bd = null;
+                return $this->login;
+                $this->bd = null;
         }
     }
 ?>

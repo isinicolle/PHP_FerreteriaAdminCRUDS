@@ -1,3 +1,6 @@
+<?php
+include_once('../controladores/controladorLogin.php');
+?>
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -37,7 +40,6 @@
                 </div>
             </div>
         </div>
-
         <div class="modal-dialog">
             <div class="col-sm-9 main-section">
                 <div class="modal-content">
@@ -48,17 +50,32 @@
                         <img src="../bootstrap/img/user.png">
                     </div>
                      <!--aca en la ACTION va ir el formulario al que vamos a ir-->
-                    <form name='form' class="col-12" action="../controladores//controladorLogin.php" method="post">
+                    <form name='form' class="col-12" action="" method="post">
                         <!--Usuario-->
                         <div class="form-group" id="user-group">
-                            <input required type="text" class="form-control" placeholder="Username" name="login"/>
+                            <input required type="text" class="form-control" placeholder="Username" name="user" value="<?php
+                                if(isset($_COOKIE['user'])){
+                                    echo $_COOKIE['user'];
+                                }
+                            ?>">
                         </div>
                         <!--Contraseña-->
                         <div class="form-group" id="contrasena-group">
-                            <input required type="password" class="form-control" placeholder="Password" name="password"/>
+                            <input required type="password" class="form-control" placeholder="Password" name="password" value="<?php
+                                if(isset($_COOKIE['password'])){
+                                    echo $_COOKIE['password'];
+                                }
+                            ?>">
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" class="form-control"  name="remember" value="<?php
+                                if(isset($_COOKIE['remember'])){
+                                    echo $_COOKIE['remember'];
+                                }
+                            ?>">
                         </div>
                       <!-- <input type="submit" onclick=go() class="btn btn-primary" name='save' data-toggle="modal" data-target="#exampleModal"> -->
-                        <input type="submit" class="btn btn-primary" name='save' data-toggle="modal" data-target="#exampleModal">
+                        <input type="submit" class="btn btn-primary" name='save' value='Ingresar' >
                     </form>
                    <!--
                      <div class="col-12 forgot" id="olvido">

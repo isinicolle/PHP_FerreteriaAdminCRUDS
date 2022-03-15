@@ -1,6 +1,5 @@
 <?php
  include_once('../controladores/controladorEmpleados.php');
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,7 +69,7 @@
               <a class="nav-link " href="./ventas.php">Ventas</a>
               <a class="nav-link" href="./direcciones.php">Direcciones</a>
               <form class="d-flex">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" name="close">Cerrar sesi&oacute;n</button>
+              <button type="button" class="btn btn-primary" > <a style="text-decoration: none;color: #fff;" href="../vistas/login.php">Cerrar sesión </a></button>
               </form>    
             </div>
           </div>
