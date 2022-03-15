@@ -46,7 +46,11 @@
     }
 
     
-
+    function listarCiudad(){
+        require_once("../modelos/modeloclientes.php");
+        $clientes = new Modeloclientes();
+        return  $clientes->getciudad();
+    }
 
 
        //Actualizar

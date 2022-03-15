@@ -54,7 +54,7 @@
                 <td><?php echo $datos[$i]["correo_usuario"];?></td>
                 <td><?php echo $datos[$i]["estado"];?></td>
                 <td class="text-center">
-                         <a href="./usuarioClientesActualizar.php?id=<?php echo $datos[$i]["id_usuarioCliente"]?>"><i class="fas fa-edit"></i></a>  | 
+                <a href="./usuarioClientesActualizar.php?id=<?php echo $datos[$i]["id_usuarioCliente"]?>"><i class="fas fa-edit"></i></a>  | 
                          <a href="../controladores/controladorusuariocliente.php?id_usuarioCliente=<?php echo $datos[$i]["id_usuarioCliente"]?>"><i class="fas fa-trash"></i></a>
                         </td>
         
@@ -95,14 +95,34 @@
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
                 </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">Id cliente </label>
-                  <div class="col-lg-9">
-                    <input class="form-control" type="text" required id="InputRTN" name="InputRTN" placeholder="Escriba el id cliente">
-                    <div class="valid-feedback">Correcto</div>
-                    <div class="invalid-feedback">Ingrese datos correctos</div>
+
+
+                  <!-- Ciudad-->
+                  <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label">Cliente: </label>
+                      <div class="col-lg-9">
+                        <select class="custom-select custom-select-lg mb-3" name="InputRTN"  required>
+                          <option selected disabled value="">Seleccione</option>
+
+                          <?php
+                            include_once('../controladores/controladorusuariocliente.php');
+                            $datosClientes = listarCli();
+
+                          for($cliente = 0; $cliente< sizeof($datosClientes); $cliente++){
+                          ?>
+                              <option value="<?php echo $datosClientes[$cliente]['id_cliente'] ?>"><?php echo $datosClientes[$cliente]['nom_cliente'] ?></option>
+                          <?php
+                              }
+                          ?>
+                          
+                        </select>
+                        <div class="valid-feedback">Correcto</div>
+                        <div class="invalid-feedback">Ingrese datos correctos</div>
+                      </div>
                   </div>
-                </div>
+
+          
+
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">Correo electronico</label>
                   <div class="col-lg-9">
@@ -111,36 +131,12 @@
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
                 </div>
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">¿Usuario Activo?</label>
-                  <div class="col-lg-9">
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                    </div>
-                  </div>
-                </div>
+           
                     
-                <?php
-                    if (isset($_REQUEST['enviar'])) {
-                      $correo = $_REQUEST['InputDireccion'];
-                     
-                      $idcliente = $_REQUEST['InputRTN'];
-                      $clave = $_REQUEST['InputApe'];
-                      $usuario = $_REQUEST['InputNom'];
-                      
-
-              
-                      $datos=$cliente->Guardar($usuario, $clave, $idcliente,$correo);
-
-                   // $direccioness= new ControladorDirecciones;
-                   
-                  }
-                  
-                      ?>
                
                 <div class="form-group row">
                   <div class="col-lg-12 text-center">
-                  <a href="./usuarioClientes.php" target="nombre" onclick="location.refresh()"> <button type="sumit" class="btn btn-primary"   name="enviar"  >Enviar</button></a>
+                  <button type="submit" class="btn btn-primary" id="guardar" name="guardar" value="Save Changes">Guardar</button>
                     <button type="reset" class="btn btn-secondary" value="Cancel">Cancelar</button>
                   </div>
                 </div>

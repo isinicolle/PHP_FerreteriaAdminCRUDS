@@ -91,16 +91,33 @@
                       </div>
                     </div>
                   
-                    <!-- id ciudad-->
-                    <div class="form-group row">
-                      <label class="col-lg-3 col-form-label form-control-label">Ciudad</label>
+            
+
+                       <!-- Ciudad-->
+                       <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label">Ciudad: </label>
                       <div class="col-lg-9">
-                        <input class="form-control" type="number" value="<?php echo  $ciudad ?>" id="InputCiudad"  name="InputCiudad" required>
+                        <select class="custom-select custom-select-lg mb-3" name="InputCiudad" required>
+                          <option selected disabled value=""><?php echo $ciudad?></option>
+
+                          <?php
+                            include_once('../controladores/controladorclientes.php');
+                           $datosCiudades = listarCiudad();
+
+                          for($ciudad = 0; $ciudad < sizeof($datosCiudades); $ciudad++){
+                          ?>
+                              <option value="<?php echo $datosCiudades[$ciudad]['id_ciudad'] ?>"><?php echo $datosCiudades[$ciudad]['nombre_ciudad'] ?></option>
+                          <?php
+                              }
+                          ?>
+                          
+                        </select>
                         <div class="valid-feedback">Correcto</div>
                         <div class="invalid-feedback">Ingrese datos correctos</div>
                       </div>
-                    </div>
+                  </div>
 
+                    
                      <!-- id ciudad-->
                   <div class="form-group row">
                       <label class="col-lg-3 col-form-label form-control-label">Telefono</label>

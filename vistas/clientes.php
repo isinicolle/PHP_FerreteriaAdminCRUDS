@@ -113,13 +113,29 @@
                     <div class="invalid-feedback">Ingrese datos correctos</div>
                   </div>
                 </div>
-                <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label" for="InputCiudad">ID ciudad: </label>
-                    <div class="col-lg-9">
-                      <input class="form-control" type="text" required id="InputCiudad" name="InputCiudad" placeholder="Escriba el id de la ciudad">
-                      <div class="valid-feedback">Correcto</div>
-                      <div class="invalid-feedback">Ingrese datos correctos</div>
-                    </div>
+
+                       <!-- Ciudad-->
+                       <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label">Ciudad: </label>
+                      <div class="col-lg-9">
+                        <select class="custom-select custom-select-lg mb-3" name="InputCiudad" required>
+                          <option selected disabled value="">Seleccione</option>
+
+                          <?php
+                            include_once('../controladores/controladorclientes.php');
+                           $datosCiudades = listarCiudad();
+
+                          for($ciudad = 0; $ciudad < sizeof($datosCiudades); $ciudad++){
+                          ?>
+                              <option value="<?php echo $datosCiudades[$ciudad]['id_ciudad'] ?>"><?php echo $datosCiudades[$ciudad]['nombre_ciudad'] ?></option>
+                          <?php
+                              }
+                          ?>
+                          
+                        </select>
+                        <div class="valid-feedback">Correcto</div>
+                        <div class="invalid-feedback">Ingrese datos correctos</div>
+                      </div>
                   </div>
 
                 <div class="form-group row">
@@ -132,16 +148,6 @@
                 </div>
 
     
-
-                <div class="form-group row">
-                  <label class="col-lg-3 col-form-label form-control-label">¿Activo?</label>
-                  <div class="col-lg-9">
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-
-                    </div>
-                  </div>
-                </div>
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label form-control-label">DNI: </label>
                   <div class="col-lg-9">

@@ -15,6 +15,7 @@
             $direcciones = new Modelodirecciones();
             $datos = $direcciones->setGuardar($direccion, $id_ciudad, $id_usuarioCliente,$direccion_opcional);
             require_once("../vistas/direcciones.php");
+            header('Location: ../vistas/direcciones.php');
         }
 
         /*function Actualizar($id, $direccion, $id_ciudad, $id_usuarioCliente,$direccion_opcional){
@@ -24,7 +25,20 @@
             require_once("../vistas/direcciones.php");
         }*/
 
+       
+
       
+    }
+    function listarCiudad(){
+        require_once("../modelos/modelodirecciones.php");
+        $direcciones = new Modelodirecciones();
+        return $direcciones->getciudad();
+    }
+
+    function listarUsuarios(){
+        require_once("../modelos/modelodirecciones.php");
+        $direcciones = new Modelodirecciones();
+        return $direcciones->getusuarios();
     }
 
     function Listar1($id){

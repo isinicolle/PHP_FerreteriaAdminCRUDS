@@ -4,6 +4,8 @@ class Modelodirecciones {
     
     private $direcciones;
     private $db;
+    private $ciudades;
+    private $usuarios;
 
     public function __construct() {
         $this->direcciones= array();
@@ -17,12 +19,14 @@ class Modelodirecciones {
     public function getdirecciones() {
 
        // self::setNames();
-        $sql = "SELECT [id_direccionEnvio]
-        ,[direccion]
-        ,[id_ciudad]
-        ,[id_usuarioCliente]
-        ,[direccion_opcional]
-    FROM [dbo].[DireccionesEnvio]";
+        $sql = "SELECT        dbo.DireccionesEnvio.id_direccionEnvio as id_direccionEnvio , 
+        dbo.DireccionesEnvio.direccion as direccion, 
+        dbo.Ciudades.nombre_ciudad as id_ciudad, 
+        dbo.usuariosClientes.nombre_usuario as id_usuarioCliente, 
+        dbo.DireccionesEnvio.direccion_opcional as direccion_opcional 
+        FROM            dbo.DireccionesEnvio INNER JOIN
+                                 dbo.Ciudades ON dbo.DireccionesEnvio.id_ciudad = dbo.Ciudades.id_ciudad INNER JOIN
+                                 dbo.usuariosClientes ON dbo.DireccionesEnvio.id_usuarioCliente = dbo.usuariosClientes.id_usuarioCliente";
         foreach ($this->db->query($sql) as $res) {
             $this->direcciones[] = $res;
         }
@@ -97,6 +101,33 @@ class Modelodirecciones {
             return false;
         }
     }
+
+    
+    public function getciudad(){
+
+        $sql = "SELECT [id_ciudad]
+        ,[nombre_ciudad]
+    FROM [dbo].[Ciudades]";
+        foreach ($this->db->query($sql) as $res) {
+            $this->ciudades[] = $res;
+        }
+        return $this->ciudades;
+        $this->db = null;
+    }
+
+
+    public function getusuarios(){
+
+        $sql = "SELECT [id_usuarioCliente]
+        ,[nombre_usuario]
+    FROM [dbo].[usuariosClientes]";
+        foreach ($this->db->query($sql) as $res) {
+            $this->usuarios[] = $res;
+        }
+        return $this->usuarios;
+        $this->db = null;
+    }
+
 
 
 

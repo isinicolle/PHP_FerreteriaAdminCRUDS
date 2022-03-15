@@ -4,6 +4,7 @@ class Modeloclientes {
     
     private $clientes;
     private $db;
+    private $clien;
 
     public function __construct() {
         $this->clientes = array();
@@ -17,13 +18,16 @@ class Modeloclientes {
     public function getclientes() {
 
        // self::setNames();
-        $sql = "SELECT  id_usuarioCliente
-        ,nombre_usuario
-        ,contraenia_usuario
-        ,id_cliente
-        ,correo_usuario
-        ,estado
-    FROM [dbo].[usuariosClientes]";
+        $sql = "
+        SELECT        dbo.usuariosClientes.id_usuarioCliente as id_usuarioCliente, 
+        dbo.usuariosClientes.nombre_usuario as nombre_usuario, 
+        dbo.usuariosClientes.contraenia_usuario as contraenia_usuario,  
+        Concat(dbo.Clientes.nom_cliente,' ', 
+        dbo.Clientes.apellido_cliente) as id_cliente, 
+        dbo.usuariosClientes.correo_usuario as correo_usuario, 
+        dbo.usuariosClientes.estado as  estado
+        FROM            dbo.usuariosClientes INNER JOIN
+                                 dbo.Clientes ON dbo.usuariosClientes.id_cliente = dbo.Clientes.id_cliente";
         foreach ($this->db->query($sql) as $res) {
             $this->clientes[] = $res;
         }
@@ -73,12 +77,12 @@ class Modeloclientes {
 
         //self::setNames();
         $sql = "UPDATE [dbo].[usuariosClientes]
-        SET [nombre_usuario] = '$nombre_usuario'
-           ,[contraenia_usuario] = '$contraenia_usuario'
-           ,[id_cliente] = '$id_cliente'
-           ,[correo_usuario] = '$correo_usuario'
-           ,[estado] = '$estado'
-      WHERE [id_usuarioCliente] = '$id'";
+        SET [nombre_usuario] = '$nombre_usuario',
+           [contraenia_usuario] = '$contraenia_usuario',
+           [id_cliente] = '$id_cliente',
+           [correo_usuario] = '$correo_usuario',
+           [estado] = '$estado'
+           WHERE id_usuarioCliente = '$id'";
         $result = $this->db->query($sql);
 
         if ($result) {
@@ -102,6 +106,20 @@ class Modeloclientes {
             return false;
         }
     }
+
+    //combobox clientes
+    public function getclien(){
+
+        $sql = "SELECT      id_cliente , 
+        CONCAT(nom_cliente,' ',apellido_cliente)  as  nom_cliente
+        FROM            dbo.Clientes";
+        foreach ($this->db->query($sql) as $res) {
+            $this->clien[] = $res;
+        }
+        return $this->clien;
+        $this->db = null;
+    }
+
 
 }
 
