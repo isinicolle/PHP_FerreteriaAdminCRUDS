@@ -1,97 +1,80 @@
 <?php
-    include_once('../modelos/modeloVentas.php');
-    
-    
-    
-    function listar()
-    {
-        $Ventas = new Venta();
-        return $Ventas->getVentas();
-    }
-   /* function getEmpresaEnvios(){
-        $Empresas = new Envios();
-        return $Empresas->getEmpresas();
-    }
-
-    function getEnvioId($idEnvio){
-        $Envio = new Envios();
-        $Envio->getEnvioId($idEnvio);
-        return $Envio->Envios;
-    }
-
-    if (isset($_POST['Insertar'])){
+  require_once("../modelos/modeloVentas.php");
+    class ControladorVentas  {
+        public function __construct() {
+        }
+        function Listar(){
+            $Ventas= new Ventas();
+            $datos = $Ventas->getVentas();
+            return $datos;
+        }
+        
+        function Listarproductos(){
+            $Ventas=new Ventas();
+            $datos = $Ventas->getlistaproductos();
        
-        if (!isset($_POST["numRastreo"])|| !isset($_POST['idVenta'])
-        || !isset($_POST["idEmpresa"]))
-        exit();
+            return $datos;
+        }
 
-        $numRastreo = $_POST["numRastreo"];
-        $idVenta = $_POST['idVenta'];
-        $idEmpresa = $_POST["idEmpresa"];
-        $Envio = new Envios();
-        $estado = $Envio->setEnvio($numRastreo,$idVenta,$idEmpresa);
-        if ($estado){
-            echo('Hola');
-            header('Location:../vistas/envios.php');
+        function getVenta($idVenta){
+            $Ventas = new Ventas();
+            $datos = $Ventas->getVenta($idVenta);
+            return $datos;
+            
         }
-        else{
-            echo"Un error inesperado al insertar datos";
+        
+
+        function getcargardatos($idproducto_){
+        
+            $Ventas= new Ventas();
+            $datos = $Ventas->getdatoscarga($idproducto_);
+            return $datos;
         }
-    };
-    if (isset($_GET['idEnvio'])){
-        $idenvio = $_GET['idEnvio'];
-        $Envio = new Envios();
-        if ($Envio->deleteEnvio($idenvio)){
+
+
+
+        function Guardar( $idCliente,$RtnEstado,$isv , $idDireccion, $descuento,$id_producto,$precio,$cantidad){
+           
+            $Ventas = new Ventas();
+            $datos = $Ventas->setGuardar(  $idCliente,$RtnEstado , $idDireccion, $descuento,$id_producto,$precio,$cantidad,$isv);
+        
+        }
+
+        function Actualizar($idVenta,$idCliente,$RtnEstado,$isv,$idDireccion,$descuento,$idProducto,$cantidad,$precio){
+            $Ventas = new Ventas();
+            $datos = $Ventas->setActualizar($idVenta,$idCliente,$RtnEstado,$isv,$idDireccion,$descuento,$idProducto,$cantidad,$precio);
+            if ($datos)
+            {
+                header('Location:../vistas/ventas.php');
+              
+            }
+            else
+            {
+                echo 'Ocurrio un error inesperado';
+                time_nanosleep(3,0);
+                header('Location:../vistas/ventas.php');
+            }
+            }
+        }
+
+       
+
+    
+    if (isset($_GET['idVenta'])){
+      
+        $idVenta = $_GET['idVenta'];
+        $venta=  new Ventas();
+        if ($venta->setEliminar($idVenta)){
             echo '<script>alert("Registro eliminado"</script>';
             time_nanosleep(3,0);
-            header('Location:../vistas/envios.php');
-
+            header('Location:../vistas/ventas.php');
         }
         else
         {
             echo 'Ocurrio un error inesperado';
             time_nanosleep(3,0);
-            header('Location:../vistas/envios.php');
+            header('Location:../vistas/ventas.php');
         }
     }
-
-     if (isset($_GET['idEnvioE'])){
-        $idenvio = $_GET['idEnvio'];
-        $Envio = new Envios();
-        if ($Envio->deleteEnvio($idenvio)){
-            echo '<script>alert("Registro eliminado"</script>';
-            time_nanosleep(3,0);
-            header('Location:../vistas/envios.php');
-
-        }
-        else
-        {
-            echo 'Ocurrio un error inesperado';
-            time_nanosleep(3,0);
-            header('Location:../vistas/envios.php');
-        }
-    }
-
-    if (isset($_POST["Modificar"])){
-        if (!isset($_POST["numRastreo"])|| !isset($_POST['idVenta'])
-        || !isset($_POST["idEmpresa"]))
-        exit();
-        $idEnvio=$_POST["idEnvio"];
-        $numRastreo = $_POST["numRastreo"];
-        $idVenta = $_POST['idVenta'];
-        $idEmpresa = $_POST["idEmpresa"];
-        $Envio = new Envios();
-        $estado = $Envio->updateEnvio($idEnvio,$numRastreo,$idVenta,$idEmpresa);
-        if ($estado){
-            echo('Hola');
-            header('Location:../vistas/envios.php');
-        }
-        else{
-            echo"Un error inesperado al insertar datos";
-        }
-
-    }
-*/
-
 
 ?>
