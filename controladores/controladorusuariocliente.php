@@ -13,12 +13,6 @@
   
     }
 
-    function Guardar($nombre_usuario, $contraenia_usuario, $id_cliente,$correo_usuario){
-        require_once("../modelos/modelousuariocliente.php");
-        $clientes = new Modeloclientes();
-        $datos =  $clientes->setGuardar($nombre_usuario, $contraenia_usuario, $id_cliente,$correo_usuario);
-        require_once("../vistas/usuarioClientes.php");
-    }
 
       //Guardar
       if(isset($_POST['guardar'])){
@@ -30,7 +24,7 @@
         $clave = $_POST['InputApe'];
         $usuario = $_POST['InputNom'];
         
-        header('Location: ../vistas/usuarioClientes.php');
+        //header('Location: ../vistas/usuarioClientes.php');
         return  $clientes->setGuardar($usuario,  $clave ,  $idcliente , $correo);  
     }
     
