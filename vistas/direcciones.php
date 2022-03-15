@@ -31,8 +31,8 @@
                     <tr>
                     <th scope="col">Id</th>
                       <th scope="col">Direccion</th>
-                      <th scope="col">Id Ciudad</th>
-                      <th scope="col">Id Usuario Cliente</th>
+                      <th scope="col">Ciudad</th>
+                      <th scope="col">Usuario Cliente</th>
                       <th scope="col">Direccion Opcional</th>
                       <th scope="col">Accion</th>
                     
@@ -86,23 +86,56 @@
                     </div>
                   </div>
 
-                  <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label" for="InputCiudad">ID ciudad: </label>
-                    <div class="col-lg-9">
-                      <input class="form-control" type="text" required id="InputCiudad" name="InputCiudad" placeholder="Escriba el id de la ciudad">
-                      <div class="valid-feedback">Correcto</div>
-                      <div class="invalid-feedback">Ingrese datos correctos</div>
-                    </div>
+
+
+
+                      <!-- Ciudad-->
+                 <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label">Ciudad: </label>
+                      <div class="col-lg-9">
+                        <select class="custom-select custom-select-lg mb-3" name="InputCiudad" required>
+                          <option selected disabled value="">Seleccione</option>
+
+                          <?php
+                            include_once('../controladores/controladorDirecciones.php');
+                           $datosCiudades = listarCiudad();
+
+                          for($ciudad = 0; $ciudad < sizeof($datosCiudades); $ciudad++){
+                          ?>
+                              <option value="<?php echo $datosCiudades[$ciudad]['id_ciudad'] ?>"><?php echo $datosCiudades[$ciudad]['nombre_ciudad'] ?></option>
+                          <?php
+                              }
+                          ?>
+                          
+                        </select>
+                        <div class="valid-feedback">Correcto</div>
+                        <div class="invalid-feedback">Ingrese datos correctos</div>
+                      </div>
                   </div>
 
+
                   <div class="form-group row">
-                    <label class="col-lg-3 col-form-label form-control-label" for="InputUsuario">ID Usuario cliente: </label>
-                    <div class="col-lg-9">
-                      <input class="form-control" type="text" required id="InputUsuario" name="InputUsuario" placeholder="Escriba el id del usuario">
-                      <div class="valid-feedback">Correcto</div>
-                      <div class="invalid-feedback">Ingrese datos correctos</div>
-                    </div>
+                      <label class="col-lg-3 col-form-label form-control-label">Usuario: </label>
+                      <div class="col-lg-9">
+                        <select class="custom-select custom-select-lg mb-3" name="InputUsuario" required>
+                          <option selected disabled value="">Seleccione</option>
+
+                          <?php
+                            include_once('../controladores/controladorDirecciones.php');
+                           $datosUsuarios = listarUsuarios();
+
+                          for($usuarios = 0; $usuarios < sizeof($datosUsuarios); $usuarios++){
+                          ?>
+                              <option value="<?php echo $datosUsuarios[$usuarios]['id_usuarioCliente'] ?>"><?php echo $datosUsuarios[$usuarios]['nombre_usuario'] ?></option>
+                          <?php
+                              }
+                          ?>
+                        </select>
+                        <div class="valid-feedback">Correcto</div>
+                        <div class="invalid-feedback">Ingrese datos correctos</div>
+                      </div>
                   </div>
+
                   <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label" for="InputDireccop">Direccion Opcional: </label>
                     <div class="col-lg-9">
@@ -111,6 +144,8 @@
                       <div class="invalid-feedback">Ingrese datos correctos</div>
                     </div>
                   </div>
+
+             
 
              
 

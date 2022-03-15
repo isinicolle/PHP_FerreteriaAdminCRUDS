@@ -59,25 +59,53 @@
                       </div>
                     </div>
 
-                  <!-- id ciudad-->
-                  <div class="form-group row">
-                      <label class="col-lg-3 col-form-label form-control-label">Ciudad</label>
+                        <!-- Ciudad-->
+                        <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label">Ciudad: </label>
                       <div class="col-lg-9">
-                        <input class="form-control" type="number" value="<?php echo  $ciudad ?>" id="InputCiudad"  name="InputCiudad" required>
-                        <div class="valid-feedback">Correcto</div>
-                        <div class="invalid-feedback">Ingrese datos correctos</div>
-                      </div>
-                    </div>
+                        <select class="custom-select custom-select-lg mb-3" name="InputCiudad" required>
+                          <option selected disabled value=""><?php echo $ciudad?></option>
 
-                  <!-- id usuario-->
-                  <div class="form-group row">
-                      <label class="col-lg-3 col-form-label form-control-label">Usuario</label>
-                      <div class="col-lg-9">
-                        <input class="form-control" type="number"value="<?php echo  $usuario  ?>" id="InputUsuario"  name="InputUsuario" required>
+                          <?php
+                            include_once('../controladores/controladorDirecciones.php');
+                           $datosCiudades = listarCiudad();
+
+                          for($ciudad = 0; $ciudad < sizeof($datosCiudades); $ciudad++){
+                          ?>
+                              <option value="<?php echo $datosCiudades[$ciudad]['id_ciudad'] ?>"><?php echo $datosCiudades[$ciudad]['nombre_ciudad'] ?></option>
+                          <?php
+                              }
+                          ?>
+                          
+                        </select>
                         <div class="valid-feedback">Correcto</div>
                         <div class="invalid-feedback">Ingrese datos correctos</div>
                       </div>
-                    </div>
+                  </div>
+
+
+                  <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label">Usuario: </label>
+                      <div class="col-lg-9">
+                        <select class="custom-select custom-select-lg mb-3" name="InputUsuario" required>
+                          <option selected disabled value=""><?php echo $usuario?></option>
+
+                          <?php
+                            include_once('../controladores/controladorDirecciones.php');
+                           $datosUsuarios = listarUsuarios();
+
+                          for($usuarios = 0; $usuarios < sizeof($datosUsuarios); $usuarios++){
+                          ?>
+                              <option value="<?php echo $datosUsuarios[$usuarios]['id_usuarioCliente'] ?>"><?php echo $datosUsuarios[$usuarios]['nombre_usuario'] ?></option>
+                          <?php
+                              }
+                          ?>
+                        </select>
+                        <div class="valid-feedback">Correcto</div>
+                        <div class="invalid-feedback">Ingrese datos correctos</div>
+                      </div>
+                  </div>
+
 
                      <!-- direccion opcional-->
                   <div class="form-group row">
