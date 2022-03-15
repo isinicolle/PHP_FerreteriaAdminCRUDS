@@ -61,7 +61,8 @@
               <a class="nav-link" href="./marcas.php">Marcas</a>
               <a class="nav-link " href="./clientes.php">Clientes</a>
               <a class="nav-link" href="./usuarioClientes.php">Usuarios Clientes</a>
-              <a class="nav-link" href="./envios.php">Envios / Empresas </a>
+              <a class="nav-link" href="../vistas/envios.php">Envios </a>
+              <a class="nav-link" href="../vistas/empresasEnvio.php">Empresas </a>
               <a class="nav-link" href="./compras.php">Compras</a>
               <a class="nav-link " href="./empleados.php">Empleados &Backslash; Usuarios</a>
               <a class="nav-link " href="./ventas.php">Ventas</a>
