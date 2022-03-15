@@ -18,7 +18,8 @@ class ModeloCompras {
 
        // self::setNames();
         $sql = "SELECT        dbo.Compras.id_compra, dbo.Productos.descripcion_producto, dbo.Empleados.nom_empleado + ' ' + dbo.Empleados.apellido_empleado AS Empleado, dbo.Proveedores.nom_prov, dbo.Proveedores.correo_prov, 
-        dbo.Compras.fecha_compra, dbo.DetalleCompras.precio, dbo.DetalleCompras.cantidad, dbo.DetalleCompras.cantidad*dbo.DetalleCompras.precio As Total
+        dbo.Compras.fecha_compra, dbo.DetalleCompras.precio, dbo.DetalleCompras.cantidad, 
+        (dbo.DetalleCompras.cantidad*dbo.DetalleCompras.precio)-(dbo.Compras.descuento/100)*(dbo.DetalleCompras.cantidad*dbo.DetalleCompras.precio)+((dbo.Compras.isv/100)*(dbo.DetalleCompras.cantidad*dbo.DetalleCompras.precio)) as Total
         FROM            dbo.Compras INNER JOIN
         dbo.DetalleCompras ON dbo.Compras.id_compra = dbo.DetalleCompras.id_compra INNER JOIN
         dbo.Empleados ON dbo.Compras.id_empleado = dbo.Empleados.id_empleado INNER JOIN
@@ -44,13 +45,13 @@ class ModeloCompras {
      
      }
 
-     public function getdatoscarga($idproducto_) {
+     public function getdatoscarga($idproducto) {
 
         // self::setNames();
-         $sql = "SELECT        dbo.Proveedores.id_prov, dbo.Proveedores.nom_prov, dbo.Productos.id_producto,dbo.Proveedores.correo_prov, dbo.Productos.stock, dbo.Productos.costo_producto
+         $sql = "SELECT        dbo.Proveedores.id_prov, descripcion_producto AS producto, dbo.Proveedores.nom_prov, dbo.Productos.id_producto,dbo.Proveedores.correo_prov, dbo.Productos.stock, dbo.Productos.costo_producto
          FROM            dbo.Productos INNER JOIN
                                   dbo.Proveedores ON dbo.Productos.id_proveedor = dbo.Proveedores.id_prov
-         WHERE        dbo.Productos.id_producto =$idproducto_";
+         WHERE        dbo.Productos.id_producto =$idproducto";
         
          foreach ($this->db->query($sql) as $res) {
              $this->Compras[] = $res;
@@ -59,6 +60,29 @@ class ModeloCompras {
          return $this->Compras;
      
      }
+     public function getdatoscargacompra($idactualizar) {
+
+        // self::setNames();
+         $sql = "SELECT        dbo.Compras.id_compra, dbo.Productos.descripcion_producto, dbo.Empleados.nom_empleado + ' ' + dbo.Empleados.apellido_empleado AS Empleado, dbo.Proveedores.nom_prov, dbo.Proveedores.correo_prov, 
+         dbo.Compras.fecha_compra, dbo.DetalleCompras.precio, dbo.DetalleCompras.cantidad, dbo.DetalleCompras.cantidad*dbo.DetalleCompras.precio As subTotal ,dbo.Compras.isv,dbo.Compras.descuento,
+         (dbo.DetalleCompras.cantidad*dbo.DetalleCompras.precio)-(dbo.Compras.descuento/100)*(dbo.DetalleCompras.cantidad*dbo.DetalleCompras.precio)+((dbo.Compras.isv/100)*(dbo.DetalleCompras.cantidad*dbo.DetalleCompras.precio)) as total
+         FROM            dbo.Compras INNER JOIN
+         dbo.DetalleCompras ON dbo.Compras.id_compra = dbo.DetalleCompras.id_compra INNER JOIN
+         dbo.Empleados ON dbo.Compras.id_empleado = dbo.Empleados.id_empleado INNER JOIN
+         dbo.Productos ON dbo.DetalleCompras.id_producto = dbo.Productos.id_producto INNER JOIN
+         dbo.Proveedores ON dbo.Compras.id_prov = dbo.Proveedores.id_prov AND dbo.Productos.id_proveedor = dbo.Proveedores.id_prov
+         where [dbo].[Compras].id_compra  =$idactualizar";
+        
+         foreach ($this->db->query($sql) as $res) {
+             $this->Compras[] = $res;
+         }
+        
+         return $this->Compras;
+     
+     }
+
+
+     
 
 
     public function setGuardar( $id_prov,$id_empleado , $isv, $descuento,$id_producto,$precio,$cantidad) {
@@ -101,10 +125,16 @@ class ModeloCompras {
         }
     }
 
-    public function setActualizar($id, $id_prov,$id_empleado , $isv, $descuento,$id_producto,$precio,$cantidad) {
+    public function setActualizar($id_compra,$cantidad, $descuento, $isv) {
 
         //self::setNames();
-        $sql = "";
+        $sql = "UPDATE [dbo].[DetalleCompras]
+        SET [cantidad] ='$cantidad' 
+      WHERE [id_compra] = '$id_compra'
+     UPDATE [dbo].[Compras]
+        SET [isv] = '$isv' 
+           ,[descuento] = '$descuento' 
+      WHERE [id_compra] = '$id_compra'";
         $result = $this->db->query($sql);
 
         if ($result) {
